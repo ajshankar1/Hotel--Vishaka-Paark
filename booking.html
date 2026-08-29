@@ -756,6 +756,88 @@
 
 
     /* =========================================================
+       PRICE SUMMARY
+       ========================================================= */
+
+    .price-summary {
+      margin-top: 30px;
+      padding: 25px;
+      background: #1a1511;
+      border: 1px solid rgba(198,154,85,0.35);
+      color: #ffffff;
+    }
+
+    .price-summary-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .price-summary-header h4 {
+      margin: 0;
+      color: #ffffff;
+      font-family: "Gilda Display", serif;
+      font-size: 27px;
+      font-weight: 400;
+    }
+
+    .price-summary-header span {
+      color: #c69a55;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .price-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 11px 0;
+      border-top: 1px solid rgba(255,255,255,0.09);
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .price-line strong {
+      color: #ffffff;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .price-line.total {
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(198,154,85,0.45);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .price-line.total strong {
+      color: #c69a55;
+      font-size: 22px;
+    }
+
+    .price-note {
+      margin: 15px 0 0;
+      color: rgba(255,255,255,0.52);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .room-option-price {
+      display: block;
+      margin-top: 10px;
+      color: #9a733d !important;
+      font-size: 13px !important;
+      font-weight: 700;
+    }
+
+    /* =========================================================
        MOBILE
        ========================================================= */
 
@@ -1407,6 +1489,10 @@
                       and individual travellers.
                     </span>
 
+                    <span class="room-option-price">
+                      ₹2,740 / night · 10% OFF
+                    </span>
+
                   </label>
 
                 </div>
@@ -1432,6 +1518,10 @@
                     <span>
                       Two separate beds, ideal for friends,
                       colleagues and business travellers.
+                    </span>
+
+                    <span class="room-option-price">
+                      ₹3,058 / night · 10% OFF
                     </span>
 
                   </label>
@@ -1461,10 +1551,65 @@
                       families and small groups.
                     </span>
 
+                    <span class="room-option-price">
+                      ₹4,222 / night · 10% OFF
+                    </span>
+
                   </label>
 
                 </div>
 
+
+              </div>
+
+
+              <!-- LIVE PRICE SUMMARY -->
+
+              <div class="price-summary" id="priceSummary" aria-live="polite">
+
+                <div class="price-summary-header">
+                  <h4>Your Stay Summary</h4>
+                  <span>Live Estimate</span>
+                </div>
+
+                <div class="price-line">
+                  <span>Room</span>
+                  <strong id="summaryRoom">Select a room</strong>
+                </div>
+
+                <div class="price-line">
+                  <span>Stay Duration</span>
+                  <strong id="summaryNights">Select dates</strong>
+                </div>
+
+                <div class="price-line">
+                  <span>Room Rate</span>
+                  <strong id="summaryRate">—</strong>
+                </div>
+
+                <div class="price-line">
+                  <span>Number of Rooms</span>
+                  <strong id="summaryRooms">—</strong>
+                </div>
+
+                <div class="price-line">
+                  <span>Room Charges</span>
+                  <strong id="summaryRoomCharges">₹0</strong>
+                </div>
+
+                <div class="price-line">
+                  <span>GST @ 5%</span>
+                  <strong id="summaryGst">₹0</strong>
+                </div>
+
+                <div class="price-line total">
+                  <span>Estimated Total</span>
+                  <strong id="summaryTotal">₹0</strong>
+                </div>
+
+                <p class="price-note">
+                  This is an estimated amount based on the selected room, dates and number of rooms. Final availability and billing will be confirmed by Hotel Vishaka Paark.
+                </p>
 
               </div>
 
@@ -2133,6 +2278,160 @@
 
 
     /* =========================================================
+       ROOM RATES & LIVE PRICE CALCULATOR
+       ========================================================= */
+
+    const roomRates = {
+      "Executive Double": 2740,
+      "Executive Twin": 3058,
+      "Deluxe Triple": 4222
+    };
+
+    const gstRate = 0.05;
+
+    const numberOfRooms =
+      document.getElementById("numberOfRooms");
+
+    const roomInputs =
+      document.querySelectorAll('input[name="Room Type"]');
+
+    const summaryRoom =
+      document.getElementById("summaryRoom");
+
+    const summaryNights =
+      document.getElementById("summaryNights");
+
+    const summaryRate =
+      document.getElementById("summaryRate");
+
+    const summaryRooms =
+      document.getElementById("summaryRooms");
+
+    const summaryRoomCharges =
+      document.getElementById("summaryRoomCharges");
+
+    const summaryGst =
+      document.getElementById("summaryGst");
+
+    const summaryTotal =
+      document.getElementById("summaryTotal");
+
+    function formatCurrency(value) {
+      return "₹" + Number(value).toLocaleString("en-IN", {
+        maximumFractionDigits: 0
+      });
+    }
+
+    function getStayNights() {
+
+      if (!checkinDate.value || !checkoutDate.value) {
+        return 0;
+      }
+
+      const start =
+        new Date(checkinDate.value + "T00:00:00");
+
+      const end =
+        new Date(checkoutDate.value + "T00:00:00");
+
+      const difference =
+        end.getTime() - start.getTime();
+
+      return Math.ceil(
+        difference / (1000 * 60 * 60 * 24)
+      );
+    }
+
+    function updatePriceSummary() {
+
+      const selectedRoom =
+        document.querySelector('input[name="Room Type"]:checked');
+
+      const nights =
+        getStayNights();
+
+      const roomCount =
+        parseInt(numberOfRooms.value, 10) || 0;
+
+      if (selectedRoom) {
+        summaryRoom.textContent = selectedRoom.value;
+        summaryRate.textContent =
+          formatCurrency(roomRates[selectedRoom.value]) + "/ night";
+      } else {
+        summaryRoom.textContent = "Select a room";
+        summaryRate.textContent = "—";
+      }
+
+      summaryNights.textContent =
+        nights > 0
+          ? nights + (nights === 1 ? " Night" : " Nights")
+          : "Select dates";
+
+      summaryRooms.textContent =
+        roomCount > 0
+          ? roomCount + (roomCount === 1 ? " Room" : " Rooms")
+          : "—";
+
+      if (selectedRoom && nights > 0 && roomCount > 0) {
+
+        const roomCharges =
+          roomRates[selectedRoom.value] *
+          nights *
+          roomCount;
+
+        const gst =
+          Math.round(roomCharges * gstRate);
+
+        const total =
+          roomCharges + gst;
+
+        summaryRoomCharges.textContent =
+          formatCurrency(roomCharges);
+
+        summaryGst.textContent =
+          formatCurrency(gst);
+
+        summaryTotal.textContent =
+          formatCurrency(total);
+
+      } else {
+
+        summaryRoomCharges.textContent = "₹0";
+        summaryGst.textContent = "₹0";
+        summaryTotal.textContent = "₹0";
+
+      }
+
+    }
+
+    checkinDate.addEventListener(
+      "change",
+      updatePriceSummary
+    );
+
+    checkoutDate.addEventListener(
+      "change",
+      updatePriceSummary
+    );
+
+    numberOfRooms.addEventListener(
+      "change",
+      updatePriceSummary
+    );
+
+    roomInputs.forEach(function(input) {
+
+      input.addEventListener(
+        "change",
+        updatePriceSummary
+      );
+
+    });
+
+    updatePriceSummary();
+
+
+    /* =========================================================
        FORM SUBMISSION
        ========================================================= */
 
@@ -2261,7 +2560,33 @@
           document.getElementById("company").value,
 
         specialRequest:
-          document.getElementById("specialRequest").value
+          document.getElementById("specialRequest").value,
+
+        stayNights:
+          getStayNights(),
+
+        roomRate:
+          selectedRoom
+            ? roomRates[selectedRoom.value]
+            : 0,
+
+        roomCharges:
+          selectedRoom && getStayNights() > 0
+            ? roomRates[selectedRoom.value] * getStayNights() * (parseInt(numberOfRooms.value, 10) || 0)
+            : 0,
+
+        gstRate:
+          gstRate,
+
+        gstAmount:
+          selectedRoom && getStayNights() > 0
+            ? Math.round(roomRates[selectedRoom.value] * getStayNights() * (parseInt(numberOfRooms.value, 10) || 0) * gstRate)
+            : 0,
+
+        estimatedTotal:
+          selectedRoom && getStayNights() > 0
+            ? Math.round(roomRates[selectedRoom.value] * getStayNights() * (parseInt(numberOfRooms.value, 10) || 0) * (1 + gstRate))
+            : 0
 
       };
 
