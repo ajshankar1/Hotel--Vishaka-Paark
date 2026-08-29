@@ -1,3 +1,1020 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terms & Conditions | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">LEGAL</div><h1>Terms & Conditions.</h1></div></section><section class="section"><div class="container legal"><p>These terms are a demo website placeholder and should be replaced with Vishaka Paark’s final approved legal wording before production use.</p><h2>1. Reservations</h2><p>Room reservations are subject to availability and the rates, dates, occupancy and conditions shown at the time of booking. A booking is considered confirmed only after the applicable booking provider issues confirmation.</p><h2>2. Check-in and Check-out</h2><p>Guests must follow the hotel's published check-in and check-out timings. Early check-in or late check-out is subject to availability and may carry additional charges.</p><h2>3. Cancellation</h2><p>Cancellation and modification rules depend on the selected rate plan and booking channel. Please review the applicable policy before confirming a reservation.</p><h2>4. Rates and Payments</h2><p>Displayed rates are subject to applicable taxes, fees and the hotel's final commercial terms. Payments processed through a third-party booking provider are also subject to that provider's terms.</p><h2>5. Guest Responsibilities</h2><p>Guests are expected to provide accurate booking information and comply with hotel rules, safety requirements and applicable laws.</p><h2>6. Website Information</h2><p>Room descriptions, photographs, facilities and promotional information are provided for general guidance and may be updated by the hotel.</p><h2>7. Contact</h2><p>For questions about a reservation or these terms, please contact Vishaka Paark through the official contact channel.</p></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Terms & Conditions | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Terms and Conditions for Vishaka Paark, Coimbatore."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 480px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.80),
+          rgba(0,0,0,.22)
+        ),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 950px;
+      font-family: var(--serif);
+      font-size: clamp(55px, 7vw, 92px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .legal-sidebar {
+      position: sticky;
+      top: 30px;
+    }
+
+    .legal-sidebar p {
+      max-width: 360px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .legal-nav {
+      margin-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .legal-nav a {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      color: #55524c;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .legal-nav a:hover {
+      color: #111;
+    }
+
+    .legal-content {
+      border-top: 1px solid var(--line);
+    }
+
+    .legal-section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-section:first-child {
+      padding-top: 0;
+    }
+
+    .legal-number {
+      margin-bottom: 16px;
+      color: #aaa69e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .13em;
+    }
+
+    .legal-section h2 {
+      margin-bottom: 17px;
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .legal-section p {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section ul {
+      margin: 15px 0 0;
+      padding-left: 20px;
+    }
+
+    .legal-section li {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .legal-highlight {
+      margin-top: 25px;
+      padding: 25px;
+      background: #ebe8e1;
+      border: 1px solid var(--line);
+    }
+
+    .legal-highlight strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
+    }
+
+    .legal-highlight p {
+      margin: 0;
+    }
+
+    .legal-contact {
+      margin-top: 20px;
+    }
+
+    .legal-contact a {
+      color: #24231f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .terms-cta {
+      padding: 60px;
+      background: #171714;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .terms-cta h2 {
+      font-family: var(--serif);
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .terms-cta p {
+      max-width: 550px;
+      margin-top: 14px;
+      color: #aaa79f;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .legal-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .legal-sidebar {
+        position: static;
+      }
+
+      .terms-cta {
+        padding: 45px 30px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 53px;
+      }
+
+      .legal-section {
+        padding: 30px 0;
+      }
+
+      .legal-section h2 {
+        font-size: 28px;
+      }
+
+      .legal-section p,
+      .legal-section li {
+        font-size: 12px;
+      }
+
+      .terms-cta {
+        padding: 35px 25px;
+      }
+
+      .terms-cta h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · LEGAL
+      </div>
+
+      <h1>
+        Terms &
+        <br>
+        <em>conditions.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- TERMS -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="legal-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="legal-sidebar">
+
+          <div class="kicker">
+            PLEASE READ
+          </div>
+
+          <h2 class="title">
+            Our terms,
+            <br>
+            <em>clearly stated.</em>
+          </h2>
+
+          <p>
+            These terms describe the general conditions
+            applicable to enquiries, reservations and use
+            of the Vishaka Paark website.
+          </p>
+
+
+          <div class="legal-nav">
+
+            <a href="#general">
+              01 · GENERAL
+            </a>
+
+            <a href="#reservations">
+              02 · RESERVATIONS
+            </a>
+
+            <a href="#checkin">
+              03 · CHECK-IN & CHECK-OUT
+            </a>
+
+            <a href="#payments">
+              04 · PAYMENTS
+            </a>
+
+            <a href="#cancellation">
+              05 · CANCELLATION
+            </a>
+
+            <a href="#conduct">
+              06 · GUEST CONDUCT
+            </a>
+
+            <a href="#liability">
+              07 · LIABILITY
+            </a>
+
+            <a href="#website">
+              08 · WEBSITE USE
+            </a>
+
+            <a href="#contact">
+              09 · CONTACT
+            </a>
+
+          </div>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+        <main class="legal-content">
+
+
+          <!-- 01 -->
+          <section
+            class="legal-section"
+            id="general"
+          >
+
+            <div class="legal-number">
+              01 · GENERAL
+            </div>
+
+            <h2>
+              General Information
+            </h2>
+
+            <p>
+              By using this website or making an enquiry
+              regarding accommodation at Vishaka Paark,
+              you acknowledge that you have read and
+              understood these terms and conditions.
+            </p>
+
+            <p>
+              The information displayed on this website is
+              intended to provide general information about
+              the property, rooms, services and booking
+              enquiries.
+            </p>
+
+            <p>
+              Hotel policies, room availability, rates and
+              services may change from time to time without
+              prior notice.
+            </p>
+
+          </section>
+
+
+          <!-- 02 -->
+          <section
+            class="legal-section"
+            id="reservations"
+          >
+
+            <div class="legal-number">
+              02 · RESERVATIONS
+            </div>
+
+            <h2>
+              Reservations & Enquiries
+            </h2>
+
+            <p>
+              A booking enquiry submitted through the
+              website does not automatically constitute a
+              confirmed reservation.
+            </p>
+
+            <p>
+              A reservation becomes effective only after
+              confirmation by the hotel through an
+              appropriate communication channel.
+            </p>
+
+            <p>
+              Guests may be asked to provide accurate
+              information including their name, contact
+              number, dates of stay, number of guests and
+              other information required for the reservation.
+            </p>
+
+            <div class="legal-highlight">
+
+              <strong>
+                Please wait for confirmation.
+              </strong>
+
+              <p>
+                Submitting an online enquiry should not be
+                treated as confirmation of room availability.
+                Please obtain confirmation from the hotel.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- 03 -->
+          <section
+            class="legal-section"
+            id="checkin"
+          >
+
+            <div class="legal-number">
+              03 · CHECK-IN & CHECK-OUT
+            </div>
+
+            <h2>
+              Arrival & Departure
+            </h2>
+
+            <p>
+              Standard check-in and check-out times are
+              determined by the hotel and may be subject
+              to change.
+            </p>
+
+            <p>
+              Guests should provide valid identification
+              documents when requested by the hotel.
+            </p>
+
+            <p>
+              Early check-in or late check-out may be
+              available depending on occupancy and hotel
+              policy. Additional charges may apply where
+              applicable.
+            </p>
+
+            <ul>
+
+              <li>
+                Check-in is subject to room availability.
+              </li>
+
+              <li>
+                Guests should comply with applicable hotel
+                identification requirements.
+              </li>
+
+              <li>
+                Late check-out requests should be made
+                directly with the hotel.
+              </li>
+
+            </ul>
+
+          </section>
+
+
+          <!-- 04 -->
+          <section
+            class="legal-section"
+            id="payments"
+          >
+
+            <div class="legal-number">
+              04 · PAYMENTS
+            </div>
+
+            <h2>
+              Rates & Payments
+            </h2>
+
+            <p>
+              Room rates, taxes, applicable charges and
+              payment requirements will be communicated
+              by the hotel during the booking process.
+            </p>
+
+            <p>
+              Any applicable advance payment or deposit
+              requirements must be completed according to
+              the hotel's instructions.
+            </p>
+
+            <p>
+              The website demonstration currently does
+              not process online payments. Any payment
+              functionality added to the final website
+              will be governed by the applicable payment
+              terms and conditions.
+            </p>
+
+          </section>
+
+
+          <!-- 05 -->
+          <section
+            class="legal-section"
+            id="cancellation"
+          >
+
+            <div class="legal-number">
+              05 · CANCELLATION
+            </div>
+
+            <h2>
+              Cancellation & Modification
+            </h2>
+
+            <p>
+              Cancellation, modification and refund
+              conditions may vary depending on the
+              reservation, room category, rate plan or
+              promotional offer.
+            </p>
+
+            <p>
+              Guests should confirm the applicable
+              cancellation conditions at the time of
+              reservation.
+            </p>
+
+            <p>
+              If a reservation needs to be changed or
+              cancelled, guests should contact the hotel
+              as early as possible.
+            </p>
+
+            <div class="legal-highlight">
+
+              <strong>
+                Confirm the policy before booking.
+              </strong>
+
+              <p>
+                For the most accurate cancellation and
+                refund information, please contact the
+                hotel directly before confirming your stay.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- 06 -->
+          <section
+            class="legal-section"
+            id="conduct"
+          >
+
+            <div class="legal-number">
+              06 · GUEST CONDUCT
+            </div>
+
+            <h2>
+              Guest Responsibilities
+            </h2>
+
+            <p>
+              Guests are expected to behave responsibly
+              and respect the property, staff and other
+              guests during their stay.
+            </p>
+
+            <ul>
+
+              <li>
+                Guests must comply with applicable laws
+                and hotel rules.
+              </li>
+
+              <li>
+                Property and hotel facilities should be
+                used responsibly.
+              </li>
+
+              <li>
+                Guests may be responsible for damage caused
+                to hotel property through misuse or
+                negligence.
+              </li>
+
+              <li>
+                Any prohibited activities or conduct
+                identified by hotel management may result
+                in appropriate action.
+              </li>
+
+            </ul>
+
+          </section>
+
+
+          <!-- 07 -->
+          <section
+            class="legal-section"
+            id="liability"
+          >
+
+            <div class="legal-number">
+              07 · LIABILITY
+            </div>
+
+            <h2>
+              Liability & Responsibility
+            </h2>
+
+            <p>
+              Vishaka Paark will take reasonable steps to
+              provide the services described to guests.
+              However, circumstances outside the hotel's
+              reasonable control may affect services,
+              facilities or availability.
+            </p>
+
+            <p>
+              Guests are responsible for their personal
+              belongings and should take appropriate care
+              of valuables during their stay.
+            </p>
+
+            <p>
+              Any specific limitation of liability,
+              compensation or insurance requirements shall
+              be subject to applicable law and the hotel's
+              official policies.
+            </p>
+
+          </section>
+
+
+          <!-- 08 -->
+          <section
+            class="legal-section"
+            id="website"
+          >
+
+            <div class="legal-number">
+              08 · WEBSITE USE
+            </div>
+
+            <h2>
+              Website Information
+            </h2>
+
+            <p>
+              Reasonable efforts are made to keep website
+              information accurate and useful. However,
+              room photographs, descriptions, facilities,
+              rates and other information may change.
+            </p>
+
+            <p>
+              Website content should not be interpreted as
+              a guarantee that a particular room, facility,
+              service or promotional rate will be available
+              at the time of a guest's stay.
+            </p>
+
+            <p>
+              The hotel reserves the right to correct
+              errors and update website content when
+              necessary.
+            </p>
+
+          </section>
+
+
+          <!-- 09 -->
+          <section
+            class="legal-section"
+            id="contact"
+          >
+
+            <div class="legal-number">
+              09 · CONTACT
+            </div>
+
+            <h2>
+              Questions About These Terms
+            </h2>
+
+            <p>
+              If you have questions regarding a reservation,
+              cancellation, hotel policy or these terms,
+              please contact Vishaka Paark directly.
+            </p>
+
+            <div class="legal-contact">
+
+              <p>
+                <strong>
+                  Phone:
+                </strong>
+                <a href="tel:+919090927979">
+                  +91 90909 27979
+                </a>
+              </p>
+
+              <p>
+                <strong>
+                  Landline:
+                </strong>
+                <a href="tel:04224695952">
+                  0422 4695952
+                </a>
+              </p>
+
+              <p>
+                <strong>
+                  Email:
+                </strong>
+                <a href="mailto:hotelvishakapaark@gmail.com">
+                  hotelvishakapaark@gmail.com
+                </a>
+              </p>
+
+              <p>
+                <strong>
+                  Address:
+                </strong>
+                Thudiyalur Road,
+                Saravanampatty,
+                Coimbatore — 641 035,
+                Tamil Nadu, India.
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- DISCLAIMER -->
+          <section class="legal-section">
+
+            <div class="legal-number">
+              LAST UPDATED
+            </div>
+
+            <h2>
+              Website Demonstration Notice
+            </h2>
+
+            <p>
+              This Terms & Conditions page is prepared
+              as part of the Vishaka Paark website
+              demonstration. Before the website is used
+              commercially, the final terms should be
+              reviewed and approved by the hotel and,
+              where appropriate, a qualified legal
+              professional.
+            </p>
+
+          </section>
+
+
+        </main>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="terms-cta">
+
+        <div>
+
+          <div class="kicker">
+            VISHaka PAARK
+          </div>
+
+          <h2>
+            Ready to plan
+            <br>
+            <em>your stay?</em>
+          </h2>
+
+          <p>
+            Explore our rooms or contact the hotel directly
+            for availability and reservation assistance.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="booking.html"
+        >
+          BOOK YOUR STAY →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
