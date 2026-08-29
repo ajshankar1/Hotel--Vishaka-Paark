@@ -1,3 +1,1143 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="active" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">CONTACT US</div><h1>We’re here to help.</h1></div></section><section class="section"><div class="container split"><div><div class="kicker">GET IN TOUCH</div><h2 class="title">Plan your<br><em>next stay.</em></h2><p class="copy">Have a question, need help with a reservation, or want to discuss your stay? Send us a message.</p><p class="copy">Coimbatore, Tamil Nadu</p></div><form class="form-grid" onsubmit="demoForm(event)"><div class="field"><label>Name</label><input placeholder="Your Name"></div><div class="field"><label>Email</label><input type="email" placeholder="Your Email"></div><div class="field"><label>Check In</label><input type="date"></div><div class="field"><label>Check Out</label><input type="date"></div><div class="field full"><label>Message</label><textarea rows="6" placeholder="How can we help?"></textarea></div><button class="btn" type="submit">SEND ENQUIRY →</button></form></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Contact Vishaka Paark, Saravanampatty, Coimbatore for room bookings, enquiries and directions."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 480px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.78),
+          rgba(0,0,0,.22)
+        ),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(58px, 7vw, 94px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 50px;
+    }
+
+    .contact-details {
+      padding-right: 25px;
+    }
+
+    .contact-block {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-block:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-label {
+      margin-bottom: 10px;
+      color: #aaa69e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    .contact-block h3 {
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 400;
+    }
+
+    .contact-block p,
+    .contact-block a {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    .contact-block a:hover {
+      color: #171714;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .contact-form-wrap {
+      padding: 45px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .contact-form-wrap h2 {
+      margin-bottom: 12px;
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+    }
+
+    .contact-form-wrap > p {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: #5c5953;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid #d4d0c8;
+      outline: none;
+      background: #faf9f6;
+      color: #24231f;
+      font-family: inherit;
+      font-size: 13px;
+      transition: border-color .2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: #77736b;
+    }
+
+    .form-field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      margin-top: 5px;
+    }
+
+    .form-submit button {
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      background: #ebe8e1;
+      color: #55524c;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .map-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+      background: #ebe8e1;
+    }
+
+    .map-copy {
+      padding: 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .map-copy h2 {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .map-copy p {
+      max-width: 480px;
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .map-box {
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          rgba(0,0,0,.1),
+          rgba(0,0,0,.1)
+        ),
+        url("https://images.unsplash.com/photo-1524666041070-9d87656c25bb?auto=format&fit=crop&w=1600&q=80")
+        center / cover;
+    }
+
+    .map-overlay {
+      position: absolute;
+      left: 35px;
+      bottom: 35px;
+      padding: 20px 24px;
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+
+    .map-overlay strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
+    }
+
+    .map-overlay span {
+      color: #66625b;
+      font-size: 10px;
+      letter-spacing: .05em;
+    }
+
+    .faq-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .faq-mini-item {
+      padding: 32px;
+      border-right: 1px solid var(--line);
+    }
+
+    .faq-mini-item:last-child {
+      border-right: 0;
+    }
+
+    .faq-mini-item b {
+      display: block;
+      margin-bottom: 20px;
+      color: #aaa69e;
+      font-size: 10px;
+      letter-spacing: .13em;
+    }
+
+    .faq-mini-item h3 {
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .faq-mini-item p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .contact-cta {
+      padding: 60px;
+      background: #171714;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .contact-cta h2 {
+      font-family: var(--serif);
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .contact-cta p {
+      max-width: 540px;
+      margin-top: 14px;
+      color: #aaa79f;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .map-section {
+        grid-template-columns: 1fr;
+      }
+
+      .map-copy {
+        padding: 50px 35px;
+      }
+
+      .faq-mini {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-mini-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .faq-mini-item:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-cta {
+        padding: 45px 30px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 54px;
+      }
+
+      .contact-form-wrap {
+        padding: 30px 22px;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full,
+      .form-submit {
+        grid-column: auto;
+      }
+
+      .map-copy {
+        padding: 40px 25px;
+      }
+
+      .map-copy h2 {
+        font-size: 40px;
+      }
+
+      .map-box {
+        min-height: 350px;
+      }
+
+      .contact-cta {
+        padding: 35px 25px;
+      }
+
+      .contact-cta h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a class="active" href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · CONTACT
+      </div>
+
+      <h1>
+        Let's plan your
+        <br>
+        <em>stay together.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="contact-grid">
+
+
+        <!-- CONTACT DETAILS -->
+        <div class="contact-details">
+
+          <div class="kicker">
+            GET IN TOUCH
+          </div>
+
+          <h2 class="title">
+            We're here
+            <br>
+            <em>to help.</em>
+          </h2>
+
+          <br>
+
+
+          <div class="contact-block">
+
+            <div class="contact-label">
+              CALL US
+            </div>
+
+            <h3>
+              +91 90909 27979
+            </h3>
+
+            <a href="tel:+919090927979">
+              Call Vishaka Paark →
+            </a>
+
+          </div>
+
+
+          <div class="contact-block">
+
+            <div class="contact-label">
+              LANDLINE
+            </div>
+
+            <h3>
+              0422 4695952
+            </h3>
+
+            <a href="tel:04224695952">
+              Call hotel →
+            </a>
+
+          </div>
+
+
+          <div class="contact-block">
+
+            <div class="contact-label">
+              EMAIL
+            </div>
+
+            <h3>
+              Send us a message
+            </h3>
+
+            <a href="mailto:hotelvishakapaark@gmail.com">
+              hotelvishakapaark@gmail.com
+            </a>
+
+          </div>
+
+
+          <div class="contact-block">
+
+            <div class="contact-label">
+              LOCATION
+            </div>
+
+            <h3>
+              Vishaka Paark
+            </h3>
+
+            <p>
+              Thudiyalur Road,
+              Saravanampatty,
+              Coimbatore — 641 035,
+              Tamil Nadu, India.
+            </p>
+
+          </div>
+
+
+          <div class="contact-actions">
+
+            <a
+              class="btn"
+              href="tel:+919090927979"
+            >
+              CALL NOW →
+            </a>
+
+            <a
+              class="btn"
+              href="mailto:hotelvishakapaark@gmail.com"
+              style="
+                background:transparent;
+                color:#20201d;
+              "
+            >
+              EMAIL US
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORM -->
+        <div class="contact-form-wrap">
+
+          <div class="kicker">
+            SEND AN ENQUIRY
+          </div>
+
+          <h2>
+            Tell us what
+            <br>
+            you need.
+          </h2>
+
+          <p>
+            Use the form below for a room enquiry,
+            general question or special request.
+          </p>
+
+
+          <form
+            class="contact-form"
+            id="contactForm"
+          >
+
+            <div class="form-field">
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+91"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="purpose">
+                Enquiry Type
+              </label>
+
+              <select
+                id="purpose"
+                name="purpose"
+              >
+
+                <option value="Room Booking">
+                  Room Booking
+                </option>
+
+                <option value="Room Availability">
+                  Room Availability
+                </option>
+
+                <option value="General Enquiry">
+                  General Enquiry
+                </option>
+
+                <option value="Event / Group">
+                  Event / Group
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="checkin">
+                Check-in
+              </label>
+
+              <input
+                id="checkin"
+                name="checkin"
+                type="date"
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="checkout">
+                Check-out
+              </label>
+
+              <input
+                id="checkout"
+                name="checkout"
+                type="date"
+              >
+
+            </div>
+
+
+            <div class="form-field full">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your requirements..."
+              ></textarea>
+
+            </div>
+
+
+            <div class="form-submit">
+
+              <button
+                class="btn"
+                type="submit"
+              >
+                SEND ENQUIRY →
+              </button>
+
+              <div
+                class="form-message"
+                id="formMessage"
+              >
+                Thank you. This demo form is ready for
+                integration with the hotel's email,
+                WhatsApp or booking system.
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LOCATION -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="map-section">
+
+        <div class="map-copy">
+
+          <div class="kicker">
+            FIND US
+          </div>
+
+          <h2>
+            Your stay,
+            <br>
+            <em>right here.</em>
+          </h2>
+
+          <p>
+            Vishaka Paark is located on Thudiyalur Road
+            in Saravanampatty, Coimbatore.
+          </p>
+
+          <p>
+            For exact directions and the easiest route
+            from your current location, contact the hotel
+            directly.
+          </p>
+
+          <a
+            class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Vishaka+Paark+Saravanampatty+Coimbatore"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OPEN GOOGLE MAPS →
+          </a>
+
+        </div>
+
+
+        <div class="map-box">
+
+          <div class="map-overlay">
+
+            <strong>
+              Vishaka Paark
+            </strong>
+
+            <span>
+              Saravanampatty · Coimbatore
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUICK INFO -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="kicker">
+            BEFORE YOU ARRIVE
+          </div>
+
+          <h2 class="title">
+            A few useful
+            <br>
+            <em>things to know.</em>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="faq-mini">
+
+
+        <div class="faq-mini-item">
+
+          <b>01 · RESERVATIONS</b>
+
+          <h3>
+            Need a room?
+          </h3>
+
+          <p>
+            Contact our team directly for current room
+            availability, rates and booking assistance.
+          </p>
+
+        </div>
+
+
+        <div class="faq-mini-item">
+
+          <b>02 · LOCATION</b>
+
+          <h3>
+            Need directions?
+          </h3>
+
+          <p>
+            Our team can help you with directions and
+            information about reaching the hotel.
+          </p>
+
+        </div>
+
+
+        <div class="faq-mini-item">
+
+          <b>03 · QUESTIONS</b>
+
+          <h3>
+            Have a request?
+          </h3>
+
+          <p>
+            Tell us what you need before your arrival and
+            we'll help wherever possible.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="contact-cta">
+
+        <div>
+
+          <div class="kicker">
+            VISHaka PAARK
+          </div>
+
+          <h2>
+            Ready to make
+            <br>
+            a reservation?
+          </h2>
+
+          <p>
+            Explore our rooms or contact the hotel directly
+            to plan your stay in Coimbatore.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="booking.html"
+        >
+          BOOK YOUR STAY →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <!-- CONTACT FORM DEMO SCRIPT -->
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const form =
+          document.getElementById("contactForm");
+
+        const message =
+          document.getElementById("formMessage");
+
+
+        form.addEventListener(
+          "submit",
+          function (event) {
+
+            event.preventDefault();
+
+            message.style.display = "block";
+
+            form.reset();
+
+            message.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest"
+            });
+
+          }
+        );
+
+      }
+    );
+
+  </script>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
