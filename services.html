@@ -1,3 +1,897 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Services | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="active" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">HOTEL SERVICES</div><h1>Made for easy stays.</h1></div></section><section class="section"><div class="container"><div class="facility-grid"><div class="facility"><b>01</b><strong>Guest Service</strong><p>Friendly support designed around your stay.</p></div><div class="facility"><b>02</b><strong>Wi-Fi</strong><p>Reliable connectivity for work and leisure.</p></div><div class="facility"><b>03</b><strong>Dining</strong><p>Convenient dining options for guests.</p></div><div class="facility"><b>04</b><strong>Housekeeping</strong><p>Clean and comfortable spaces throughout your visit.</p></div><div class="facility"><b>05</b><strong>Parking</strong><p>Convenient access for arriving guests.</p></div><div class="facility"><b>06</b><strong>Direct Booking</strong><p>Secure online reservation with direct-booking benefits.</p></div><div class="facility"><b>07</b><strong>Reception</strong><p>Assistance for questions and stay arrangements.</p></div><div class="facility"><b>08</b><strong>Comfort</strong><p>Thoughtful in-room facilities for a relaxed stay.</p></div></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Services & Facilities | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Explore the services and facilities available at Vishaka Paark, Coimbatore."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 480px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.76),
+          rgba(0,0,0,.24)
+        ),
+        url("https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(58px, 7vw, 94px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .service-card {
+      min-height: 320px;
+      padding: 42px;
+      background: #fff;
+      position: relative;
+      transition:
+        transform .3s ease,
+        background .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      background: #f7f5ef;
+    }
+
+    .service-number {
+      margin-bottom: 70px;
+      color: #aaa69e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      border: 1px solid #bbb8b0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .service-card h2 {
+      margin-bottom: 14px;
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .service-card p {
+      max-width: 500px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .feature-band {
+      padding: 75px 0;
+      background: #171714;
+      color: #fff;
+    }
+
+    .feature-band .title {
+      color: #fff;
+    }
+
+    .feature-band .copy {
+      color: #bdbab1;
+    }
+
+    .service-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #3b3b36;
+      border-bottom: 1px solid #3b3b36;
+    }
+
+    .service-point {
+      min-height: 190px;
+      padding: 30px 25px;
+      border-right: 1px solid #3b3b36;
+    }
+
+    .service-point:last-child {
+      border-right: 0;
+    }
+
+    .service-point b {
+      display: block;
+      margin-bottom: 35px;
+      color: #9d9a91;
+      font-size: 10px;
+      letter-spacing: .12em;
+    }
+
+    .service-point strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .service-point span {
+      color: #aaa79f;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .service-cta {
+      padding: 55px;
+      background: #ebe8e1;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .service-cta h2 {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-points {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-point:nth-child(2) {
+        border-right: 0;
+      }
+
+      .service-point:nth-child(-n+2) {
+        border-bottom: 1px solid #3b3b36;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 54px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 32px 25px;
+      }
+
+      .service-number {
+        margin-bottom: 45px;
+      }
+
+      .service-points {
+        grid-template-columns: 1fr;
+      }
+
+      .service-point {
+        border-right: 0;
+        border-bottom: 1px solid #3b3b36;
+      }
+
+      .service-point:last-child {
+        border-bottom: 0;
+      }
+
+      .service-point:nth-child(2) {
+        border-bottom: 1px solid #3b3b36;
+      }
+
+      .service-cta {
+        padding: 35px 25px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .service-cta h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a class="active" href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · SERVICES
+      </div>
+
+      <h1>
+        Everything you need
+        <br>
+        <em>for an easy stay.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            SERVICES & FACILITIES
+          </div>
+
+          <h2 class="title">
+            Thoughtful
+            <br>
+            <em>essentials.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="copy">
+            From connectivity and parking to everyday guest
+            assistance, Vishaka Paark provides the practical
+            facilities you need for a comfortable visit.
+          </p>
+
+          <p class="copy">
+            Whether you are travelling for business, visiting
+            family or exploring Coimbatore, our services are
+            designed to keep your stay simple.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICE CARDS -->
+  <section class="section" style="padding-top:20px;">
+
+    <div class="container">
+
+      <div class="service-grid">
+
+
+        <!-- 01 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            01 · GUEST SERVICE
+          </div>
+
+          <div class="service-icon">
+            ◌
+          </div>
+
+          <h2>
+            24/7 Front Desk
+          </h2>
+
+          <p>
+            Our front desk team is available to assist with
+            check-in, check-out, general enquiries and
+            everyday guest requirements.
+          </p>
+
+        </article>
+
+
+        <!-- 02 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            02 · CONNECTIVITY
+          </div>
+
+          <div class="service-icon">
+            ◇
+          </div>
+
+          <h2>
+            High-Speed Wi-Fi
+          </h2>
+
+          <p>
+            Stay connected with convenient Wi-Fi access,
+            whether you need to catch up on work or simply
+            stay in touch with family and friends.
+          </p>
+
+        </article>
+
+
+        <!-- 03 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            03 · PARKING
+          </div>
+
+          <div class="service-icon">
+            □
+          </div>
+
+          <h2>
+            Convenient Parking
+          </h2>
+
+          <p>
+            Guests arriving by car can make use of convenient
+            parking facilities while staying at the hotel.
+          </p>
+
+        </article>
+
+
+        <!-- 04 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            04 · SECURITY
+          </div>
+
+          <div class="service-icon">
+            △
+          </div>
+
+          <h2>
+            Security & CCTV
+          </h2>
+
+          <p>
+            Security measures and CCTV coverage help provide
+            guests with a comfortable and secure hotel
+            environment.
+          </p>
+
+        </article>
+
+
+        <!-- 05 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            05 · POWER
+          </div>
+
+          <div class="service-icon">
+            +
+          </div>
+
+          <h2>
+            Power Backup
+          </h2>
+
+          <p>
+            Power backup helps maintain essential hotel
+            services and keeps your stay comfortable during
+            interruptions.
+          </p>
+
+        </article>
+
+
+        <!-- 06 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            06 · ROOM COMFORT
+          </div>
+
+          <div class="service-icon">
+            ○
+          </div>
+
+          <h2>
+            Hot & Cold Water
+          </h2>
+
+          <p>
+            Essential bathroom facilities with hot and cold
+            water availability for everyday convenience.
+          </p>
+
+        </article>
+
+
+        <!-- 07 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            07 · DINING
+          </div>
+
+          <div class="service-icon">
+            ∙
+          </div>
+
+          <h2>
+            Breakfast Service
+          </h2>
+
+          <p>
+            Begin your day with convenient breakfast service
+            during your stay at Vishaka Paark.
+          </p>
+
+        </article>
+
+
+        <!-- 08 -->
+        <article class="service-card">
+
+          <div class="service-number">
+            08 · ENTERTAINMENT
+          </div>
+
+          <div class="service-icon">
+            ▷
+          </div>
+
+          <h2>
+            In-Room Entertainment
+          </h2>
+
+          <p>
+            Unwind in your room with convenient entertainment
+            options after a busy day of work or travel.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DARK FEATURE BAND -->
+  <section class="feature-band">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            DESIGNED FOR TRAVEL
+          </div>
+
+          <h2 class="title">
+            Less to worry about.
+            <br>
+            <em>More to enjoy.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="copy">
+            The best hotel services are the ones that make
+            your stay feel effortless. At Vishaka Paark,
+            we focus on dependable essentials that work
+            quietly in the background.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <br><br>
+
+
+      <div class="service-points">
+
+        <div class="service-point">
+
+          <b>01</b>
+
+          <strong>
+            Easy Arrival
+          </strong>
+
+          <span>
+            Convenient front-desk assistance for a smoother
+            arrival and departure.
+          </span>
+
+        </div>
+
+
+        <div class="service-point">
+
+          <b>02</b>
+
+          <strong>
+            Stay Connected
+          </strong>
+
+          <span>
+            Wi-Fi access for work, communication and
+            everyday browsing.
+          </span>
+
+        </div>
+
+
+        <div class="service-point">
+
+          <b>03</b>
+
+          <strong>
+            Everyday Comfort
+          </strong>
+
+          <span>
+            Essential room facilities to help you settle
+            in and relax.
+          </span>
+
+        </div>
+
+
+        <div class="service-point">
+
+          <b>04</b>
+
+          <strong>
+            Guest Support
+          </strong>
+
+          <span>
+            A responsive team available to help with
+            your stay.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LOCATION -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            OUR LOCATION
+          </div>
+
+          <h2 class="title">
+            Well placed in
+            <br>
+            <em>Coimbatore.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="copy">
+            Vishaka Paark is located on Thudiyalur Road,
+            Saravanampatty, Coimbatore — providing a
+            convenient base for guests travelling through
+            the city.
+          </p>
+
+          <p class="copy">
+            For directions, nearby attractions or help
+            planning your visit, speak with our team.
+          </p>
+
+          <a
+            class="link"
+            href="contact.html"
+          >
+            VIEW LOCATION & CONTACT →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;">
+
+    <div class="container">
+
+      <div class="service-cta">
+
+        <div>
+
+          <div class="kicker">
+            READY TO STAY?
+          </div>
+
+          <h2>
+            Find your room
+            <br>
+            and plan your visit.
+          </h2>
+
+        </div>
+
+        <a
+          class="btn"
+          href="booking.html"
+        >
+          BOOK YOUR STAY →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
