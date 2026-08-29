@@ -1,3 +1,1026 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gallery | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="active" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">GALLERY</div><h1>A glimpse inside.</h1></div></section><section class="section"><div class="container"><div class="gallery"><div class="big" style="background-image:url(https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=88)"></div><div style="background-image:url(https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=88)"></div><div style="background-image:url(https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=88)"></div><div style="background-image:url(https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=88)"></div><div style="background-image:url(https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=900&q=88)"></div></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Gallery | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Explore the rooms, spaces and hospitality experience at Vishaka Paark, Coimbatore."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 480px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.76),
+          rgba(0,0,0,.22)
+        ),
+        url("https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(58px, 7vw, 94px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .gallery-intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .gallery-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .gallery-filter button {
+      padding: 12px 19px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: #55534e;
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+
+    .gallery-filter button:hover,
+    .gallery-filter button.active {
+      background: #171714;
+      color: #fff;
+      border-color: #171714;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 90px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: #ddd9d0;
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: span 7;
+      grid-row: span 6;
+    }
+
+    .gallery-item:nth-child(2) {
+      grid-column: span 5;
+      grid-row: span 4;
+    }
+
+    .gallery-item:nth-child(3) {
+      grid-column: span 5;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: span 7;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(5) {
+      grid-column: span 4;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(6) {
+      grid-column: span 4;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(7) {
+      grid-column: span 4;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(8) {
+      grid-column: span 4;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(9) {
+      grid-column: span 8;
+      grid-row: span 5;
+    }
+
+    .gallery-item:nth-child(10) {
+      grid-column: span 4;
+      grid-row: span 5;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.65),
+          transparent 55%
+        );
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .gallery-note {
+      margin-top: 45px;
+      padding: 35px;
+      border: 1px solid var(--line);
+      background: #ebe8e1;
+    }
+
+    .gallery-note p {
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .gallery-cta {
+      padding: 60px;
+      background: #171714;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .gallery-cta h2 {
+      font-family: var(--serif);
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .gallery-cta p {
+      max-width: 550px;
+      margin-top: 15px;
+      color: #aaa79f;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 240px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(9) {
+        grid-column: span 2;
+      }
+
+      .gallery-cta {
+        padding: 42px 30px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 54px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 270px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 1;
+      }
+
+      .gallery-cta {
+        padding: 35px 25px;
+      }
+
+      .gallery-cta h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a class="active" href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · GALLERY
+      </div>
+
+      <h1>
+        See the spaces
+        <br>
+        <em>before you arrive.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            THE HOTEL
+          </div>
+
+          <h2 class="title">
+            A closer look at
+            <br>
+            <em>Vishaka Paark.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="gallery-intro">
+            Explore a selection of spaces representing
+            the Vishaka Paark experience — from comfortable
+            accommodation and welcoming interiors to the
+            details that make a hotel stay enjoyable.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section
+    class="section"
+    style="padding-top:20px;"
+  >
+
+    <div class="container">
+
+
+      <!-- FILTER -->
+      <div class="gallery-filter">
+
+        <button
+          class="active"
+          type="button"
+          data-filter="all"
+        >
+          ALL
+        </button>
+
+        <button
+          type="button"
+          data-filter="rooms"
+        >
+          ROOMS
+        </button>
+
+        <button
+          type="button"
+          data-filter="interiors"
+        >
+          INTERIORS
+        </button>
+
+        <button
+          type="button"
+          data-filter="dining"
+        >
+          DINING
+        </button>
+
+        <button
+          type="button"
+          data-filter="hotel"
+        >
+          HOTEL
+        </button>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+
+        <!-- 01 -->
+        <div
+          class="gallery-item"
+          data-category="rooms"
+          data-image="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1800&q=90"
+            alt="Comfortable hotel room"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Rooms & Suites</span>
+          </div>
+
+        </div>
+
+
+        <!-- 02 -->
+        <div
+          class="gallery-item"
+          data-category="interiors"
+          data-image="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1800&q=90"
+            alt="Hotel interior"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Hotel Interiors</span>
+          </div>
+
+        </div>
+
+
+        <!-- 03 -->
+        <div
+          class="gallery-item"
+          data-category="rooms"
+          data-image="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1800&q=90"
+            alt="Premium hotel room"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Premium Rooms</span>
+          </div>
+
+        </div>
+
+
+        <!-- 04 -->
+        <div
+          class="gallery-item"
+          data-category="hotel"
+          data-image="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1800&q=90"
+            alt="Hotel common area"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Hotel Experience</span>
+          </div>
+
+        </div>
+
+
+        <!-- 05 -->
+        <div
+          class="gallery-item"
+          data-category="dining"
+          data-image="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=90"
+            alt="Hotel dining"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Dining</span>
+          </div>
+
+        </div>
+
+
+        <!-- 06 -->
+        <div
+          class="gallery-item"
+          data-category="interiors"
+          data-image="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1800&q=90"
+            alt="Hotel interior space"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Interiors</span>
+          </div>
+
+        </div>
+
+
+        <!-- 07 -->
+        <div
+          class="gallery-item"
+          data-category="rooms"
+          data-image="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=90"
+            alt="Executive hotel room"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Executive Rooms</span>
+          </div>
+
+        </div>
+
+
+        <!-- 08 -->
+        <div
+          class="gallery-item"
+          data-category="hotel"
+          data-image="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1800&q=90"
+            alt="Hotel exterior"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Hotel Exterior</span>
+          </div>
+
+        </div>
+
+
+        <!-- 09 -->
+        <div
+          class="gallery-item"
+          data-category="interiors"
+          data-image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90"
+            alt="Elegant hotel interior"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Guest Spaces</span>
+          </div>
+
+        </div>
+
+
+        <!-- 10 -->
+        <div
+          class="gallery-item"
+          data-category="dining"
+          data-image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=90"
+            alt="Restaurant interior"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            <span>Dining Space</span>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="gallery-note">
+
+        <div class="kicker">
+          NOTE
+        </div>
+
+        <p>
+          The photographs currently shown on this demo
+          page are temporary visual placeholders. For the
+          final Vishaka Paark website, these can be replaced
+          with the hotel's actual room, building, restaurant,
+          facilities and property photographs.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="gallery-cta">
+
+        <div>
+
+          <div class="kicker">
+            READY TO EXPERIENCE IT?
+          </div>
+
+          <h2>
+            See the rooms.
+            <br>
+            Plan your stay.
+          </h2>
+
+          <p>
+            Explore our accommodation options or contact
+            Vishaka Paark directly for availability and
+            booking assistance.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="rooms.html"
+        >
+          EXPLORE ROOMS →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <!-- GALLERY FILTER SCRIPT -->
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const filterButtons =
+        document.querySelectorAll(".gallery-filter button");
+
+      const galleryItems =
+        document.querySelectorAll(".gallery-item");
+
+
+      filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+          const filter =
+            button.getAttribute("data-filter");
+
+
+          filterButtons.forEach(function (item) {
+            item.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+
+          galleryItems.forEach(function (item) {
+
+            const category =
+              item.getAttribute("data-category");
+
+
+            if (
+              filter === "all" ||
+              category === filter
+            ) {
+
+              item.style.display = "";
+
+              setTimeout(function () {
+                item.style.opacity = "1";
+              }, 20);
+
+            } else {
+
+              item.style.opacity = "0";
+
+              setTimeout(function () {
+                item.style.display = "none";
+              }, 200);
+
+            }
+
+          });
+
+        });
+
+      });
+
+
+      /* SIMPLE IMAGE LIGHTBOX */
+
+      galleryItems.forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+          const image =
+            item.getAttribute("data-image");
+
+          if (!image) {
+            return;
+          }
+
+
+          const lightbox =
+            document.createElement("div");
+
+          lightbox.style.position = "fixed";
+          lightbox.style.inset = "0";
+          lightbox.style.zIndex = "9999";
+          lightbox.style.background = "rgba(0,0,0,.92)";
+          lightbox.style.display = "flex";
+          lightbox.style.alignItems = "center";
+          lightbox.style.justifyContent = "center";
+          lightbox.style.padding = "30px";
+          lightbox.style.cursor = "zoom-out";
+
+
+          const img =
+            document.createElement("img");
+
+          img.src = image;
+          img.alt = "Vishaka Paark gallery image";
+
+          img.style.maxWidth = "94vw";
+          img.style.maxHeight = "90vh";
+          img.style.objectFit = "contain";
+          img.style.boxShadow = "0 25px 80px rgba(0,0,0,.5)";
+
+
+          const close =
+            document.createElement("button");
+
+          close.innerHTML = "×";
+
+          close.setAttribute(
+            "aria-label",
+            "Close image"
+          );
+
+          close.style.position = "absolute";
+          close.style.top = "20px";
+          close.style.right = "25px";
+          close.style.width = "45px";
+          close.style.height = "45px";
+          close.style.border = "1px solid rgba(255,255,255,.4)";
+          close.style.background = "transparent";
+          close.style.color = "#fff";
+          close.style.fontSize = "30px";
+          close.style.cursor = "pointer";
+
+
+          lightbox.appendChild(img);
+          lightbox.appendChild(close);
+
+          document.body.appendChild(lightbox);
+
+
+          function removeLightbox() {
+            lightbox.remove();
+          }
+
+
+          lightbox.addEventListener(
+            "click",
+            function (event) {
+
+              if (
+                event.target === lightbox ||
+                event.target === close
+              ) {
+                removeLightbox();
+              }
+
+            }
+          );
+
+
+          document.addEventListener(
+            "keydown",
+            function escapeHandler(event) {
+
+              if (event.key === "Escape") {
+
+                removeLightbox();
+
+                document.removeEventListener(
+                  "keydown",
+                  escapeHandler
+                );
+
+              }
+
+            }
+          );
+
+        });
+
+      });
+
+    });
+
+  </script>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
