@@ -948,6 +948,90 @@
 
     }
 
+  
+    /* LIVE BOOKING CALCULATOR - FINAL */
+    .price-summary {
+      display:block !important;
+      margin-top:30px;
+      padding:28px;
+      background:#1a1511;
+      border:1px solid rgba(198,154,85,.45);
+      color:#fff;
+    }
+    .price-summary-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      margin-bottom:18px;
+      padding-bottom:15px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .price-summary-header h4 {
+      margin:0;
+      color:#fff;
+      font-family:"Gilda Display",serif;
+      font-size:27px;
+      font-weight:400;
+    }
+    .price-summary-header span {
+      color:#c69a55;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+    }
+    .price-summary .price-line {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:20px;
+      padding:11px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .price-summary .price-line span {
+      color:rgba(255,255,255,.62);
+      font-size:12px;
+    }
+    .price-summary .price-line strong {
+      color:#fff;
+      font-size:13px;
+      text-align:right;
+    }
+    .price-summary .price-line.total {
+      margin-top:8px;
+      padding:17px 0 5px;
+      border-bottom:none;
+    }
+    .price-summary .price-line.total span {
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+    }
+    .price-summary .price-line.total strong {
+      color:#c69a55;
+      font-family:"Gilda Display",serif;
+      font-size:30px;
+      font-weight:400;
+    }
+    .price-note {
+      margin:14px 0 0;
+      color:rgba(255,255,255,.48);
+      font-size:11px;
+      line-height:1.6;
+    }
+    .room-option-price {
+      display:block !important;
+      margin-top:10px;
+      color:#8f1b2d !important;
+      font-size:12px !important;
+      font-weight:700;
+    }
+    @media (max-width:760px){
+      .price-summary{padding:22px 18px;}
+      .price-summary .price-line.total strong{font-size:27px;}
+    }
+
   </style>
 
 </head>
@@ -1946,6 +2030,52 @@
           </div>
 
 
+          <!-- QUICK PRICE ESTIMATE -->
+
+          <div class="price-summary" style="margin-top:30px;">
+
+            <div class="price-summary-header">
+              <h4>Booking Estimate</h4>
+              <span>Live</span>
+            </div>
+
+            <div class="price-line">
+              <span>Room</span>
+              <strong id="sideSummaryRoom">Select a room</strong>
+            </div>
+
+            <div class="price-line">
+              <span>Duration</span>
+              <strong id="sideSummaryNights">Select dates</strong>
+            </div>
+
+            <div class="price-line">
+              <span>Rooms</span>
+              <strong id="sideSummaryRooms">—</strong>
+            </div>
+
+            <div class="price-line">
+              <span>Room Charges</span>
+              <strong id="sideSummaryCharges">₹0</strong>
+            </div>
+
+            <div class="price-line">
+              <span>GST @ 5%</span>
+              <strong id="sideSummaryGst">₹0</strong>
+            </div>
+
+            <div class="price-line total">
+              <span>Estimated Total</span>
+              <strong id="sideSummaryTotal">₹0</strong>
+            </div>
+
+            <p class="price-note">
+              Estimated room amount including GST, based on the selected room, dates and number of rooms.
+            </p>
+
+          </div>
+
+
           <!-- DIRECT CONTACT -->
 
           <div class="direct-contact">
@@ -2394,11 +2524,25 @@
         summaryTotal.textContent =
           formatCurrency(total);
 
+        document.getElementById("sideSummaryRoom").textContent = selectedRoom.value;
+        document.getElementById("sideSummaryNights").textContent = nights + (nights === 1 ? " Night" : " Nights");
+        document.getElementById("sideSummaryRooms").textContent = roomCount + (roomCount === 1 ? " Room" : " Rooms");
+        document.getElementById("sideSummaryCharges").textContent = formatCurrency(roomCharges);
+        document.getElementById("sideSummaryGst").textContent = formatCurrency(gst);
+        document.getElementById("sideSummaryTotal").textContent = formatCurrency(total);
+
       } else {
 
         summaryRoomCharges.textContent = "₹0";
         summaryGst.textContent = "₹0";
         summaryTotal.textContent = "₹0";
+
+        document.getElementById("sideSummaryRoom").textContent = selectedRoom ? selectedRoom.value : "Select a room";
+        document.getElementById("sideSummaryNights").textContent = nights > 0 ? (nights + (nights === 1 ? " Night" : " Nights")) : "Select dates";
+        document.getElementById("sideSummaryRooms").textContent = roomCount > 0 ? (roomCount + (roomCount === 1 ? " Room" : " Rooms")) : "—";
+        document.getElementById("sideSummaryCharges").textContent = "₹0";
+        document.getElementById("sideSummaryGst").textContent = "₹0";
+        document.getElementById("sideSummaryTotal").textContent = "₹0";
 
       }
 
