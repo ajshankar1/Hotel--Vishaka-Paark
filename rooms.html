@@ -1,3 +1,797 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rooms & Suites | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="active" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">ROOMS & SUITES</div><h1>Rest in comfort.</h1><p class="copy" style="margin:auto">Three room categories, one consistent standard of care.</p></div></section><section class="section"><div class="container"><div class="cards"><article class="card"><div class="card-photo" style="background-image:url(https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=88)"><span class="badge">01 / 03</span></div><div class="card-body"><h3>Deluxe Room</h3><p>A calm and contemporary room for an easy stay.</p><div class="meta"><span>Wi-Fi</span><span>Comfort</span><span>Service</span></div><a class="link" href="room-details.html">VIEW DETAILS →</a></div></article><article class="card"><div class="card-photo" style="background-image:url(https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=88)"><span class="badge">02 / 03</span></div><div class="card-body"><h3>Premium Room</h3><p>More space and refined comfort for a relaxed visit.</p><div class="meta"><span>Wi-Fi</span><span>Comfort</span><span>Service</span></div><a class="link" href="room-details.html">VIEW DETAILS →</a></div></article><article class="card"><div class="card-photo" style="background-image:url(https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=88)"><span class="badge">03 / 03</span></div><div class="card-body"><h3>Executive Room</h3><p>A polished setting for work, rest and everything between.</p><div class="meta"><span>Wi-Fi</span><span>Comfort</span><span>Service</span></div><a class="link" href="room-details.html">VIEW DETAILS →</a></div></article></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rooms & Suites | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Explore comfortable rooms and suites at Vishaka Paark, Coimbatore."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 470px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.72),
+          rgba(0,0,0,.25)
+        ),
+        url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 800px;
+      font-family: var(--serif);
+      font-size: clamp(58px, 7vw, 92px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    .room-list {
+      display: grid;
+      gap: 35px;
+    }
+
+    .room-large {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      min-height: 500px;
+      background: #fff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .room-large.reverse {
+      grid-template-columns: .95fr 1.05fr;
+    }
+
+    .room-large.reverse .room-image {
+      order: 2;
+    }
+
+    .room-image {
+      min-height: 500px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .room-content {
+      padding: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .room-number {
+      margin-bottom: 25px;
+      color: #aaa69e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    .room-content h2 {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .room-content p {
+      max-width: 510px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .room-features {
+      margin-bottom: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 25px;
+    }
+
+    .room-features span {
+      color: #68655f;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .room-content .btn {
+      width: fit-content;
+    }
+
+    .room-note {
+      margin-top: 60px;
+      padding: 38px;
+      background: #ebe8e1;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .room-note p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .room-large,
+      .room-large.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .room-large.reverse .room-image {
+        order: 0;
+      }
+
+      .room-image {
+        min-height: 390px;
+      }
+
+      .room-content {
+        padding: 42px 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 55px;
+      }
+
+      .room-image {
+        min-height: 300px;
+      }
+
+      .room-content h2 {
+        font-size: 39px;
+      }
+
+      .room-note {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a class="active" href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · ACCOMMODATION
+      </div>
+
+      <h1>
+        Rooms made for
+        <br>
+        <em>rest & comfort.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            ROOMS & SUITES
+          </div>
+
+          <h2 class="title">
+            Choose the space
+            <br>
+            <em>that suits you.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="copy">
+            Every room at Vishaka Paark is designed around
+            the essentials of a comfortable stay — a welcoming
+            atmosphere, practical amenities and thoughtful
+            hospitality.
+          </p>
+
+          <p class="copy">
+            Select the room category that best matches your
+            visit to Coimbatore.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ROOMS -->
+  <section class="section" style="padding-top:20px;">
+
+    <div class="container">
+
+      <div class="room-list">
+
+
+        <!-- DELUXE -->
+        <article class="room-large">
+
+          <div
+            class="room-image"
+            style="background-image:url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=90')"
+          ></div>
+
+
+          <div class="room-content">
+
+            <div class="room-number">
+              ROOM 01 · DELUXE
+            </div>
+
+            <h2>
+              Deluxe Room
+            </h2>
+
+            <p>
+              A comfortable room created for travellers
+              looking for a peaceful place to relax after
+              a day in Coimbatore.
+            </p>
+
+
+            <div class="room-features">
+
+              <span>
+                Comfortable Bed
+              </span>
+
+              <span>
+                Wi-Fi
+              </span>
+
+              <span>
+                Hot & Cold Water
+              </span>
+
+              <span>
+                In-Room Entertainment
+              </span>
+
+              <span>
+                24/7 Support
+              </span>
+
+            </div>
+
+
+            <a
+              class="btn"
+              href="room-details.html"
+            >
+              VIEW ROOM →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PREMIUM -->
+        <article class="room-large reverse">
+
+          <div
+            class="room-image"
+            style="background-image:url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1600&q=90')"
+          ></div>
+
+
+          <div class="room-content">
+
+            <div class="room-number">
+              ROOM 02 · PREMIUM
+            </div>
+
+            <h2>
+              Premium Room
+            </h2>
+
+            <p>
+              More room to settle in and unwind, with a
+              refined setting suitable for longer stays,
+              couples and business travellers.
+            </p>
+
+
+            <div class="room-features">
+
+              <span>
+                Spacious Interior
+              </span>
+
+              <span>
+                Wi-Fi
+              </span>
+
+              <span>
+                Comfortable Bed
+              </span>
+
+              <span>
+                Hot & Cold Water
+              </span>
+
+              <span>
+                Power Backup
+              </span>
+
+            </div>
+
+
+            <a
+              class="btn"
+              href="room-details.html"
+            >
+              VIEW ROOM →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- EXECUTIVE -->
+        <article class="room-large">
+
+          <div
+            class="room-image"
+            style="background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=90')"
+          ></div>
+
+
+          <div class="room-content">
+
+            <div class="room-number">
+              ROOM 03 · EXECUTIVE
+            </div>
+
+            <h2>
+              Executive Room
+            </h2>
+
+            <p>
+              A polished and practical room for guests who
+              want comfortable accommodation while keeping
+              work and relaxation equally effortless.
+            </p>
+
+
+            <div class="room-features">
+
+              <span>
+                Work-Friendly Space
+              </span>
+
+              <span>
+                Wi-Fi
+              </span>
+
+              <span>
+                In-Room Entertainment
+              </span>
+
+              <span>
+                Hot & Cold Water
+              </span>
+
+              <span>
+                24/7 Support
+              </span>
+
+            </div>
+
+
+            <a
+              class="btn"
+              href="room-details.html"
+            >
+              VIEW ROOM →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="room-note">
+
+        <div class="kicker">
+          NEED HELP CHOOSING?
+        </div>
+
+        <p>
+          For room availability, rates, special requirements
+          or assistance choosing the right accommodation,
+          contact the Vishaka Paark team directly.
+        </p>
+
+        <br>
+
+        <a
+          class="link"
+          href="contact.html"
+        >
+          CONTACT HOTEL →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FACILITIES -->
+  <section class="section dark">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="kicker">
+            INCLUDED COMFORTS
+          </div>
+
+          <h2 class="title">
+            The essentials,
+            <br>
+            <em>taken care of.</em>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="facility-grid">
+
+        <div class="facility">
+          <b>01</b>
+          <strong>High-Speed Wi-Fi</strong>
+          <p>Stay connected throughout your visit.</p>
+        </div>
+
+        <div class="facility">
+          <b>02</b>
+          <strong>24/7 Front Desk</strong>
+          <p>Guest assistance whenever you need it.</p>
+        </div>
+
+        <div class="facility">
+          <b>03</b>
+          <strong>Security & CCTV</strong>
+          <p>A secure environment for guests.</p>
+        </div>
+
+        <div class="facility">
+          <b>04</b>
+          <strong>Breakfast</strong>
+          <p>Start your day with convenient breakfast service.</p>
+        </div>
+
+        <div class="facility">
+          <b>05</b>
+          <strong>Power Backup</strong>
+          <p>Reliable continuity during your stay.</p>
+        </div>
+
+        <div class="facility">
+          <b>06</b>
+          <strong>Parking</strong>
+          <p>Convenient parking facilities for guests.</p>
+        </div>
+
+        <div class="facility">
+          <b>07</b>
+          <strong>Hot & Cold Water</strong>
+          <p>Essential comfort throughout the day.</p>
+        </div>
+
+        <div class="facility">
+          <b>08</b>
+          <strong>Entertainment</strong>
+          <p>Relax with convenient in-room entertainment.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            PLAN YOUR STAY
+          </div>
+
+          <h2 class="title">
+            Your room is
+            <br>
+            <em>waiting.</em>
+          </h2>
+
+        </div>
+
+
+        <div>
+
+          <p class="copy">
+            Ready to explore Coimbatore from a comfortable
+            base? Check our accommodation options and plan
+            your stay with Vishaka Paark.
+          </p>
+
+
+          <a
+            class="btn"
+            href="booking.html"
+          >
+            BOOK YOUR STAY →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
