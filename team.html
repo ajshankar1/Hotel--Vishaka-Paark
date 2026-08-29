@@ -1,3 +1,705 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our Team | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">OUR TEAM</div><h1>The people behind the stay.</h1></div></section><section class="section"><div class="container"><div class="cards"><article class="card"><div class="card-photo" style="background-image:url(https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=88)"></div><div class="card-body"><h3>Guest Experience</h3><p>Focused on making every arrival and departure comfortable.</p></div></article><article class="card"><div class="card-photo" style="background-image:url(https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=88)"></div><div class="card-body"><h3>Reservations</h3><p>Helping guests choose the right room and stay.</p></div></article><article class="card"><div class="card-photo" style="background-image:url(https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=88)"></div><div class="card-body"><h3>Hospitality</h3><p>Creating the thoughtful details that make a stay memorable.</p></div></article></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Our Team | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Meet the hospitality team at Vishaka Paark, Coimbatore."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 480px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.78),
+          rgba(0,0,0,.20)
+        ),
+        url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 950px;
+      font-family: var(--serif);
+      font-size: clamp(58px, 7vw, 94px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .team-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 60px;
+    }
+
+    .team-intro p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .team-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .team-image {
+      position: relative;
+      aspect-ratio: 4 / 4.7;
+      overflow: hidden;
+      background: #ddd9d1;
+    }
+
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .team-card:hover .team-image img {
+      transform: scale(1.04);
+    }
+
+    .team-info {
+      padding: 25px;
+    }
+
+    .team-role {
+      margin-bottom: 9px;
+      color: #99958d;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .team-info h3 {
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .team-info p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .team-values {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .value-card {
+      padding: 38px 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .value-card:last-child {
+      border-right: 0;
+    }
+
+    .value-number {
+      margin-bottom: 25px;
+      color: #aaa69e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .value-card h3 {
+      margin-bottom: 12px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .team-cta {
+      margin-top: 80px;
+      padding: 60px;
+      background: #171714;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .team-cta h2 {
+      font-family: var(--serif);
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .team-cta p {
+      max-width: 550px;
+      margin-top: 14px;
+      color: #aaa79f;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .team-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .team-values {
+        grid-template-columns: 1fr;
+      }
+
+      .value-card {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .value-card:last-child {
+        border-bottom: 0;
+      }
+
+      .team-cta {
+        margin-top: 55px;
+        padding: 45px 30px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 54px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-info {
+        padding: 22px;
+      }
+
+      .team-values {
+        margin-top: 55px;
+      }
+
+      .team-cta {
+        padding: 35px 25px;
+      }
+
+      .team-cta h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a class="active" href="team.html">
+        Team
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · HOSPITALITY
+      </div>
+
+      <h1>
+        The people
+        <br>
+        <em>behind the stay.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- TEAM -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="team-intro">
+
+        <div>
+
+          <div class="kicker">
+            OUR TEAM
+          </div>
+
+          <h2 class="title">
+            Hospitality
+            <br>
+            <em>with a human touch.</em>
+          </h2>
+
+        </div>
+
+        <p>
+          Great hospitality is created by people who care
+          about the details. Our team is dedicated to making
+          every guest feel comfortable, welcomed and looked
+          after throughout their stay.
+        </p>
+
+      </div>
+
+
+      <div class="team-grid">
+
+
+        <article class="team-card">
+
+          <div class="team-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=90"
+              alt="Hotel management professional"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="team-info">
+
+            <div class="team-role">
+              MANAGEMENT
+            </div>
+
+            <h3>
+              Hotel Management
+            </h3>
+
+            <p>
+              Guiding the property with a focus on
+              hospitality standards, guest satisfaction
+              and a smooth overall experience.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="team-card">
+
+          <div class="team-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=1000&q=90"
+              alt="Hospitality professional"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="team-info">
+
+            <div class="team-role">
+              GUEST RELATIONS
+            </div>
+
+            <h3>
+              Guest Experience
+            </h3>
+
+            <p>
+              Helping guests with enquiries, requests and
+              the small details that make a stay comfortable
+              from arrival to departure.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="team-card">
+
+          <div class="team-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=90"
+              alt="Hotel operations professional"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="team-info">
+
+            <div class="team-role">
+              OPERATIONS
+            </div>
+
+            <h3>
+              Hotel Operations
+            </h3>
+
+            <p>
+              Working behind the scenes to keep rooms,
+              facilities and everyday hotel operations
+              running smoothly.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- VALUES -->
+      <div class="team-values">
+
+
+        <div class="value-card">
+
+          <div class="value-number">
+            01 · WARMTH
+          </div>
+
+          <h3>
+            Feel welcomed.
+          </h3>
+
+          <p>
+            Every interaction matters. We believe genuine
+            hospitality begins with making people feel
+            comfortable from the moment they arrive.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="value-number">
+            02 · ATTENTION
+          </div>
+
+          <h3>
+            Notice the details.
+          </h3>
+
+          <p>
+            Thoughtful service is often found in the small
+            things — a clean room, a helpful answer and a
+            smooth experience.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="value-number">
+            03 · CARE
+          </div>
+
+          <h3>
+            Hospitality that cares.
+          </h3>
+
+          <p>
+            Our goal is simple: provide a dependable and
+            comfortable stay while treating every guest
+            with respect.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- CTA -->
+      <div class="team-cta">
+
+        <div>
+
+          <div class="kicker">
+            VISHaka PAARK
+          </div>
+
+          <h2>
+            Come as a guest.
+            <br>
+            <em>Leave with memories.</em>
+          </h2>
+
+          <p>
+            Explore our rooms or contact us to plan your
+            next stay in Coimbatore.
+          </p>
+
+        </div>
+
+        <a
+          class="btn"
+          href="booking.html"
+        >
+          PLAN YOUR STAY →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="team.html">
+          Our Team
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
