@@ -1,3 +1,761 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offers | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="active" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">SPECIAL OFFERS</div><h1>More reasons to stay.</h1></div></section><section class="section"><div class="container"><div class="offers"><div class="offer" style="background-image:url(https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=88)"><div><div class="eyebrow">DIRECT BOOKING</div><h3>10% direct-booking benefit</h3><p>Reserve through the direct channel and enjoy the available direct-booking benefit.</p><a class="btn" href="booking.html">BOOK NOW →</a></div></div><div class="offer" style="background-image:url(https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=88)"><div><div class="eyebrow">STAY LONGER</div><h3>A more relaxed city stay</h3><p>Choose the room that gives you the space and comfort you need.</p><a class="btn" href="rooms.html">EXPLORE ROOMS →</a></div></div></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Offers | Vishaka Paark</title>
+
+  <meta
+    name="description"
+    content="Discover special offers and stay packages at Vishaka Paark, Coimbatore."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-hero {
+      min-height: 480px;
+      padding: 100px 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.75),
+          rgba(0,0,0,.25)
+        ),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+      color: #fff;
+    }
+
+    .page-hero h1 {
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(58px, 7vw, 94px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .offer-card {
+      position: relative;
+      min-height: 460px;
+      padding: 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.82),
+          rgba(0,0,0,.12) 70%
+        );
+    }
+
+    .offer-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .offer-tag {
+      align-self: flex-start;
+      margin-bottom: auto;
+      padding: 9px 13px;
+      border: 1px solid rgba(255,255,255,.5);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+    }
+
+    .offer-card h2 {
+      max-width: 540px;
+      margin-bottom: 13px;
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .offer-card p {
+      max-width: 520px;
+      margin-bottom: 25px;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .offer-card .offer-link {
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-decoration: none;
+    }
+
+    .offer-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .offer-info-item {
+      min-height: 170px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .offer-info-item:last-child {
+      border-right: 0;
+    }
+
+    .offer-info-item b {
+      display: block;
+      margin-bottom: 30px;
+      color: #aaa69e;
+      font-size: 10px;
+      letter-spacing: .13em;
+    }
+
+    .offer-info-item strong {
+      display: block;
+      margin-bottom: 9px;
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .offer-info-item span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .booking-banner {
+      padding: 60px;
+      background: #171714;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .booking-banner h2 {
+      font-family: var(--serif);
+      font-size: 45px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .booking-banner p {
+      max-width: 560px;
+      margin-top: 15px;
+      color: #aaa79f;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .terms-box {
+      padding: 35px;
+      background: #ebe8e1;
+      border: 1px solid var(--line);
+    }
+
+    .terms-box h3 {
+      margin-bottom: 15px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .terms-box p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 800px) {
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-info {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-info-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .offer-info-item:last-child {
+        border-bottom: 0;
+      }
+
+      .booking-banner {
+        padding: 42px 30px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero {
+        min-height: 390px;
+        padding: 75px 0;
+      }
+
+      .page-hero h1 {
+        font-size: 54px;
+      }
+
+      .offer-card {
+        min-height: 430px;
+        padding: 30px;
+      }
+
+      .offer-card h2 {
+        font-size: 35px;
+      }
+
+      .booking-banner h2 {
+        font-size: 36px;
+      }
+
+      .terms-box {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+
+    <div>
+      <span>Welcome to Vishaka Paark</span>
+      <span>Coimbatore, Tamil Nadu</span>
+    </div>
+
+    <div>
+      <span>0422 4695952</span>
+      <span>+91 90909 27979</span>
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      VISHaka
+      <small>PAARK</small>
+    </a>
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a class="active" href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-btn" href="booking.html">
+      BOOK NOW ↗
+    </a>
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        VISHaka PAARK · OFFERS
+      </div>
+
+      <h1>
+        More reasons to
+        <br>
+        <em>stay with us.</em>
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+
+          <div class="kicker">
+            SPECIAL OFFERS
+          </div>
+
+          <h2 class="title">
+            Thoughtful stays,
+            <br>
+            <em>better value.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="copy">
+            Explore our stay offers and packages designed
+            to make your visit to Coimbatore comfortable
+            and convenient.
+          </p>
+
+          <p class="copy">
+            Offers shown on this demo website are for
+            presentation purposes. Final availability,
+            inclusions and rates can be confirmed directly
+            with the hotel.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OFFERS -->
+  <section
+    class="section"
+    style="padding-top:20px;"
+  >
+
+    <div class="container">
+
+      <div class="offer-grid">
+
+
+        <!-- OFFER 01 -->
+        <article
+          class="offer-card"
+          style="
+            background-image:
+              url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=90');
+          "
+        >
+
+          <div class="offer-tag">
+            STAY OFFER
+          </div>
+
+          <div>
+
+            <h2>
+              Stay Longer,
+              <br>
+              Relax More.
+            </h2>
+
+            <p>
+              Planning an extended visit to Coimbatore?
+              Ask our team about long-stay rates and
+              accommodation options.
+            </p>
+
+            <a
+              class="offer-link"
+              href="contact.html"
+            >
+              ENQUIRE NOW →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- OFFER 02 -->
+        <article
+          class="offer-card"
+          style="
+            background-image:
+              url('https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1600&q=90');
+          "
+        >
+
+          <div class="offer-tag">
+            DIRECT BOOKING
+          </div>
+
+          <div>
+
+            <h2>
+              Plan Directly
+              <br>
+              With Us.
+            </h2>
+
+            <p>
+              Contact the Vishaka Paark team directly for
+              current room availability, rates and special
+              requirements.
+            </p>
+
+            <a
+              class="offer-link"
+              href="tel:+919090927979"
+            >
+              CALL +91 90909 27979 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="kicker">
+            WHY BOOK DIRECT
+          </div>
+
+          <h2 class="title">
+            A simpler way
+            <br>
+            <em>to plan.</em>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="offer-info">
+
+
+        <div class="offer-info-item">
+
+          <b>01 · AVAILABILITY</b>
+
+          <strong>
+            Current Room Options
+          </strong>
+
+          <span>
+            Speak with our team for the latest room
+            availability and suitable accommodation.
+          </span>
+
+        </div>
+
+
+        <div class="offer-info-item">
+
+          <b>02 · ASSISTANCE</b>
+
+          <strong>
+            Personal Assistance
+          </strong>
+
+          <span>
+            Get help with room selection, stay requirements
+            and other booking questions.
+          </span>
+
+        </div>
+
+
+        <div class="offer-info-item">
+
+          <b>03 · FLEXIBILITY</b>
+
+          <strong>
+            Discuss Your Stay
+          </strong>
+
+          <span>
+            Tell us your travel requirements and let our
+            team help you plan your visit.
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DARK BOOKING CTA -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="booking-banner">
+
+        <div>
+
+          <div class="kicker">
+            PLAN YOUR VISIT
+          </div>
+
+          <h2>
+            Your next stay
+            <br>
+            starts here.
+          </h2>
+
+          <p>
+            Check our rooms or speak directly with Vishaka
+            Paark to plan your stay in Coimbatore.
+          </p>
+
+        </div>
+
+
+        <a
+          class="btn"
+          href="booking.html"
+        >
+          CHECK AVAILABILITY →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OFFER NOTES -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="terms-box">
+
+        <h3>
+          Offer Information
+        </h3>
+
+        <p>
+          All offers, rates, inclusions and availability
+          are subject to confirmation by Vishaka Paark.
+          Promotional offers may have specific booking
+          dates, stay periods or other conditions.
+          Please contact the hotel before making travel
+          arrangements based on a promotional offer.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+          VISHaka
+          <small>PAARK</small>
+        </div>
+
+        <p>
+          A contemporary stay designed around comfort,
+          thoughtful hospitality and easy living in Coimbatore.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="rooms.html">
+          Rooms & Suites
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Useful Links
+        </h4>
+
+        <a href="offers.html">
+          Offers
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:04224695952">
+          0422 4695952
+        </a>
+
+        <a href="tel:+919090927979">
+          +91 90909 27979
+        </a>
+
+        <a href="mailto:hotelvishakapaark@gmail.com">
+          hotelvishakapaark@gmail.com
+        </a>
+
+        <p>
+          Thudiyalur Road,
+          Saravanampatty,
+          <br>
+          Coimbatore — 641 035
+        </p>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Vishaka Paark. Demo website concept.
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
