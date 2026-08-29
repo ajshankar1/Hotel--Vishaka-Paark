@@ -6,83 +6,93 @@
 
   <title>Reservation | Hotel Vishaka Paark</title>
 
-  <meta name="description"
-        content="Reserve your stay at Hotel Vishaka Paark, Coimbatore. Choose your room, dates and guest details and send a reservation request.">
+  <meta
+    name="description"
+    content="Reserve your stay at Hotel Vishaka Paark, Coimbatore. Select your room, dates, check-in time and check-out time."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="styles.css">
 
   <style>
+
     /* =========================================================
-       RESERVATION PAGE
+       BOOKING PAGE
        ========================================================= */
 
-    .reservation-page {
+    .booking-page {
       background: #f5f0e8;
       color: #181411;
     }
 
-    .reservation-hero {
-      min-height: 430px;
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .booking-hero {
+      min-height: 470px;
       display: flex;
       align-items: flex-end;
-      padding: 150px 0 75px;
+      padding: 150px 0 80px;
+      position: relative;
       background:
         linear-gradient(
           90deg,
-          rgba(20, 14, 10, 0.88),
-          rgba(20, 14, 10, 0.52)
+          rgba(20, 14, 10, 0.90),
+          rgba(20, 14, 10, 0.55)
         ),
-        url("images/booking.jpg") center/cover no-repeat;
-      position: relative;
+        url("images/booking.jpg") center center / cover no-repeat;
     }
 
-    .reservation-hero-inner {
+    .booking-hero-inner {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .reservation-hero .kicker {
+    .booking-hero .kicker {
       color: #c69a55;
-      letter-spacing: 4px;
       font-size: 12px;
       font-weight: 700;
+      letter-spacing: 4px;
       margin-bottom: 18px;
     }
 
-    .reservation-hero h1 {
-      color: #fff;
+    .booking-hero h1 {
+      margin: 0;
+      color: #ffffff;
       font-family: "Gilda Display", serif;
-      font-size: clamp(48px, 7vw, 82px);
+      font-size: clamp(52px, 7vw, 84px);
       line-height: 0.98;
       font-weight: 400;
-      margin: 0;
-      max-width: 850px;
+      max-width: 900px;
     }
 
-    .reservation-hero h1 em {
+    .booking-hero h1 em {
       color: #c69a55;
       font-style: italic;
     }
 
-    .reservation-hero p {
+    .booking-hero p {
+      max-width: 680px;
+      margin: 25px 0 0;
       color: rgba(255,255,255,0.82);
       font-size: 17px;
       line-height: 1.8;
-      max-width: 650px;
-      margin: 25px 0 0;
     }
 
+
     /* =========================================================
-       24 HOUR HIGHLIGHT
+       24 HOUR POLICY BAR
        ========================================================= */
 
-    .stay-policy-wrap {
+    .stay-policy-wrapper {
       padding: 0 20px;
       margin-top: -42px;
       position: relative;
@@ -92,129 +102,175 @@
     .stay-policy {
       width: min(1180px, 100%);
       margin: 0 auto;
-      background: #1a1511;
-      border: 1px solid rgba(198,154,85,0.35);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      box-shadow: 0 20px 55px rgba(0,0,0,0.14);
+      background: #1a1511;
+      border: 1px solid rgba(198,154,85,0.35);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.15);
     }
 
     .policy-item {
       padding: 30px 28px;
       text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.08);
+      border-right: 1px solid rgba(255,255,255,0.09);
     }
 
     .policy-item:last-child {
-      border-right: 0;
+      border-right: none;
     }
 
     .policy-icon {
       color: #c69a55;
       font-size: 25px;
-      margin-bottom: 10px;
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
     .policy-item h3 {
-      color: #fff;
+      margin: 0 0 7px;
+      color: #ffffff;
       font-family: "Gilda Display", serif;
       font-size: 23px;
       font-weight: 400;
-      margin: 0 0 7px;
     }
 
     .policy-item p {
+      margin: 0;
       color: rgba(255,255,255,0.65);
       font-size: 13px;
       line-height: 1.6;
-      margin: 0;
     }
+
 
     /* =========================================================
-       MAIN SECTION
+       MAIN BOOKING SECTION
        ========================================================= */
 
-    .reservation-section {
-      padding: 100px 20px 110px;
+    .booking-main {
+      padding: 105px 20px 110px;
     }
 
-    .reservation-container {
+    .booking-container {
       width: min(1180px, 100%);
       margin: 0 auto;
     }
 
-    .reservation-heading {
+    .booking-intro {
       text-align: center;
       margin-bottom: 55px;
     }
 
-    .reservation-heading .kicker {
+    .booking-intro .kicker {
       color: #9a733d;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 4px;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
 
-    .reservation-heading h2 {
+    .booking-intro h2 {
+      margin: 0 0 17px;
+      color: #1a1511;
       font-family: "Gilda Display", serif;
-      font-size: clamp(40px, 5vw, 62px);
+      font-size: clamp(42px, 5vw, 64px);
       line-height: 1.05;
       font-weight: 400;
-      margin: 0 0 16px;
-      color: #1a1511;
     }
 
-    .reservation-heading h2 em {
+    .booking-intro h2 em {
       color: #9a733d;
       font-style: italic;
     }
 
-    .reservation-heading p {
-      max-width: 680px;
+    .booking-intro p {
+      max-width: 700px;
       margin: 0 auto;
       color: #6c625b;
       font-size: 16px;
       line-height: 1.8;
     }
 
+
     /* =========================================================
-       FORM
+       BOOKING LAYOUT
        ========================================================= */
 
-    .reservation-layout {
+    .booking-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.75fr);
       gap: 32px;
       align-items: start;
     }
 
-    .reservation-card {
-      background: #fff;
+
+    /* =========================================================
+       FORM CARD
+       ========================================================= */
+
+    .booking-card {
+      background: #ffffff;
       border: 1px solid #ded5ca;
-      padding: 42px;
+      padding: 44px;
     }
 
-    .form-section-title {
-      font-family: "Gilda Display", serif;
-      font-size: 30px;
-      font-weight: 400;
+    .booking-card-heading {
+      margin-bottom: 30px;
+    }
+
+    .booking-card-heading h3 {
       margin: 0 0 8px;
       color: #211b17;
+      font-family: "Gilda Display", serif;
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 400;
     }
 
-    .form-section-subtitle {
+    .booking-card-heading p {
+      margin: 0;
       color: #756b63;
       font-size: 14px;
       line-height: 1.7;
-      margin: 0 0 30px;
+    }
+
+
+    /* =========================================================
+       FORM SECTION
+       ========================================================= */
+
+    .form-section {
+      margin-top: 35px;
+    }
+
+    .form-section:first-of-type {
+      margin-top: 0;
+    }
+
+    .form-section-title {
+      margin: 0 0 7px;
+      color: #251e19;
+      font-family: "Gilda Display", serif;
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .form-section-description {
+      margin: 0 0 25px;
+      color: #766c63;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .form-divider {
       height: 1px;
+      margin: 40px 0;
       background: #e5ddd4;
-      margin: 36px 0;
     }
+
+
+    /* =========================================================
+       FORM GRID
+       ========================================================= */
 
     .form-grid {
       display: grid;
@@ -222,73 +278,123 @@
       gap: 22px;
     }
 
-    .form-group {
+    .form-field {
       display: flex;
       flex-direction: column;
     }
 
-    .form-group.full {
+    .form-field.full {
       grid-column: 1 / -1;
     }
 
-    .form-group label {
+    .form-field label {
+      margin-bottom: 9px;
+      color: #443a33;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 1.5px;
-      color: #443a33;
-      margin-bottom: 9px;
       text-transform: uppercase;
     }
 
-    .form-group label span {
-      color: #9a1c2f;
+    .form-field label .required {
+      color: #8f1b2d;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
       width: 100%;
       box-sizing: border-box;
       border: 1px solid #d8cfc5;
+      border-radius: 0;
+      outline: none;
       background: #faf8f5;
       color: #211b17;
       font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 15px;
       padding: 15px 16px;
-      border-radius: 0;
-      outline: none;
-      transition: border-color .2s ease, background .2s ease;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .form-group textarea {
-      min-height: 130px;
+    .form-field input,
+    .form-field select {
+      min-height: 53px;
+    }
+
+    .form-field textarea {
+      min-height: 135px;
       resize: vertical;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
       border-color: #9a733d;
-      background: #fff;
+      background: #ffffff;
+      box-shadow: 0 0 0 2px rgba(154,115,61,0.08);
     }
 
-    .form-note {
-      font-size: 12px;
-      color: #7a7068;
-      margin-top: 8px;
+    .form-field small {
+      margin-top: 7px;
+      color: #7b7068;
+      font-size: 11px;
       line-height: 1.5;
     }
 
+
     /* =========================================================
-       ROOM SELECTION
+       DATE & TIME BLOCK
+       ========================================================= */
+
+    .datetime-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 25px 0 5px;
+      padding: 18px;
+      background: #f6efe4;
+      border: 1px solid #e1d3c0;
+    }
+
+    .datetime-note-icon {
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      background: #9a733d;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .datetime-note strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #3c3027;
+      font-size: 13px;
+    }
+
+    .datetime-note p {
+      margin: 0;
+      color: #70645b;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       ROOM OPTIONS
        ========================================================= */
 
     .room-options {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: 10px;
     }
 
     .room-option {
@@ -303,34 +409,33 @@
 
     .room-option label {
       display: block;
-      border: 1px solid #d8cfc5;
-      background: #faf8f5;
-      padding: 18px 16px;
-      cursor: pointer;
-      transition: all .2s ease;
       height: 100%;
       box-sizing: border-box;
+      padding: 20px 17px;
+      border: 1px solid #d8cfc5;
+      background: #faf8f5;
+      cursor: pointer;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .room-option label strong {
       display: block;
+      margin-bottom: 7px;
       color: #251e19;
       font-family: "Gilda Display", serif;
-      font-size: 19px;
+      font-size: 20px;
+      line-height: 1.15;
       font-weight: 400;
-      margin-bottom: 7px;
-      text-transform: none;
-      letter-spacing: 0;
     }
 
-    .room-option label small {
+    .room-option label span {
       display: block;
       color: #766c63;
-      font-size: 12px;
-      line-height: 1.5;
-      text-transform: none;
-      letter-spacing: 0;
-      font-weight: 400;
+      font-size: 11px;
+      line-height: 1.55;
     }
 
     .room-option input:checked + label {
@@ -339,173 +444,83 @@
       box-shadow: inset 0 0 0 1px #9a733d;
     }
 
+
     /* =========================================================
        TERMS
        ========================================================= */
 
     .terms-box {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-top: 30px;
-      padding: 18px;
+      margin-top: 32px;
+      padding: 19px;
       background: #f7f2eb;
       border: 1px solid #e1d7cb;
     }
 
-    .terms-box input {
-      width: 18px;
-      height: 18px;
-      margin-top: 2px;
-      flex: 0 0 auto;
-      accent-color: #9a1c2f;
-    }
-
-    .terms-box label {
-      color: #5f554e;
-      font-size: 13px;
-      line-height: 1.7;
+    .terms-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
       cursor: pointer;
     }
 
-    .terms-box a {
+    .terms-label input {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      margin-top: 2px;
+      accent-color: #8f1b2d;
+    }
+
+    .terms-label span {
+      color: #5f554e;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .terms-label a {
       color: #8f1b2d;
       text-decoration: underline;
     }
 
+
     /* =========================================================
-       BUTTON
+       SUBMIT AREA
        ========================================================= */
 
-    .reservation-submit {
+    .submit-area {
+      margin-top: 28px;
+    }
+
+    .submit-button {
       width: 100%;
-      margin-top: 25px;
-      border: 0;
-      background: #8f1b2d;
-      color: #fff;
       padding: 18px 25px;
+      border: none;
+      border-radius: 0;
+      background: #8f1b2d;
+      color: #ffffff;
+      cursor: pointer;
       font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 2px;
-      cursor: pointer;
-      transition: transform .2s ease, background .2s ease;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .reservation-submit:hover {
-      background: #731525;
+    .submit-button:hover {
+      background: #741625;
       transform: translateY(-1px);
     }
 
-    /* =========================================================
-       SIDE CARD
-       ========================================================= */
-
-    .reservation-side {
-      background: #1a1511;
-      color: #fff;
-      padding: 38px;
-      position: sticky;
-      top: 110px;
-    }
-
-    .reservation-side .kicker {
-      color: #c69a55;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
-
-    .reservation-side h3 {
-      font-family: "Gilda Display", serif;
-      font-size: 34px;
-      font-weight: 400;
-      line-height: 1.1;
-      margin: 0 0 18px;
-    }
-
-    .reservation-side h3 em {
-      color: #c69a55;
-      font-style: italic;
-    }
-
-    .reservation-side > p {
-      color: rgba(255,255,255,0.68);
-      font-size: 14px;
-      line-height: 1.8;
-      margin: 0 0 28px;
-    }
-
-    .side-feature {
-      display: flex;
-      gap: 14px;
-      padding: 18px 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .side-feature:last-of-type {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .side-feature-icon {
-      color: #c69a55;
-      font-size: 20px;
-      min-width: 25px;
-    }
-
-    .side-feature strong {
-      display: block;
-      color: #fff;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .side-feature span {
-      display: block;
-      color: rgba(255,255,255,0.58);
+    .submit-note {
+      margin: 12px 0 0;
+      color: #766c63;
       font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .contact-direct {
-      margin-top: 28px;
-    }
-
-    .contact-direct-title {
-      color: #c69a55;
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .contact-direct a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-      margin: 8px 0;
-    }
-
-    .whatsapp-btn {
-      display: block;
+      line-height: 1.6;
       text-align: center;
-      margin-top: 25px;
-      padding: 15px;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      transition: background .2s ease, border-color .2s ease;
     }
 
-    .whatsapp-btn:hover {
-      background: #8f1b2d;
-      border-color: #8f1b2d;
-    }
 
     /* =========================================================
        SUCCESS MESSAGE
@@ -513,66 +528,270 @@
 
     .reservation-success {
       display: none;
-      background: #eef6ee;
-      border: 1px solid #bdd2bd;
-      padding: 25px;
       margin-top: 25px;
+      padding: 24px;
+      border: 1px solid #bdd2bd;
+      background: #eef6ee;
     }
 
     .reservation-success.show {
       display: block;
     }
 
-    .reservation-success h3 {
-      font-family: "Gilda Display", serif;
-      font-size: 28px;
-      font-weight: 400;
+    .reservation-success h4 {
       margin: 0 0 8px;
       color: #315731;
+      font-family: "Gilda Display", serif;
+      font-size: 27px;
+      font-weight: 400;
     }
 
     .reservation-success p {
       margin: 0;
       color: #496149;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.7;
     }
 
+
     /* =========================================================
-       RESPONSIVE
+       SIDE CARD
        ========================================================= */
 
-    @media (max-width: 950px) {
+    .booking-side {
+      position: sticky;
+      top: 110px;
+      padding: 38px;
+      background: #1a1511;
+      color: #ffffff;
+    }
 
-      .reservation-layout {
+    .booking-side .kicker {
+      margin-bottom: 15px;
+      color: #c69a55;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .booking-side h3 {
+      margin: 0 0 18px;
+      color: #ffffff;
+      font-family: "Gilda Display", serif;
+      font-size: 36px;
+      line-height: 1.08;
+      font-weight: 400;
+    }
+
+    .booking-side h3 em {
+      color: #c69a55;
+      font-style: italic;
+    }
+
+    .booking-side > p {
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.68);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       SIDE FEATURES
+       ========================================================= */
+
+    .side-feature {
+      display: flex;
+      gap: 14px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .side-feature:last-of-type {
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .side-feature-icon {
+      min-width: 27px;
+      color: #c69a55;
+      font-size: 20px;
+    }
+
+    .side-feature strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .side-feature span {
+      display: block;
+      color: rgba(255,255,255,0.57);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+
+    /* =========================================================
+       DIRECT CONTACT
+       ========================================================= */
+
+    .direct-contact {
+      margin-top: 28px;
+    }
+
+    .direct-contact-title {
+      margin-bottom: 12px;
+      color: #c69a55;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .direct-contact a {
+      display: block;
+      margin: 8px 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .direct-contact a:hover {
+      color: #c69a55;
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+       ========================================================= */
+
+    .whatsapp-button {
+      display: block;
+      margin-top: 25px;
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .whatsapp-button:hover {
+      border-color: #8f1b2d;
+      background: #8f1b2d;
+    }
+
+
+    /* =========================================================
+       LOCATION / CONTACT STRIP
+       ========================================================= */
+
+    .booking-contact-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 35px;
+      padding: 35px;
+      background: #ffffff;
+      border: 1px solid #ded5ca;
+    }
+
+    .booking-contact-strip .kicker {
+      margin-bottom: 10px;
+      color: #9a733d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .booking-contact-strip h3 {
+      margin: 0 0 9px;
+      color: #241d18;
+      font-family: "Gilda Display", serif;
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .booking-contact-strip p {
+      max-width: 550px;
+      margin: 0;
+      color: #6f655d;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .booking-contact-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .booking-contact-details a {
+      display: block;
+      padding: 17px;
+      border: 1px solid #e0d7cd;
+      background: #faf8f5;
+      color: #251e19;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .booking-contact-details a:hover {
+      border-color: #9a733d;
+    }
+
+    .booking-contact-details span {
+      display: block;
+      margin-bottom: 6px;
+      color: #9a733d;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .booking-layout {
         grid-template-columns: 1fr;
       }
 
-      .reservation-side {
+      .booking-side {
         position: static;
       }
 
       .room-options {
         grid-template-columns: 1fr;
       }
+
     }
 
-    @media (max-width: 700px) {
 
-      .reservation-hero {
-        min-height: 390px;
-        padding: 130px 0 55px;
+    @media (max-width: 760px) {
+
+      .booking-hero {
+        min-height: 420px;
+        padding: 135px 0 60px;
       }
 
-      .reservation-hero-inner {
+      .booking-hero-inner {
         width: min(100% - 30px, 1180px);
       }
 
-      .reservation-hero p {
+      .booking-hero p {
         font-size: 15px;
       }
 
-      .stay-policy-wrap {
+      .stay-policy-wrapper {
         padding: 0 15px;
         margin-top: -25px;
       }
@@ -582,20 +801,20 @@
       }
 
       .policy-item {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.09);
       }
 
       .policy-item:last-child {
-        border-bottom: 0;
+        border-bottom: none;
       }
 
-      .reservation-section {
+      .booking-main {
         padding: 75px 15px 80px;
       }
 
-      .reservation-card {
-        padding: 25px 20px;
+      .booking-card {
+        padding: 27px 20px;
       }
 
       .form-grid {
@@ -603,28 +822,64 @@
         gap: 18px;
       }
 
-      .form-group.full {
+      .form-field.full {
         grid-column: auto;
       }
 
-      .reservation-side {
-        padding: 28px 22px;
+      .booking-side {
+        padding: 30px 23px;
       }
 
-      .reservation-side h3 {
-        font-size: 30px;
+      .booking-contact-strip {
+        grid-template-columns: 1fr;
+        padding: 25px 20px;
       }
+
+      .booking-contact-details {
+        grid-template-columns: 1fr;
+      }
+
     }
+
+
+    @media (max-width: 480px) {
+
+      .booking-hero h1 {
+        font-size: 48px;
+      }
+
+      .booking-intro h2 {
+        font-size: 40px;
+      }
+
+      .booking-card-heading h3 {
+        font-size: 28px;
+      }
+
+      .booking-side h3 {
+        font-size: 31px;
+      }
+
+      .datetime-note {
+        padding: 15px;
+      }
+
+    }
+
   </style>
+
 </head>
 
-<body class="reservation-page">
+
+<body class="booking-page">
+
 
   <!-- =======================================================
        TOP BAR
        ======================================================= -->
 
   <div class="topbar">
+
     <div>
       <span>Welcome to Vishaka Paark</span>
       <span>Coimbatore, Tamil Nadu</span>
@@ -634,6 +889,7 @@
       <span>0422 4695952</span>
       <span>+91 90909 27979</span>
     </div>
+
   </div>
 
 
@@ -648,24 +904,54 @@
       <small>PAARK</small>
     </a>
 
+
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms & Suites</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="offers.html">Offers</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
 
-    <a class="header-btn" href="booking.html">
+
+    <a
+      class="header-btn"
+      href="booking.html"
+    >
       BOOK NOW ↗
     </a>
 
+
     <button
       class="mobile-nav"
+      type="button"
       aria-label="Open navigation"
-      onclick="document.querySelector('.nav').classList.toggle('show')">
+      onclick="document.querySelector('.nav').classList.toggle('show')"
+    >
       ☰
     </button>
 
@@ -676,9 +962,9 @@
        HERO
        ======================================================= -->
 
-  <section class="reservation-hero">
+  <section class="booking-hero">
 
-    <div class="reservation-hero-inner">
+    <div class="booking-hero-inner">
 
       <div class="kicker">
         RESERVATION
@@ -690,8 +976,9 @@
       </h1>
 
       <p>
-        Send us your reservation request and our team will confirm
-        the room availability and booking details with you.
+        Choose your preferred room, check-in date and time,
+        and check-out date and time. Send your reservation
+        request directly to our hotel team.
       </p>
 
     </div>
@@ -700,21 +987,26 @@
 
 
   <!-- =======================================================
-       24 HOUR STAY HIGHLIGHT
+       24 HOUR INFORMATION
        ======================================================= -->
 
-  <div class="stay-policy-wrap">
+  <div class="stay-policy-wrapper">
 
     <div class="stay-policy">
 
+
       <div class="policy-item">
 
-        <div class="policy-icon">◷</div>
+        <div class="policy-icon">
+          ◷
+        </div>
 
-        <h3>24-Hour Check-In</h3>
+        <h3>
+          24-Hour Check-In
+        </h3>
 
         <p>
-          Arrive according to your travel schedule.
+          Tell us your required check-in date and exact time.
         </p>
 
       </div>
@@ -722,12 +1014,16 @@
 
       <div class="policy-item">
 
-        <div class="policy-icon">◷</div>
+        <div class="policy-icon">
+          ◷
+        </div>
 
-        <h3>24-Hour Check-Out</h3>
+        <h3>
+          24-Hour Check-Out
+        </h3>
 
         <p>
-          Flexible departure support for a convenient stay.
+          Tell us your required check-out date and exact time.
         </p>
 
       </div>
@@ -735,15 +1031,20 @@
 
       <div class="policy-item">
 
-        <div class="policy-icon">♧</div>
+        <div class="policy-icon">
+          ♧
+        </div>
 
-        <h3>24/7 Front Desk</h3>
+        <h3>
+          24/7 Front Desk
+        </h3>
 
         <p>
-          Our team is available whenever you need assistance.
+          Assistance available for your stay whenever you need it.
         </p>
 
       </div>
+
 
     </div>
 
@@ -751,15 +1052,17 @@
 
 
   <!-- =======================================================
-       RESERVATION SECTION
+       MAIN BOOKING AREA
        ======================================================= -->
 
-  <main class="reservation-section">
+  <main class="booking-main">
 
-    <div class="reservation-container">
+    <div class="booking-container">
 
 
-      <div class="reservation-heading">
+      <!-- INTRO -->
+
+      <div class="booking-intro">
 
         <div class="kicker">
           YOUR RESERVATION
@@ -770,312 +1073,398 @@
         </h2>
 
         <p>
-          Select your preferred room and dates below.
-          This is a reservation request and our team will contact
-          you to confirm availability and final booking details.
+          Please provide the exact dates and times you would
+          like to check in and check out. Our team will review
+          your request and confirm room availability.
         </p>
 
       </div>
 
 
-      <div class="reservation-layout">
+      <!-- TWO COLUMN LAYOUT -->
+
+      <div class="booking-layout">
 
 
         <!-- =================================================
-             FORM
+             LEFT FORM
              ================================================= -->
 
-        <div class="reservation-card">
+        <div class="booking-card">
+
+
+          <div class="booking-card-heading">
+
+            <h3>
+              Reservation Request
+            </h3>
+
+            <p>
+              All fields marked with an asterisk are required.
+              Your request is subject to room availability
+              and confirmation by Hotel Vishaka Paark.
+            </p>
+
+          </div>
+
 
           <form
             id="reservationForm"
-            action="mailto:hotelvishakapaark@gmail.com"
-            method="post"
-            enctype="text/plain">
+            onsubmit="handleReservation(event)"
+          >
 
 
-            <!-- STAY DETAILS -->
+            <!-- =============================================
+                 STAY DETAILS
+                 ============================================= -->
 
-            <h3 class="form-section-title">
-              Stay Details
-            </h3>
+            <div class="form-section">
 
-            <p class="form-section-subtitle">
-              Choose your dates, room and number of guests.
-            </p>
+              <h4 class="form-section-title">
+                Stay Details
+              </h4>
+
+              <p class="form-section-description">
+                Select your room and exact check-in and
+                check-out schedule.
+              </p>
 
 
-            <div class="form-grid">
+              <div class="form-grid">
 
 
-              <div class="form-group">
+                <!-- CHECK-IN DATE -->
 
-                <label for="checkin">
-                  Check-In <span>*</span>
-                </label>
+                <div class="form-field">
 
-                <input
-                  type="date"
-                  id="checkin"
-                  name="Check-In"
-                  required>
+                  <label for="checkinDate">
+                    Check-In Date
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="date"
+                    id="checkinDate"
+                    name="Check-In Date"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- CHECK-IN TIME -->
+
+                <div class="form-field">
+
+                  <label for="checkinTime">
+                    Check-In Time
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="time"
+                    id="checkinTime"
+                    name="Check-In Time"
+                    required
+                  >
+
+                  <small>
+                    Please enter your required check-in time.
+                  </small>
+
+                </div>
+
+
+                <!-- CHECK-OUT DATE -->
+
+                <div class="form-field">
+
+                  <label for="checkoutDate">
+                    Check-Out Date
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="date"
+                    id="checkoutDate"
+                    name="Check-Out Date"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- CHECK-OUT TIME -->
+
+                <div class="form-field">
+
+                  <label for="checkoutTime">
+                    Check-Out Time
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="time"
+                    id="checkoutTime"
+                    name="Check-Out Time"
+                    required
+                  >
+
+                  <small>
+                    Please enter your required check-out time.
+                  </small>
+
+                </div>
+
+
+                <!-- GUESTS -->
+
+                <div class="form-field">
+
+                  <label for="guests">
+                    Guests
+                    <span class="required">*</span>
+                  </label>
+
+                  <select
+                    id="guests"
+                    name="Guests"
+                    required
+                  >
+
+                    <option value="">
+                      Select guests
+                    </option>
+
+                    <option value="1">
+                      1 Guest
+                    </option>
+
+                    <option value="2">
+                      2 Guests
+                    </option>
+
+                    <option value="3">
+                      3 Guests
+                    </option>
+
+                    <option value="4">
+                      4 Guests
+                    </option>
+
+                    <option value="5">
+                      5 Guests
+                    </option>
+
+                    <option value="6">
+                      6 Guests
+                    </option>
+
+                    <option value="7">
+                      7 Guests
+                    </option>
+
+                    <option value="8">
+                      8 Guests
+                    </option>
+
+                    <option value="9">
+                      9 Guests
+                    </option>
+
+                    <option value="10+">
+                      10+ Guests
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- NUMBER OF ROOMS -->
+
+                <div class="form-field">
+
+                  <label for="numberOfRooms">
+                    Number of Rooms
+                    <span class="required">*</span>
+                  </label>
+
+                  <select
+                    id="numberOfRooms"
+                    name="Number of Rooms"
+                    required
+                  >
+
+                    <option value="">
+                      Select rooms
+                    </option>
+
+                    <option value="1">
+                      1 Room
+                    </option>
+
+                    <option value="2">
+                      2 Rooms
+                    </option>
+
+                    <option value="3">
+                      3 Rooms
+                    </option>
+
+                    <option value="4">
+                      4 Rooms
+                    </option>
+
+                    <option value="5">
+                      5 Rooms
+                    </option>
+
+                    <option value="6+">
+                      6+ Rooms
+                    </option>
+
+                  </select>
+
+                </div>
+
 
               </div>
 
 
-              <div class="form-group">
+              <!-- 24 HOUR NOTICE -->
 
-                <label for="checkout">
-                  Check-Out <span>*</span>
-                </label>
+              <div class="datetime-note">
 
-                <input
-                  type="date"
-                  id="checkout"
-                  name="Check-Out"
-                  required>
+                <div class="datetime-note-icon">
+                  24
+                </div>
 
-              </div>
+                <div>
 
+                  <strong>
+                    Check-in & Check-out Times Are Required
+                  </strong>
 
-              <div class="form-group full">
-
-                <label>
-                  Select Room <span>*</span>
-                </label>
-
-                <div class="room-options">
-
-
-                  <div class="room-option">
-
-                    <input
-                      type="radio"
-                      id="executiveDouble"
-                      name="Room Type"
-                      value="Executive Double"
-                      required>
-
-                    <label for="executiveDouble">
-
-                      <strong>
-                        Executive Double
-                      </strong>
-
-                      <small>
-                        Comfortable choice for couples and solo travellers.
-                      </small>
-
-                    </label>
-
-                  </div>
-
-
-                  <div class="room-option">
-
-                    <input
-                      type="radio"
-                      id="executiveTwin"
-                      name="Room Type"
-                      value="Executive Twin">
-
-                    <label for="executiveTwin">
-
-                      <strong>
-                        Executive Twin
-                      </strong>
-
-                      <small>
-                        Two separate beds for friends and colleagues.
-                      </small>
-
-                    </label>
-
-                  </div>
-
-
-                  <div class="room-option">
-
-                    <input
-                      type="radio"
-                      id="deluxeTriple"
-                      name="Room Type"
-                      value="Deluxe Triple">
-
-                    <label for="deluxeTriple">
-
-                      <strong>
-                        Deluxe Triple
-                      </strong>
-
-                      <small>
-                        Spacious option for families and groups.
-                      </small>
-
-                    </label>
-
-                  </div>
-
+                  <p>
+                    Please enter both your preferred check-in
+                    time and preferred check-out time. The hotel
+                    team will confirm the requested timings
+                    based on room availability.
+                  </p>
 
                 </div>
 
               </div>
 
 
-              <div class="form-group">
-
-                <label for="adults">
-                  Adults <span>*</span>
-                </label>
-
-                <select
-                  id="adults"
-                  name="Adults"
-                  required>
-
-                  <option value="">
-                    Select adults
-                  </option>
-
-                  <option value="1">
-                    1 Adult
-                  </option>
-
-                  <option value="2">
-                    2 Adults
-                  </option>
-
-                  <option value="3">
-                    3 Adults
-                  </option>
-
-                  <option value="4">
-                    4 Adults
-                  </option>
-
-                  <option value="5">
-                    5 Adults
-                  </option>
-
-                  <option value="6+">
-                    6+ Adults
-                  </option>
-
-                </select>
-
-              </div>
+            </div>
 
 
-              <div class="form-group">
+            <!-- DIVIDER -->
 
-                <label for="children">
-                  Children
-                </label>
-
-                <select
-                  id="children"
-                  name="Children">
-
-                  <option value="0">
-                    No Children
-                  </option>
-
-                  <option value="1">
-                    1 Child
-                  </option>
-
-                  <option value="2">
-                    2 Children
-                  </option>
-
-                  <option value="3">
-                    3 Children
-                  </option>
-
-                  <option value="4+">
-                    4+ Children
-                  </option>
-
-                </select>
-
-              </div>
+            <div class="form-divider"></div>
 
 
-              <div class="form-group">
+            <!-- =============================================
+                 ROOM SELECTION
+                 ============================================= -->
 
-                <label for="rooms">
-                  Number of Rooms <span>*</span>
-                </label>
+            <div class="form-section">
 
-                <select
-                  id="rooms"
-                  name="Number of Rooms"
-                  required>
+              <h4 class="form-section-title">
+                Choose Your Room
+              </h4>
 
-                  <option value="">
-                    Select rooms
-                  </option>
-
-                  <option value="1">
-                    1 Room
-                  </option>
-
-                  <option value="2">
-                    2 Rooms
-                  </option>
-
-                  <option value="3">
-                    3 Rooms
-                  </option>
-
-                  <option value="4">
-                    4 Rooms
-                  </option>
-
-                  <option value="5+">
-                    5+ Rooms
-                  </option>
-
-                </select>
-
-              </div>
+              <p class="form-section-description">
+                Select the room category you would like to reserve.
+              </p>
 
 
-              <div class="form-group">
+              <div class="room-options">
 
-                <label for="arrival">
-                  Approx. Arrival Time
-                </label>
 
-                <select
-                  id="arrival"
-                  name="Approximate Arrival Time">
+                <!-- EXECUTIVE DOUBLE -->
 
-                  <option value="">
-                    Select time
-                  </option>
+                <div class="room-option">
 
-                  <option value="Morning">
-                    Morning
-                  </option>
+                  <input
+                    type="radio"
+                    id="executiveDouble"
+                    name="Room Type"
+                    value="Executive Double"
+                    required
+                  >
 
-                  <option value="Afternoon">
-                    Afternoon
-                  </option>
+                  <label for="executiveDouble">
 
-                  <option value="Evening">
-                    Evening
-                  </option>
+                    <strong>
+                      Executive Double
+                    </strong>
 
-                  <option value="Late Night">
-                    Late Night
-                  </option>
+                    <span>
+                      Comfortable accommodation for couples
+                      and individual travellers.
+                    </span>
 
-                  <option value="Not Sure">
-                    Not Sure
-                  </option>
+                  </label>
 
-                </select>
+                </div>
+
+
+                <!-- EXECUTIVE TWIN -->
+
+                <div class="room-option">
+
+                  <input
+                    type="radio"
+                    id="executiveTwin"
+                    name="Room Type"
+                    value="Executive Twin"
+                  >
+
+                  <label for="executiveTwin">
+
+                    <strong>
+                      Executive Twin
+                    </strong>
+
+                    <span>
+                      Two separate beds, ideal for friends,
+                      colleagues and business travellers.
+                    </span>
+
+                  </label>
+
+                </div>
+
+
+                <!-- DELUXE TRIPLE -->
+
+                <div class="room-option">
+
+                  <input
+                    type="radio"
+                    id="deluxeTriple"
+                    name="Room Type"
+                    value="Deluxe Triple"
+                  >
+
+                  <label for="deluxeTriple">
+
+                    <strong>
+                      Deluxe Triple
+                    </strong>
+
+                    <span>
+                      Spacious accommodation suited for
+                      families and small groups.
+                    </span>
+
+                  </label>
+
+                </div>
+
 
               </div>
 
@@ -1087,155 +1476,204 @@
             <div class="form-divider"></div>
 
 
-            <!-- GUEST DETAILS -->
+            <!-- =============================================
+                 GUEST DETAILS
+                 ============================================= -->
 
-            <h3 class="form-section-title">
-              Guest Details
-            </h3>
+            <div class="form-section">
 
-            <p class="form-section-subtitle">
-              Please provide the details our team can use to contact you.
-            </p>
+              <h4 class="form-section-title">
+                Guest Details
+              </h4>
 
-
-            <div class="form-grid">
-
-
-              <div class="form-group">
-
-                <label for="guestName">
-                  Full Name <span>*</span>
-                </label>
-
-                <input
-                  type="text"
-                  id="guestName"
-                  name="Guest Name"
-                  placeholder="Your full name"
-                  autocomplete="name"
-                  required>
-
-              </div>
+              <p class="form-section-description">
+                Give us the details required to contact you
+                about your reservation request.
+              </p>
 
 
-              <div class="form-group">
-
-                <label for="phone">
-                  Mobile Number <span>*</span>
-                </label>
-
-                <input
-                  type="tel"
-                  id="phone"
-                  name="Mobile Number"
-                  placeholder="+91"
-                  autocomplete="tel"
-                  inputmode="tel"
-                  required>
-
-              </div>
+              <div class="form-grid">
 
 
-              <div class="form-group">
+                <!-- FULL NAME -->
 
-                <label for="email">
-                  Email Address <span>*</span>
-                </label>
+                <div class="form-field">
 
-                <input
-                  type="email"
-                  id="email"
-                  name="Email Address"
-                  placeholder="you@example.com"
-                  autocomplete="email"
-                  required>
+                  <label for="guestName">
+                    Full Name
+                    <span class="required">*</span>
+                  </label>
 
-              </div>
+                  <input
+                    type="text"
+                    id="guestName"
+                    name="Guest Name"
+                    placeholder="Your full name"
+                    autocomplete="name"
+                    required
+                  >
 
-
-              <div class="form-group">
-
-                <label for="company">
-                  Company / Organisation
-                </label>
-
-                <input
-                  type="text"
-                  id="company"
-                  name="Company / Organisation"
-                  placeholder="Optional">
-
-              </div>
+                </div>
 
 
-              <div class="form-group full">
+                <!-- PHONE -->
 
-                <label for="message">
-                  Special Requests
-                </label>
+                <div class="form-field">
 
-                <textarea
-                  id="message"
-                  name="Special Requests"
-                  placeholder="Airport transfer, room preference, special occasion, accessibility requirements, etc."></textarea>
+                  <label for="guestPhone">
+                    Mobile Number
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="guestPhone"
+                    name="Mobile Number"
+                    placeholder="+91"
+                    autocomplete="tel"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-field">
+
+                  <label for="guestEmail">
+                    Email Address
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    id="guestEmail"
+                    name="Email Address"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- COMPANY -->
+
+                <div class="form-field">
+
+                  <label for="company">
+                    Company / Organisation
+                  </label>
+
+                  <input
+                    type="text"
+                    id="company"
+                    name="Company / Organisation"
+                    placeholder="Optional"
+                  >
+
+                </div>
+
+
+                <!-- SPECIAL REQUEST -->
+
+                <div class="form-field full">
+
+                  <label for="specialRequest">
+                    Special Requests
+                  </label>
+
+                  <textarea
+                    id="specialRequest"
+                    name="Special Requests"
+                    placeholder="Please mention any special requests or requirements."
+                  ></textarea>
+
+                </div>
+
 
               </div>
 
             </div>
 
 
-            <!-- TERMS -->
+            <!-- =============================================
+                 TERMS
+                 ============================================= -->
 
             <div class="terms-box">
 
-              <input
-                type="checkbox"
-                id="terms"
-                name="Terms Accepted"
-                value="Yes"
-                required>
+              <label class="terms-label">
 
-              <label for="terms">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="Terms & Conditions"
+                  value="Accepted"
+                  required
+                >
 
-                I have read and agree to the
-                <a href="terms.html" target="_blank">
-                  Terms & Conditions
-                </a>
-                and understand that this form sends a reservation
-                request. The reservation is subject to availability
-                and confirmation by Hotel Vishaka Paark.
+                <span>
+
+                  I have read and agree to the
+                  <a
+                    href="terms.html"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Terms & Conditions
+                  </a>
+                  and understand that this reservation request
+                  is subject to room availability and confirmation
+                  by Hotel Vishaka Paark.
+
+                </span>
 
               </label>
 
             </div>
 
 
-            <!-- SUBMIT -->
+            <!-- =============================================
+                 SUBMIT
+                 ============================================= -->
 
-            <button
-              type="submit"
-              class="reservation-submit">
+            <div class="submit-area">
 
-              SEND RESERVATION REQUEST →
+              <button
+                type="submit"
+                class="submit-button"
+              >
+                SEND RESERVATION REQUEST →
+              </button>
 
-            </button>
+              <p class="submit-note">
+                Our team will contact you to confirm availability,
+                timings and reservation details.
+              </p>
+
+            </div>
 
 
-            <!-- SUCCESS MESSAGE -->
+            <!-- =============================================
+                 SUCCESS
+                 ============================================= -->
 
             <div
               class="reservation-success"
-              id="reservationSuccess">
+              id="reservationSuccess"
+            >
 
-              <h3>
-                Reservation request ready.
-              </h3>
+              <h4>
+                Reservation Request Received
+              </h4>
 
               <p>
-                Your email application should open with the reservation
-                details. Please send the email to complete the request.
-                Our hotel team can then confirm availability with you.
-
+                Thank you for contacting Hotel Vishaka Paark.
+                Your requested stay details have been submitted
+                for confirmation. Our team will contact you
+                regarding availability and booking confirmation.
               </p>
 
             </div>
@@ -1247,19 +1685,22 @@
 
 
         <!-- =================================================
-             SIDE INFORMATION
+             RIGHT SIDE
              ================================================= -->
 
-        <aside class="reservation-side">
+        <aside class="booking-side">
+
 
           <div class="kicker">
             HOTEL VISHaka PAARK
           </div>
 
+
           <h3>
             Stay with<br>
             <em>confidence.</em>
           </h3>
+
 
           <p>
             Whether you're visiting Coimbatore for business,
@@ -1267,6 +1708,8 @@
             to make your arrival and departure comfortable.
           </p>
 
+
+          <!-- FEATURE 1 -->
 
           <div class="side-feature">
 
@@ -1281,13 +1724,15 @@
               </strong>
 
               <span>
-                Flexible arrival support according to your travel schedule.
+                Specify your required check-in date and exact time.
               </span>
 
             </div>
 
           </div>
 
+
+          <!-- FEATURE 2 -->
 
           <div class="side-feature">
 
@@ -1302,13 +1747,15 @@
               </strong>
 
               <span>
-                Flexible departure assistance for a relaxed stay.
+                Specify your required check-out date and exact time.
               </span>
 
             </div>
 
           </div>
 
+
+          <!-- FEATURE 3 -->
 
           <div class="side-feature">
 
@@ -1331,6 +1778,8 @@
           </div>
 
 
+          <!-- FEATURE 4 -->
+
           <div class="side-feature">
 
             <div class="side-feature-icon">
@@ -1344,7 +1793,7 @@
               </strong>
 
               <span>
-                Speak directly with the hotel team for your request.
+                Contact our team directly for your reservation.
               </span>
 
             </div>
@@ -1352,15 +1801,19 @@
           </div>
 
 
-          <div class="contact-direct">
+          <!-- DIRECT CONTACT -->
 
-            <div class="contact-direct-title">
+          <div class="direct-contact">
+
+            <div class="direct-contact-title">
               CALL THE HOTEL
             </div>
+
 
             <a href="tel:04224695952">
               0422 4695952
             </a>
+
 
             <a href="tel:+919090927979">
               +91 90909 27979
@@ -1369,20 +1822,102 @@
           </div>
 
 
+          <!-- WHATSAPP -->
+
           <a
-            class="whatsapp-btn"
+            class="whatsapp-button"
             href="https://wa.me/919090927979?text=Hello%20Hotel%20Vishaka%20Paark%2C%20I%20would%20like%20to%20make%20a%20reservation."
             target="_blank"
-            rel="noopener">
-
+            rel="noopener"
+          >
             RESERVE VIA WHATSAPP →
-
           </a>
+
 
         </aside>
 
 
       </div>
+
+
+      <!-- =================================================
+           CONTACT STRIP
+           ================================================= -->
+
+      <div class="booking-contact-strip">
+
+
+        <div>
+
+          <div class="kicker">
+            NEED HELP?
+          </div>
+
+          <h3>
+            Speak with Vishaka Paark.
+          </h3>
+
+          <p>
+            For immediate assistance with room availability,
+            check-in timings, check-out timings or special
+            requirements, contact the hotel directly.
+          </p>
+
+        </div>
+
+
+        <div class="booking-contact-details">
+
+
+          <a href="tel:04224695952">
+
+            <span>
+              PHONE
+            </span>
+
+            0422 4695952
+
+          </a>
+
+
+          <a href="tel:+919090927979">
+
+            <span>
+              MOBILE
+            </span>
+
+            +91 90909 27979
+
+          </a>
+
+
+          <a href="mailto:hotelvishakapaark@gmail.com">
+
+            <span>
+              EMAIL
+            </span>
+
+            hotelvishakapaark@gmail.com
+
+          </a>
+
+
+          <a href="contact.html">
+
+            <span>
+              LOCATION
+            </span>
+
+            Saravanampatty, Coimbatore
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
@@ -1398,11 +1933,18 @@
     <div class="container footer-grid">
 
 
+      <!-- FOOTER BRAND -->
+
       <div>
 
         <div class="logo">
+
           VISHaka
-          <small>PAARK</small>
+
+          <small>
+            PAARK
+          </small>
+
         </div>
 
         <p>
@@ -1412,6 +1954,8 @@
 
       </div>
 
+
+      <!-- QUICK LINKS -->
 
       <div>
 
@@ -1438,6 +1982,8 @@
       </div>
 
 
+      <!-- USEFUL LINKS -->
+
       <div>
 
         <h4>
@@ -1462,6 +2008,8 @@
 
       </div>
 
+
+      <!-- CONTACT -->
 
       <div>
 
@@ -1493,9 +2041,12 @@
       </div>
 
 
+      <!-- COPYRIGHT -->
+
       <div class="copyright">
 
-        © 2026 Vishaka Paark. Demo website concept.
+        © 2026 Vishaka Paark.
+        Demo website concept.
 
       </div>
 
@@ -1511,99 +2062,254 @@
 
   <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
+    /* =========================================================
+       DATE ELEMENTS
+       ========================================================= */
 
-      const form = document.getElementById("reservationForm");
+    const checkinDate =
+      document.getElementById("checkinDate");
 
-      const checkin = document.getElementById("checkin");
+    const checkoutDate =
+      document.getElementById("checkoutDate");
 
-      const checkout = document.getElementById("checkout");
+    const checkinTime =
+      document.getElementById("checkinTime");
 
-      const success = document.getElementById("reservationSuccess");
-
-
-      /* -------------------------------------------------------
-         SET MINIMUM DATE TO TODAY
-         ------------------------------------------------------- */
-
-      const today = new Date();
-
-      const year = today.getFullYear();
-
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-
-      const day = String(today.getDate()).padStart(2, "0");
-
-      const todayString = `${year}-${month}-${day}`;
-
-      checkin.min = todayString;
-
-      checkout.min = todayString;
+    const checkoutTime =
+      document.getElementById("checkoutTime");
 
 
-      /* -------------------------------------------------------
-         CHECK-IN CHANGE
-         ------------------------------------------------------- */
+    /* =========================================================
+       TODAY'S DATE
+       ========================================================= */
 
-      checkin.addEventListener("change", function () {
+    const now =
+      new Date();
 
-        checkout.min = checkin.value;
+    const year =
+      now.getFullYear();
 
-        if (
-          checkout.value &&
-          checkout.value < checkin.value
-        ) {
-          checkout.value = "";
-        }
+    const month =
+      String(now.getMonth() + 1).padStart(2, "0");
 
-      });
+    const day =
+      String(now.getDate()).padStart(2, "0");
+
+    const today =
+      year + "-" + month + "-" + day;
 
 
-      /* -------------------------------------------------------
-         FORM SUBMISSION
-         ------------------------------------------------------- */
+    checkinDate.min =
+      today;
 
-      form.addEventListener("submit", function (event) {
+    checkoutDate.min =
+      today;
 
-        if (!form.checkValidity()) {
-          return;
-        }
+
+    /* =========================================================
+       CHECK-IN DATE CHANGE
+       ========================================================= */
+
+    checkinDate.addEventListener(
+      "change",
+      function () {
+
+        checkoutDate.min =
+          checkinDate.value;
+
 
         if (
-          checkin.value &&
-          checkout.value &&
-          checkout.value <= checkin.value
+          checkoutDate.value &&
+          checkoutDate.value < checkinDate.value
         ) {
 
-          event.preventDefault();
+          checkoutDate.value =
+            "";
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       FORM SUBMISSION
+       ========================================================= */
+
+    function handleReservation(event) {
+
+      event.preventDefault();
+
+
+      const form =
+        document.getElementById("reservationForm");
+
+
+      const success =
+        document.getElementById("reservationSuccess");
+
+
+      /* -------------------------------------------------------
+         BASIC HTML VALIDATION
+         ------------------------------------------------------- */
+
+      if (!form.checkValidity()) {
+
+        form.reportValidity();
+
+        return;
+
+      }
+
+
+      /* -------------------------------------------------------
+         DATE VALIDATION
+         ------------------------------------------------------- */
+
+      if (
+        checkoutDate.value <
+        checkinDate.value
+      ) {
+
+        alert(
+          "Check-out date must be after the check-in date."
+        );
+
+        checkoutDate.focus();
+
+        return;
+
+      }
+
+
+      /* -------------------------------------------------------
+         SAME DAY TIME VALIDATION
+         ------------------------------------------------------- */
+
+      if (
+        checkoutDate.value ===
+        checkinDate.value
+      ) {
+
+        if (
+          checkoutTime.value <=
+          checkinTime.value
+        ) {
 
           alert(
-            "Please select a check-out date after the check-in date."
+            "For the same date, check-out time must be later than check-in time."
           );
 
-          checkout.focus();
+          checkoutTime.focus();
 
           return;
 
         }
 
+      }
 
-        /*
-          The current demo uses mailto.
-          This opens the visitor's configured email application
-          with the reservation form as the email body.
 
-          A proper automatic email service/backend can be connected
-          later without changing the visible form design.
-        */
+      /* -------------------------------------------------------
+         GET ROOM TYPE
+         ------------------------------------------------------- */
 
-        success.classList.add("show");
+      const selectedRoom =
+        document.querySelector(
+          'input[name="Room Type"]:checked'
+        );
+
+
+      /* -------------------------------------------------------
+         BUILD RESERVATION INFORMATION
+         ------------------------------------------------------- */
+
+      const reservationData = {
+
+        guestName:
+          document.getElementById("guestName").value,
+
+        phone:
+          document.getElementById("guestPhone").value,
+
+        email:
+          document.getElementById("guestEmail").value,
+
+        checkinDate:
+          checkinDate.value,
+
+        checkinTime:
+          checkinTime.value,
+
+        checkoutDate:
+          checkoutDate.value,
+
+        checkoutTime:
+          checkoutTime.value,
+
+        guests:
+          document.getElementById("guests").value,
+
+        rooms:
+          document.getElementById("numberOfRooms").value,
+
+        roomType:
+          selectedRoom
+            ? selectedRoom.value
+            : "",
+
+        company:
+          document.getElementById("company").value,
+
+        specialRequest:
+          document.getElementById("specialRequest").value
+
+      };
+
+
+      /* -------------------------------------------------------
+         DEMO SUCCESS STATE
+         ------------------------------------------------------- */
+
+      success.classList.add("show");
+
+
+      success.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
 
       });
 
-    });
+
+      /* -------------------------------------------------------
+         KEEP DATA IN CONSOLE FOR DEMO TESTING
+         ------------------------------------------------------- */
+
+      console.log(
+        "Hotel Vishaka Paark Reservation Request:",
+        reservationData
+      );
+
+
+      /*
+        IMPORTANT:
+
+        This front-end demo validates and captures the
+        reservation information.
+
+        The actual automatic email delivery will be connected
+        separately through a form/email service or backend.
+
+        No visitor email application is required once the
+        production email service is connected.
+      */
+
+    }
+
 
   </script>
+
 
 </body>
 </html>
