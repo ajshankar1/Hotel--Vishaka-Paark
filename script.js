@@ -1,0 +1,1 @@
+function demoBook(){alert("Demo booking flow: connect this action to the existing Cheerze live booking URL after client approval.");}function demoForm(e){e.preventDefault();alert("Demo enquiry submitted. Connect this form to the hotel's preferred enquiry system.");}
