@@ -4,6 +4,47 @@ document.addEventListener("DOMContentLoaded", function () {
     Main website interactions
   */
 
+
+  // -----------------------------------------
+  // BRAND LOGO
+  // -----------------------------------------
+  // Keeps the same real logo on every page.
+  // The logo file is stored at:
+  // assets/branding/logo.png
+  // -----------------------------------------
+
+  const logoPath = "assets/branding/logo.png";
+
+  document.querySelectorAll(".logo").forEach(function (logoElement) {
+
+    // If the logo container already contains an image,
+    // simply correct its source.
+    const existingImage =
+      logoElement.querySelector("img");
+
+    if (existingImage) {
+
+      existingImage.src = logoPath;
+      existingImage.alt = "Vishaka Paark";
+
+      return;
+    }
+
+
+    // For pages where the logo is currently text,
+    // replace the text logo with the actual image.
+    const logoImage =
+      document.createElement("img");
+
+    logoImage.src = logoPath;
+    logoImage.alt = "Vishaka Paark";
+
+    logoElement.innerHTML = "";
+    logoElement.appendChild(logoImage);
+
+  });
+
+
   // -----------------------------------------
   // MOBILE NAVIGATION
   // -----------------------------------------
@@ -12,27 +53,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector(".nav");
 
   if (mobileButton && nav) {
+
     mobileButton.addEventListener("click", function () {
+
       nav.classList.toggle("show");
 
-      const isOpen = nav.classList.contains("show");
+      const isOpen =
+        nav.classList.contains("show");
 
       mobileButton.setAttribute(
         "aria-expanded",
         isOpen ? "true" : "false"
       );
+
     });
 
+
     nav.querySelectorAll("a").forEach(function (link) {
+
       link.addEventListener("click", function () {
+
         nav.classList.remove("show");
 
         mobileButton.setAttribute(
           "aria-expanded",
           "false"
         );
+
       });
+
     });
+
   }
 
 
@@ -40,10 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // SET MINIMUM CHECK-IN DATE
   // -----------------------------------------
 
-  const checkIn = document.getElementById("checkin");
-  const checkOut = document.getElementById("checkout");
+  const checkIn =
+    document.getElementById("checkin");
 
-  const today = new Date();
+  const checkOut =
+    document.getElementById("checkout");
+
+
+  const today =
+    new Date();
+
 
   const todayString =
     today.getFullYear() +
@@ -52,9 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "-" +
     String(today.getDate()).padStart(2, "0");
 
+
   if (checkIn) {
     checkIn.min = todayString;
   }
+
 
   if (checkOut) {
     checkOut.min = todayString;
@@ -73,14 +132,20 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      checkOut.min = checkIn.value;
+
+      checkOut.min =
+        checkIn.value;
+
 
       if (
         checkOut.value &&
         checkOut.value <= checkIn.value
       ) {
+
         checkOut.value = "";
+
       }
+
     });
 
   }
@@ -93,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const availabilityButton =
     document.querySelector(".booking button");
 
+
   if (availabilityButton) {
 
     availabilityButton.addEventListener(
@@ -102,14 +168,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const guests =
           document.getElementById("guests");
 
+
         const checkInValue =
           checkIn ? checkIn.value : "";
+
 
         const checkOutValue =
           checkOut ? checkOut.value : "";
 
+
         const guestsValue =
-          guests ? guests.value : "1 Room · 2 Adults";
+          guests
+            ? guests.value
+            : "1 Room · 2 Adults";
 
 
         if (!checkInValue || !checkOutValue) {
@@ -142,7 +213,8 @@ document.addEventListener("DOMContentLoaded", function () {
           encodeURIComponent(guestsValue);
 
 
-        window.location.href = bookingUrl;
+        window.location.href =
+          bookingUrl;
 
       }
     );
@@ -155,13 +227,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // -----------------------------------------
 
   const params =
-    new URLSearchParams(window.location.search);
+    new URLSearchParams(
+      window.location.search
+    );
+
 
   const bookingCheckIn =
     params.get("checkin");
 
+
   const bookingCheckOut =
     params.get("checkout");
+
 
   const bookingGuests =
     params.get("guests");
@@ -172,10 +249,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "#booking-checkin"
     );
 
+
   const bookingPageCheckOut =
     document.querySelector(
       "#booking-checkout"
     );
+
 
   const bookingPageGuests =
     document.querySelector(
@@ -187,8 +266,10 @@ document.addEventListener("DOMContentLoaded", function () {
     bookingPageCheckIn &&
     bookingCheckIn
   ) {
+
     bookingPageCheckIn.value =
       bookingCheckIn;
+
   }
 
 
@@ -196,8 +277,10 @@ document.addEventListener("DOMContentLoaded", function () {
     bookingPageCheckOut &&
     bookingCheckOut
   ) {
+
     bookingPageCheckOut.value =
       bookingCheckOut;
+
   }
 
 
@@ -211,15 +294,19 @@ document.addEventListener("DOMContentLoaded", function () {
         bookingPageGuests.options
       ).find(function (option) {
 
-        return option.value === bookingGuests ||
-          option.textContent.trim() === bookingGuests;
+        return (
+          option.value === bookingGuests ||
+          option.textContent.trim() === bookingGuests
+        );
 
       });
 
 
     if (matchingOption) {
+
       bookingPageGuests.value =
         matchingOption.value;
+
     }
 
   }
@@ -240,21 +327,28 @@ document.addEventListener("DOMContentLoaded", function () {
           const targetId =
             anchor.getAttribute("href");
 
+
           if (
             !targetId ||
             targetId === "#"
           ) {
+
             return;
+
           }
+
 
           const target =
             document.querySelector(targetId);
+
 
           if (!target) {
             return;
           }
 
+
           event.preventDefault();
+
 
           target.scrollIntoView({
             behavior: "smooth",
@@ -273,6 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const header =
     document.querySelector(".header");
+
 
   if (header) {
 
@@ -294,12 +389,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     updateHeader();
+
 
     window.addEventListener(
       "scroll",
       updateHeader,
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
   }
@@ -322,7 +421,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const observer =
       new IntersectionObserver(
-        function (entries, observerInstance) {
+        function (
+          entries,
+          observerInstance
+        ) {
 
           entries.forEach(function (entry) {
 
@@ -330,9 +432,11 @@ document.addEventListener("DOMContentLoaded", function () {
               return;
             }
 
+
             entry.target.classList.add(
               "is-visible"
             );
+
 
             observerInstance.unobserve(
               entry.target
@@ -353,6 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
         element.classList.add(
           "reveal"
         );
+
 
         observer.observe(element);
 
@@ -419,8 +524,10 @@ function demoBook() {
   const checkIn =
     document.getElementById("checkin");
 
+
   const checkOut =
     document.getElementById("checkout");
+
 
   const guests =
     document.getElementById("guests");
@@ -470,7 +577,8 @@ function demoBook() {
     encodeURIComponent(guestsValue);
 
 
-  window.location.href = url;
+  window.location.href =
+    url;
 }
 
 
@@ -481,7 +589,10 @@ function demoBook() {
 function showNotice(message) {
 
   const existing =
-    document.querySelector(".site-notice");
+    document.querySelector(
+      ".site-notice"
+    );
+
 
   if (existing) {
     existing.remove();
@@ -490,6 +601,7 @@ function showNotice(message) {
 
   const notice =
     document.createElement("div");
+
 
   notice.className =
     "site-notice";
@@ -503,17 +615,23 @@ function showNotice(message) {
   `;
 
 
-  document.body.appendChild(notice);
+  document.body.appendChild(
+    notice
+  );
 
 
   const closeButton =
-    notice.querySelector("button");
+    notice.querySelector(
+      "button"
+    );
 
 
   closeButton.addEventListener(
     "click",
     function () {
+
       notice.remove();
+
     }
   );
 
@@ -539,11 +657,27 @@ function showNotice(message) {
 function escapeHtml(value) {
 
   return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+    .replace(
+      /</g,
+      "&lt;"
+    )
+    .replace(
+      />/g,
+      "&gt;"
+    )
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
 }
 
 
