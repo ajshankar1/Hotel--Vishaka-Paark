@@ -1,3 +1,857 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blog Details | Vishaka Paark</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="topbar"><div><span>Welcome to Vishaka Paark</span><span>Coimbatore, Tamil Nadu</span></div><div>Comfort · Hospitality · Stay</div></div><header class="header"><a class="logo" href="index.html">VISHaka <small>PAARK</small></a><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="rooms.html">Rooms & Suites</a><a class="" href="about.html">About</a><a class="" href="services.html">Services</a><a class="" href="offers.html">Offers</a><a class="" href="gallery.html">Gallery</a><a class="" href="contact.html">Contact</a></nav><a class="header-btn" href="booking.html">BOOK NOW ↗</a><button class="mobile-nav" onclick="document.querySelector('.nav').classList.toggle('show')">☰</button></header><section class="page-hero"><div class="container"><div class="kicker">BLOG</div><h1>What makes a stay feel effortless.</h1></div></section><section class="section"><div class="container legal"><div class="photo" style="min-height:430px;background-image:url(https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1500&q=88);margin-bottom:45px"></div><p>A good hotel experience is rarely about one single feature. It is the combination of an easy arrival, a comfortable room, thoughtful service and clear information.</p><h2>Comfort first</h2><p>The right room should let you settle in quickly. At Vishaka Paark, the room categories are designed to give guests a clear choice based on their stay.</p><h2>Simple booking</h2><p>A strong booking experience should make dates, guests, availability and confirmation easy to understand. The website demo is structured around that principle.</p><h2>Thoughtful hospitality</h2><p>The final detail is service: responsive, warm and practical. That is what turns a room into a stay worth remembering.</p></div></section><footer class="footer"><div class="container footer-grid"><div><div class="logo">VISHaka <small>PAARK</small></div><p>A contemporary stay designed around comfort, thoughtful hospitality and easy living in Coimbatore.</p></div><div><h4>Quick Links</h4><a href="about.html">About Hotel</a><a href="rooms.html">Rooms & Suites</a><a href="services.html">Services</a><a href="offers.html">Offers</a></div><div><h4>Useful Links</h4><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="terms.html">Terms & Conditions</a><a href="privacy.html">Privacy Policy</a></div><div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>For reservations, please use our direct booking option.</p><a href="contact.html">Contact Us →</a></div><div class="copyright">© 2026 Vishaka Paark. Demo website concept.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Blog Details | Vishaka Paark</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+
+  <style>
+
+    :root {
+      --vp-brown: #47260E;
+      --vp-walnut: #684A2F;
+      --vp-gold: #D6A84F;
+      --vp-champagne: #E8D09A;
+      --vp-ivory: #F7F3EA;
+      --vp-sand: #EDE4D5;
+      --vp-espresso: #2B211A;
+      --vp-taupe: #756A5E;
+      --vp-line: rgba(71,38,14,.14);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      background: var(--vp-ivory);
+      color: var(--vp-espresso);
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       TOP BAR
+       ========================= */
+
+    .topbar {
+      min-height: 42px;
+      padding: 0 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: var(--vp-brown);
+      color: rgba(255,255,255,.78);
+
+      font-size: 11px;
+      letter-spacing: .07em;
+    }
+
+    .topbar > div {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .header {
+      min-height: 92px;
+      padding: 0 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+
+      background: var(--vp-ivory);
+      border-bottom: 1px solid var(--vp-line);
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+
+      min-width: 155px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", serif;
+      font-size: 29px;
+      line-height: 1;
+    }
+
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 27px;
+    }
+
+
+    .nav a {
+      position: relative;
+
+      padding: 8px 0;
+
+      color: var(--vp-espresso);
+
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .06em;
+    }
+
+
+    .nav a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--vp-gold);
+
+      transition: width .2s ease;
+    }
+
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--vp-brown);
+    }
+
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 45px;
+      padding: 0 20px;
+
+      background: var(--vp-brown);
+      border: 1px solid var(--vp-brown);
+
+      color: #fff;
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+
+      transition: .2s ease;
+    }
+
+
+    .header-btn:hover {
+      background: var(--vp-gold);
+      border-color: var(--vp-gold);
+      color: var(--vp-brown);
+    }
+
+
+    .mobile-nav {
+      display: none;
+
+      border: 0;
+      background: transparent;
+      color: var(--vp-brown);
+
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       BLOG HERO
+       ========================= */
+
+    .page-hero {
+      min-height: 470px;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 90px 0;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(43,33,26,.86),
+          rgba(43,33,26,.53),
+          rgba(43,33,26,.20)
+        ),
+        url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=90")
+        center / cover no-repeat;
+    }
+
+
+    .page-hero .container {
+      width: min(1180px, calc(100% - 80px));
+      margin: 0 auto;
+    }
+
+
+    .page-hero .kicker {
+      color: var(--vp-champagne);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .20em;
+    }
+
+
+    .page-hero h1 {
+      max-width: 900px;
+
+      margin: 18px 0 0;
+
+      color: #fff;
+
+      font-family: "Gilda Display", serif;
+      font-size: clamp(52px, 6vw, 82px);
+      line-height: 1.02;
+      font-weight: 400;
+    }
+
+
+    /* =========================
+       ARTICLE
+       ========================= */
+
+    .section {
+      padding: 105px 0 115px;
+
+      background: var(--vp-ivory);
+    }
+
+
+    .section .container {
+      width: min(900px, calc(100% - 80px));
+      margin: 0 auto;
+    }
+
+
+    .legal {
+      color: var(--vp-taupe);
+    }
+
+
+    .photo {
+      width: 100%;
+      min-height: 500px;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      border: 1px solid var(--vp-line);
+    }
+
+
+    .legal p {
+      margin: 0 0 28px;
+
+      color: var(--vp-taupe);
+
+      font-size: 14px;
+      line-height: 2;
+    }
+
+
+    .legal h2 {
+      margin: 55px 0 17px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", serif;
+      font-size: 37px;
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+
+    .legal h2::after {
+      content: "";
+
+      display: block;
+
+      width: 42px;
+      height: 2px;
+
+      margin-top: 15px;
+
+      background: var(--vp-gold);
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    .footer {
+      background: var(--vp-espresso);
+      color: #fff;
+    }
+
+
+    .footer .container {
+      width: min(1240px, calc(100% - 80px));
+      margin: 0 auto;
+    }
+
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .75fr .75fr 1fr;
+      gap: 55px;
+
+      padding: 75px 0 30px;
+    }
+
+
+    .footer .logo {
+      min-width: 0;
+      margin-bottom: 18px;
+    }
+
+
+    .footer .logo img {
+      height: 58px;
+      max-width: 175px;
+    }
+
+
+    .footer p {
+      max-width: 340px;
+
+      margin: 0;
+
+      color: rgba(255,255,255,.62);
+
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+
+    .footer h4 {
+      margin: 0 0 20px;
+
+      color: var(--vp-champagne);
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+
+    .footer a:not(.logo) {
+      display: block;
+
+      margin-bottom: 11px;
+
+      color: rgba(255,255,255,.66);
+
+      font-size: 11px;
+
+      transition: color .2s ease;
+    }
+
+
+    .footer a:not(.logo):hover {
+      color: var(--vp-gold);
+    }
+
+
+    .copyright {
+      grid-column: 1 / -1;
+
+      margin-top: 20px;
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(255,255,255,.10);
+
+      color: rgba(255,255,255,.36);
+
+      font-size: 10px;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 1050px) {
+
+      .header,
+      .topbar {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .nav {
+        gap: 18px;
+      }
+
+      .nav a {
+        font-size: 9px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 850px) {
+
+      .nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .header-btn {
+        margin-left: auto;
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .topbar {
+        display: none;
+      }
+
+      .header {
+        min-height: 76px;
+        padding: 0 20px;
+      }
+
+      .logo img {
+        height: 52px;
+        max-width: 155px;
+      }
+
+      .header-btn {
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 8px;
+      }
+
+      .page-hero {
+        min-height: 400px;
+        padding: 75px 0;
+      }
+
+      .page-hero .container,
+      .section .container,
+      .footer .container {
+        width: min(100% - 40px, 600px);
+      }
+
+      .page-hero h1 {
+        font-size: 52px;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .photo {
+        min-height: 330px !important;
+      }
+
+      .legal p {
+        font-size: 13px;
+        line-height: 1.85;
+      }
+
+      .legal h2 {
+        font-size: 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .copyright {
+        margin-top: 0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- TOP BAR -->
+
+  <div class="topbar">
+
+    <div>
+
+      <span>
+        Welcome to Vishaka Paark
+      </span>
+
+      <span>
+        Coimbatore, Tamil Nadu
+      </span>
+
+    </div>
+
+    <div>
+      Comfort · Hospitality · Stay
+    </div>
+
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+
+    <a
+      class="logo"
+      href="index.html"
+      aria-label="Vishaka Paark"
+    >
+
+      <img
+        src="assets/branding/logo.png"
+        alt="Vishaka Paark"
+      >
+
+    </a>
+
+
+    <nav class="nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms &amp; Suites
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <a
+      class="header-btn"
+      href="booking.html"
+    >
+      BOOK NOW ↗
+    </a>
+
+
+    <button
+      class="mobile-nav"
+      type="button"
+      aria-label="Open navigation"
+      onclick="document.querySelector('.nav').classList.toggle('show')"
+    >
+      ☰
+    </button>
+
+
+  </header>
+
+
+  <!-- BLOG HERO -->
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <div class="kicker">
+        BLOG
+      </div>
+
+      <h1>
+        What makes a stay
+        <br>
+        feel effortless.
+      </h1>
+
+    </div>
+
+  </section>
+
+
+  <!-- ARTICLE -->
+
+  <section class="section">
+
+    <div class="container legal">
+
+
+      <div
+        class="photo"
+        style="
+          min-height:430px;
+          background-image:url(https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1500&q=88);
+          margin-bottom:45px
+        "
+      ></div>
+
+
+      <p>
+        A good hotel experience is rarely about one single feature.
+        It is the combination of an easy arrival, a comfortable room,
+        thoughtful service and clear information.
+      </p>
+
+
+      <h2>
+        Comfort first
+      </h2>
+
+
+      <p>
+        The right room should let you settle in quickly.
+        At Vishaka Paark, the room categories are designed to give
+        guests a clear choice based on their stay.
+      </p>
+
+
+      <h2>
+        Simple booking
+      </h2>
+
+
+      <p>
+        A strong booking experience should make dates, guests,
+        availability and confirmation easy to understand.
+        The website demo is structured around that principle.
+      </p>
+
+
+      <h2>
+        Thoughtful hospitality
+      </h2>
+
+
+      <p>
+        The final detail is service: responsive, warm and practical.
+        That is what turns a room into a stay worth remembering.
+      </p>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <a
+            class="logo"
+            href="index.html"
+            aria-label="Vishaka Paark"
+          >
+
+            <img
+              src="assets/branding/logo.png"
+              alt="Vishaka Paark"
+            >
+
+          </a>
+
+
+          <p>
+            A contemporary stay designed around comfort,
+            thoughtful hospitality and easy living in Coimbatore.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Quick Links
+          </h4>
+
+          <a href="about.html">
+            About Hotel
+          </a>
+
+          <a href="rooms.html">
+            Rooms &amp; Suites
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="offers.html">
+            Offers
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Useful Links
+          </h4>
+
+          <a href="gallery.html">
+            Gallery
+          </a>
+
+          <a href="faq.html">
+            FAQ
+          </a>
+
+          <a href="terms.html">
+            Terms &amp; Conditions
+          </a>
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Contact
+          </h4>
+
+          <p>
+            Coimbatore, Tamil Nadu
+          </p>
+
+          <p>
+            For reservations, please use our direct booking option.
+          </p>
+
+          <a href="contact.html">
+            Contact Us →
+          </a>
+
+        </div>
+
+
+        <div class="copyright">
+
+          © 2026 Vishaka Paark. Demo website concept.
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
