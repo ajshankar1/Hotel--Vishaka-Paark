@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,10 +21,6 @@
   >
 
   <style>
-    /* =========================================================
-       RESET
-       ========================================================= */
-
     * {
       box-sizing: border-box;
     }
@@ -43,7 +40,7 @@
 
     img {
       display: block;
-      width: 100%;
+      max-width: 100%;
     }
 
     a {
@@ -114,73 +111,36 @@
 
     .brand {
       display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      font-family: "Gilda Display", serif;
-      font-size: 30px;
-      line-height: .85;
-      letter-spacing: .02em;
-      color: #fff;
+      align-items: center;
+      flex-shrink: 0;
     }
 
-    .brand small {
-      margin-top: 9px;
-
-      font-family: "Plus Jakarta Sans", Arial, sans-serif;
-      font-size: 9px;
-      line-height: 1;
-      font-weight: 600;
-      letter-spacing: .38em;
-      color: #b28a4c;
+    .brand img {
+      width: auto;
+      height: 62px;
+      max-width: 190px;
+      object-fit: contain;
     }
 
     .main-nav {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 34px;
+      gap: 28px;
+
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     .main-nav a {
-      position: relative;
-
-      color: rgba(255,255,255,.76);
-
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-
+      color: rgba(255,255,255,.72);
       transition: color .2s ease;
-    }
-
-    .main-nav a::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -10px;
-
-      height: 1px;
-
-      background: #b28a4c;
-
-      transform: scaleX(0);
-      transform-origin: center;
-
-      transition: transform .2s ease;
     }
 
     .main-nav a:hover,
     .main-nav a.active {
-      color: #fff;
-    }
-
-    .main-nav a:hover::after,
-    .main-nav a.active::after {
-      transform: scaleX(1);
+      color: #d0a86b;
     }
 
     .book-button {
@@ -188,16 +148,16 @@
       align-items: center;
       justify-content: center;
 
-      min-height: 46px;
+      min-height: 48px;
       padding: 0 22px;
 
-      border: 1px solid #b28a4c;
-
+      background: #b28a4c;
       color: #fff;
 
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 10px;
+      font-weight: 700;
       letter-spacing: .14em;
+      text-transform: uppercase;
 
       transition:
         background .2s ease,
@@ -205,8 +165,7 @@
     }
 
     .book-button:hover {
-      background: #b28a4c;
-      color: #171310;
+      background: #d0a86b;
     }
 
 
@@ -215,70 +174,62 @@
        ========================================================= */
 
     .about-hero {
-      min-height: 570px;
+      min-height: 610px;
 
       display: flex;
       align-items: flex-end;
 
-      position: relative;
-
-      overflow: hidden;
-
       background:
         linear-gradient(
-          90deg,
-          rgba(15,12,10,.82),
-          rgba(15,12,10,.38),
-          rgba(15,12,10,.12)
+          to right,
+          rgba(23,19,16,.70),
+          rgba(23,19,16,.18)
         ),
-        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=90")
+        url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=90")
         center / cover no-repeat;
+
+      color: #fff;
     }
 
     .about-hero-content {
       width: min(1240px, calc(100% - 80px));
       margin: 0 auto;
-      padding: 110px 0 95px;
-      color: #fff;
+      padding: 110px 0 90px;
     }
 
     .eyebrow {
       display: block;
 
-      margin-bottom: 22px;
+      color: #d0a86b;
 
-      color: #c29a5d;
-
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: .28em;
+      letter-spacing: .24em;
       text-transform: uppercase;
     }
 
     .about-hero h1 {
-      max-width: 850px;
-
-      margin: 0;
+      margin: 20px 0 0;
 
       font-family: "Gilda Display", serif;
-      font-size: clamp(58px, 7vw, 100px);
+      font-size: clamp(58px, 7vw, 96px);
       line-height: .98;
       font-weight: 400;
       letter-spacing: -.025em;
     }
 
     .about-hero h1 em {
-      color: #d0ad76;
+      color: #d0a86b;
       font-style: italic;
     }
 
     .hero-line {
-      width: 80px;
+      width: 90px;
       height: 1px;
 
-      margin-top: 34px;
+      margin-top: 32px;
 
-      background: #b28a4c;
+      background: #d0a86b;
     }
 
 
@@ -769,24 +720,16 @@
 
     .footer-brand {
       display: inline-flex;
-      flex-direction: column;
+      align-items: center;
 
       margin-bottom: 20px;
-
-      font-family: "Gilda Display", serif;
-      font-size: 31px;
-      line-height: .9;
-      color: #fff;
     }
 
-    .footer-brand small {
-      margin-top: 8px;
-
-      font-family: "Plus Jakarta Sans", Arial, sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: .35em;
-      color: #b28a4c;
+    .footer-brand img {
+      width: auto;
+      height: 58px;
+      max-width: 180px;
+      object-fit: contain;
     }
 
     .footer-about {
@@ -909,8 +852,9 @@
         min-height: 76px;
       }
 
-      .brand {
-        font-size: 25px;
+      .brand img {
+        height: 52px;
+        max-width: 160px;
       }
 
       .book-button {
@@ -981,6 +925,11 @@
         gap: 35px;
       }
 
+      .footer-brand img {
+        height: 52px;
+        max-width: 160px;
+      }
+
       .footer-bottom {
         margin-top: 35px;
       }
@@ -996,6 +945,7 @@
        ========================================================= -->
 
   <div class="topbar">
+
     <div class="topbar-left">
       <span>Welcome to Vishaka Paark</span>
       <span>Coimbatore, Tamil Nadu</span>
@@ -1005,27 +955,61 @@
       <span>0422 4695952</span>
       <span>+91 90909 27979</span>
     </div>
+
   </div>
 
 
   <header class="site-header">
 
-    <a class="brand" href="index.html">
-      VISHaka
-      <small>PAARK</small>
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Vishaka Paark"
+    >
+      <img
+        src="assets/branding/logo.png"
+        alt="Vishaka Paark"
+      >
     </a>
 
+
     <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms & Suites</a>
-      <a class="active" href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="offers.html">Offers</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="rooms.html">
+        Rooms & Suites
+      </a>
+
+      <a class="active" href="about.html">
+        About
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="offers.html">
+        Offers
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
 
-    <a class="book-button" href="booking.html">
+
+    <a
+      class="book-button"
+      href="booking.html"
+    >
       BOOK NOW ↗
     </a>
 
@@ -1102,11 +1086,15 @@
           </p>
 
           <div class="story-signature">
-            <strong>Vishaka Paark</strong>
+
+            <strong>
+              Vishaka Paark
+            </strong>
 
             <span>
               Comfort · Convenience · Hospitality
             </span>
+
           </div>
 
         </div>
@@ -1127,7 +1115,6 @@
     <div class="container">
 
       <div class="experience-grid">
-
 
         <div class="experience-intro">
 
@@ -1159,6 +1146,7 @@
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
                 <path d="M4 20h16"></path>
                 <path d="M6 20V9h12v11"></path>
@@ -1166,9 +1154,12 @@
                 <path d="M9 13h6"></path>
                 <path d="M9 16h6"></path>
               </svg>
+
             </div>
 
-            <h3>24/7 Front Desk</h3>
+            <h3>
+              24/7 Front Desk
+            </h3>
 
             <p>
               Guest assistance whenever you need it,
@@ -1183,40 +1174,52 @@
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
-                <path d="M3 8.5C8.5 4 15.5 4 21 8.5"></path>
-                <path d="M6 12c4-3 8-3 12 0"></path>
-                <path d="M9.5 15.5c1.7-1.2 3.3-1.2 5 0"></path>
-                <circle cx="12" cy="19" r="1"></circle>
+                <path d="M5 9.5a11 11 0 0 1 14 0"></path>
+                <path d="M8 12.5a6.5 6.5 0 0 1 8 0"></path>
+                <path d="M11 15.5a2 2 0 0 1 2 0"></path>
+                <circle cx="12" cy="18" r=".7"></circle>
               </svg>
+
             </div>
 
-            <h3>High-Speed Wi-Fi</h3>
+            <h3>
+              Wi-Fi
+            </h3>
 
             <p>
-              Stay connected throughout your visit,
-              whether working or relaxing.
+              Stay connected throughout your visit
+              with convenient guest Wi-Fi.
             </p>
 
           </div>
 
 
-          <!-- SECURITY -->
+          <!-- AIR CONDITIONING -->
 
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
-                <path d="M12 3l7 3v5c0 5-3 8.2-7 10-4-1.8-7-5-7-10V6l7-3z"></path>
-                <path d="M9 12l2 2 4-4"></path>
+                <path d="M4 7h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 17h16"></path>
+                <path d="M7 5v4"></path>
+                <path d="M17 10v4"></path>
+                <path d="M9 15v4"></path>
               </svg>
+
             </div>
 
-            <h3>Security & CCTV</h3>
+            <h3>
+              Air Conditioning
+            </h3>
 
             <p>
-              A secure environment designed to give
-              guests peace of mind.
+              Comfortable room conditions throughout
+              your stay.
             </p>
 
           </div>
@@ -1227,40 +1230,23 @@
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
-                <path d="M5 18V8h10l4 4v6"></path>
-                <path d="M5 12h10"></path>
-                <path d="M9 8l1.5-3h4L16 8"></path>
-                <circle cx="8" cy="18" r="2"></circle>
-                <circle cx="17" cy="18" r="2"></circle>
+                <path d="M5 17V8h9a3 3 0 0 1 0 6H5"></path>
+                <path d="M8 17v2"></path>
+                <path d="M16 17v2"></path>
+                <path d="M7 20h10"></path>
               </svg>
+
             </div>
 
-            <h3>Convenient Parking</h3>
+            <h3>
+              Parking
+            </h3>
 
             <p>
-              Practical parking facilities for guests
-              arriving by car.
-            </p>
-
-          </div>
-
-
-          <!-- POWER -->
-
-          <div class="experience-card">
-
-            <div class="experience-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M13 2L5 13h6l-1 9 8-12h-6l1-8z"></path>
-              </svg>
-            </div>
-
-            <h3>Power Backup</h3>
-
-            <p>
-              Reliable continuity so your stay remains
-              comfortable.
+              Convenient parking facilities for
+              arriving and departing guests.
             </p>
 
           </div>
@@ -1271,15 +1257,19 @@
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
                 <path d="M4 11h13v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3z"></path>
                 <path d="M17 12h2a2.5 2.5 0 0 1 0 5h-2"></path>
                 <path d="M7 7c0-1 1-1 1-2"></path>
                 <path d="M11 7c0-1 1-1 1-2"></path>
               </svg>
+
             </div>
 
-            <h3>Breakfast</h3>
+            <h3>
+              Breakfast
+            </h3>
 
             <p>
               A convenient start to the day for
@@ -1294,13 +1284,17 @@
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
                 <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"></path>
                 <path d="M9 16c.8 1.3 1.8 2 3 2"></path>
               </svg>
+
             </div>
 
-            <h3>Hot & Cold Water</h3>
+            <h3>
+              Hot & Cold Water
+            </h3>
 
             <p>
               Essential everyday comfort throughout
@@ -1315,15 +1309,19 @@
           <div class="experience-card">
 
             <div class="experience-icon">
+
               <svg viewBox="0 0 24 24">
                 <rect x="3" y="5" width="18" height="13" rx="1"></rect>
                 <path d="M8 21h8"></path>
                 <path d="M12 18v3"></path>
                 <path d="M10 9l5 2.5-5 2.5V9z"></path>
               </svg>
+
             </div>
 
-            <h3>In-Room Entertainment</h3>
+            <h3>
+              In-Room Entertainment
+            </h3>
 
             <p>
               Relax with convenient entertainment
@@ -1394,7 +1392,7 @@
           </p>
 
           <span class="hour-note">
-            24-Hour Check-In
+            Flexible arrival
           </span>
 
         </div>
@@ -1409,17 +1407,17 @@
           </span>
 
           <h3>
-            24 Hours
+            Flexible
           </h3>
 
           <p>
-            Check-out is flexible around your schedule.
-            Guests can provide their required check-out
-            time while making the reservation.
+            Guests can provide their preferred
+            departure time while making a reservation.
+            Our team will assist with the arrangements.
           </p>
 
           <span class="hour-note">
-            24-Hour Check-Out
+            Plan ahead
           </span>
 
         </div>
@@ -1433,7 +1431,7 @@
 
 
   <!-- =========================================================
-       LOCATION & CONTACT
+       LOCATION
        ========================================================= -->
 
   <section class="location-section">
@@ -1442,14 +1440,13 @@
 
       <div class="location-grid">
 
-
         <div class="location-image"></div>
 
 
         <div>
 
           <div class="section-label">
-            FIND US
+            OUR LOCATION
           </div>
 
           <h2 class="section-title">
@@ -1539,7 +1536,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -1598,10 +1594,19 @@
 
         <div>
 
-          <div class="footer-brand">
-            VISHaka
-            <small>PAARK</small>
-          </div>
+          <a
+            class="footer-brand"
+            href="index.html"
+            aria-label="Vishaka Paark"
+          >
+
+            <img
+              src="assets/branding/logo.png"
+              alt="Vishaka Paark"
+            >
+
+          </a>
+
 
           <p class="footer-about">
             A contemporary stay designed around comfort,
@@ -1711,6 +1716,6 @@
 
   </footer>
 
-
 </body>
+
 </html>
