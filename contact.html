@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +9,7 @@
 
   <meta
     name="description"
-    content="Contact Vishaka Paark, Saravanampatty, Coimbatore for room bookings, enquiries and directions."
+    content="Contact Hotel Vishaka Paark in Saravanampatty, Coimbatore for reservations, enquiries and assistance."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,101 +23,325 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    .page-hero {
-      min-height: 480px;
-      padding: 100px 0;
+
+    /* =========================================================
+       VISHAKA PAARK — CONTACT BRAND LAYER
+       ========================================================= */
+
+    :root {
+      --vp-brown: #47260E;
+      --vp-walnut: #684A2F;
+      --vp-gold: #D6A84F;
+      --vp-champagne: #E8D09A;
+      --vp-cream: #F7F3EA;
+      --vp-sand: #EDE4D5;
+      --vp-espresso: #2B211A;
+      --vp-taupe: #756A5E;
+      --vp-white: #ffffff;
+      --vp-line: rgba(71, 38, 14, 0.14);
+    }
+
+    body {
+      background: var(--vp-cream);
+      color: var(--vp-espresso);
+    }
+
+    /* =========================================================
+       BRAND LOGO
+       ========================================================= */
+
+    .vp-brand {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .vp-brand img {
+      display: block;
+      width: auto;
+      height: 62px;
+      max-width: 190px;
+      object-fit: contain;
+    }
+
+    .vp-footer-brand {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 18px;
+      text-decoration: none;
+    }
+
+    .vp-footer-brand img {
+      display: block;
+      width: auto;
+      height: 58px;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .contact-hero {
       position: relative;
+      min-height: 500px;
+
       display: flex;
       align-items: flex-end;
+
+      padding: 120px 0 82px;
+
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,.78),
-          rgba(0,0,0,.22)
+          rgba(43, 33, 26, 0.94) 0%,
+          rgba(71, 38, 14, 0.82) 48%,
+          rgba(71, 38, 14, 0.50) 100%
         ),
-        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=90")
-        center / cover;
-      color: #fff;
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=88")
+        center / cover no-repeat;
     }
 
-    .page-hero h1 {
-      max-width: 900px;
-      font-family: var(--serif);
-      font-size: clamp(58px, 7vw, 94px);
+    .contact-hero-inner {
+      width: min(1240px, calc(100% - 80px));
+      margin: 0 auto;
+    }
+
+    .contact-hero .eyebrow {
+      display: block;
+      margin-bottom: 18px;
+
+      color: var(--vp-gold);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .contact-hero h1 {
+      margin: 0;
+      max-width: 850px;
+
+      color: var(--vp-white);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: clamp(50px, 7vw, 84px);
       font-weight: 400;
-      line-height: .98;
-      letter-spacing: -.035em;
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+    }
+
+    .contact-hero h1 em {
+      color: var(--vp-champagne);
+      font-style: italic;
+    }
+
+    .contact-hero-line {
+      width: 78px;
+      height: 1px;
+      margin-top: 30px;
+      background: var(--vp-gold);
+    }
+
+    /* =========================================================
+       MAIN CONTACT AREA
+       ========================================================= */
+
+    .contact-main {
+      padding: 100px 0;
+      background: var(--vp-cream);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 50px;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 70px;
+      align-items: start;
     }
 
+    /* =========================================================
+       LEFT CONTACT DETAILS
+       ========================================================= */
+
     .contact-details {
-      padding-right: 25px;
+      padding-right: 20px;
+    }
+
+    .contact-details .kicker {
+      margin-bottom: 16px;
+
+      color: var(--vp-gold);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .contact-details h2 {
+      margin: 0 0 36px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: clamp(42px, 5vw, 62px);
+      font-weight: 400;
+      line-height: 1.04;
+    }
+
+    .contact-details h2 em {
+      color: var(--vp-gold);
+      font-style: italic;
     }
 
     .contact-block {
-      padding: 25px 0;
-      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      border-top: 1px solid var(--vp-line);
     }
 
-    .contact-block:last-child {
-      border-bottom: 1px solid var(--line);
+    .contact-block:last-of-type {
+      border-bottom: 1px solid var(--vp-line);
     }
 
     .contact-label {
-      margin-bottom: 10px;
-      color: #aaa69e;
+      margin-bottom: 9px;
+
+      color: var(--vp-gold);
+
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
     }
 
     .contact-block h3 {
-      margin-bottom: 8px;
-      font-family: var(--serif);
+      margin: 0 0 7px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
       font-size: 27px;
       font-weight: 400;
+      line-height: 1.2;
     }
 
     .contact-block p,
     .contact-block a {
-      color: var(--muted);
+      color: var(--vp-taupe);
+
       font-size: 13px;
       line-height: 1.8;
       text-decoration: none;
     }
 
     .contact-block a:hover {
-      color: #171714;
+      color: var(--vp-gold);
     }
 
     .contact-actions {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
-      margin-top: 25px;
+      gap: 12px;
+      margin-top: 27px;
     }
 
+    .contact-action-primary,
+    .contact-action-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 51px;
+      padding: 0 23px;
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .contact-action-primary {
+      background: var(--vp-brown);
+      color: var(--vp-white);
+      border: 1px solid var(--vp-brown);
+    }
+
+    .contact-action-primary:hover {
+      background: var(--vp-gold);
+      border-color: var(--vp-gold);
+      color: var(--vp-brown);
+      transform: translateY(-2px);
+    }
+
+    .contact-action-secondary {
+      background: transparent;
+      color: var(--vp-brown);
+      border: 1px solid var(--vp-gold);
+    }
+
+    .contact-action-secondary:hover {
+      background: var(--vp-gold);
+      color: var(--vp-brown);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       ENQUIRY FORM
+       ========================================================= */
+
     .contact-form-wrap {
-      padding: 45px;
-      background: #fff;
-      border: 1px solid var(--line);
+      padding: 46px;
+
+      background: var(--vp-white);
+
+      border: 1px solid var(--vp-line);
+
+      box-shadow:
+        0 22px 55px rgba(43, 33, 26, 0.07);
+    }
+
+    .contact-form-wrap .kicker {
+      margin-bottom: 14px;
+
+      color: var(--vp-gold);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
     }
 
     .contact-form-wrap h2 {
-      margin-bottom: 12px;
-      font-family: var(--serif);
-      font-size: 42px;
+      margin: 0 0 12px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: 44px;
       font-weight: 400;
+      line-height: 1.08;
     }
 
-    .contact-form-wrap > p {
-      margin-bottom: 30px;
-      color: var(--muted);
+    .contact-form-wrap h2 em {
+      color: var(--vp-gold);
+      font-style: italic;
+    }
+
+    .contact-form-intro {
+      margin: 0 0 30px;
+
+      color: var(--vp-taupe);
+
       font-size: 13px;
       line-height: 1.8;
     }
@@ -138,10 +363,11 @@
     }
 
     .form-field label {
-      color: #5c5953;
+      color: var(--vp-walnut);
+
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: .09em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
     }
 
@@ -149,124 +375,331 @@
     .form-field select,
     .form-field textarea {
       width: 100%;
+      box-sizing: border-box;
+
       padding: 15px 16px;
-      border: 1px solid #d4d0c8;
+
+      border: 1px solid #D8CCBC;
       outline: none;
-      background: #faf9f6;
-      color: #24231f;
-      font-family: inherit;
+
+      background: #FCFAF6;
+      color: var(--vp-espresso);
+
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
       font-size: 13px;
-      transition: border-color .2s ease;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #9B9084;
     }
 
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
-      border-color: #77736b;
+      border-color: var(--vp-gold);
+      background: var(--vp-white);
+
+      box-shadow:
+        0 0 0 3px rgba(214, 168, 79, 0.10);
     }
 
     .form-field textarea {
-      min-height: 140px;
+      min-height: 145px;
       resize: vertical;
     }
 
     .form-submit {
       grid-column: 1 / -1;
-      margin-top: 5px;
+      margin-top: 4px;
     }
 
     .form-submit button {
+      width: 100%;
+      min-height: 54px;
+
       border: 0;
       cursor: pointer;
-      font-family: inherit;
+
+      background: var(--vp-brown);
+      color: var(--vp-white);
+
+      font-family: "Plus Jakarta Sans", Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .form-submit button:hover {
+      background: var(--vp-gold);
+      color: var(--vp-brown);
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+
+      color: var(--vp-taupe);
+
+      font-size: 11px;
+      line-height: 1.7;
+      text-align: center;
     }
 
     .form-message {
       display: none;
+
       margin-top: 18px;
-      padding: 14px 16px;
-      background: #ebe8e1;
-      color: #55524c;
+      padding: 16px 18px;
+
+      background: var(--vp-sand);
+      border-left: 3px solid var(--vp-gold);
+
+      color: var(--vp-walnut);
+
       font-size: 12px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .map-section {
+    /* =========================================================
+       LOCATION SECTION
+       ========================================================= */
+
+    .location-section {
+      background: var(--vp-sand);
+    }
+
+    .location-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 480px;
-      background: #ebe8e1;
+      min-height: 510px;
     }
 
-    .map-copy {
-      padding: 65px;
+    .location-copy {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      padding: 75px;
     }
 
-    .map-copy h2 {
-      margin-bottom: 20px;
-      font-family: var(--serif);
-      font-size: 50px;
+    .location-copy .kicker {
+      margin-bottom: 15px;
+
+      color: var(--vp-gold);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .location-copy h2 {
+      margin: 0 0 20px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: clamp(42px, 5vw, 60px);
       font-weight: 400;
       line-height: 1.05;
     }
 
-    .map-copy p {
-      max-width: 480px;
-      margin-bottom: 25px;
-      color: var(--muted);
+    .location-copy h2 em {
+      color: var(--vp-gold);
+      font-style: italic;
+    }
+
+    .location-copy > p {
+      max-width: 500px;
+      margin: 0 0 27px;
+
+      color: var(--vp-taupe);
+
       font-size: 13px;
       line-height: 1.85;
     }
 
-    .map-box {
-      min-height: 480px;
+    .location-address {
+      padding-top: 24px;
+      border-top: 1px solid var(--vp-line);
+    }
+
+    .location-address strong {
+      display: block;
+      margin-bottom: 7px;
+
+      color: var(--vp-gold);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .location-address span {
+      color: var(--vp-espresso);
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .directions-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: fit-content;
+      min-height: 50px;
+      margin-top: 25px;
+      padding: 0 25px;
+
+      background: var(--vp-brown);
+      color: var(--vp-white);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .directions-button:hover {
+      background: var(--vp-gold);
+      color: var(--vp-brown);
+      transform: translateY(-2px);
+    }
+
+    .location-map {
       position: relative;
+      min-height: 510px;
       overflow: hidden;
+
       background:
         linear-gradient(
-          rgba(0,0,0,.1),
-          rgba(0,0,0,.1)
+          rgba(43, 33, 26, 0.12),
+          rgba(43, 33, 26, 0.12)
         ),
-        url("https://images.unsplash.com/photo-1524666041070-9d87656c25bb?auto=format&fit=crop&w=1600&q=80")
-        center / cover;
+        url("https://images.unsplash.com/photo-1524666041070-9d87656c25bb?auto=format&fit=crop&w=1600&q=88")
+        center / cover no-repeat;
     }
 
-    .map-overlay {
+    .location-map::after {
+      content: "";
+
       position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(71, 38, 14, 0.05),
+          rgba(214, 168, 79, 0.08)
+        );
+
+      pointer-events: none;
+    }
+
+    .location-overlay {
+      position: absolute;
+      z-index: 2;
+
       left: 35px;
       bottom: 35px;
-      padding: 20px 24px;
-      background: rgba(255,255,255,.94);
-      border: 1px solid rgba(0,0,0,.08);
+
+      padding: 21px 25px;
+
+      background: rgba(255, 255, 255, 0.95);
+
+      border-left: 3px solid var(--vp-gold);
+
+      box-shadow:
+        0 12px 30px rgba(43, 33, 26, 0.14);
     }
 
-    .map-overlay strong {
+    .location-overlay strong {
       display: block;
       margin-bottom: 5px;
-      font-family: var(--serif);
-      font-size: 23px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: 24px;
       font-weight: 400;
     }
 
-    .map-overlay span {
-      color: #66625b;
+    .location-overlay span {
+      color: var(--vp-taupe);
+
       font-size: 10px;
-      letter-spacing: .05em;
+      letter-spacing: 0.05em;
+    }
+
+    /* =========================================================
+       QUICK INFO
+       ========================================================= */
+
+    .quick-info-section {
+      padding: 100px 0;
+      background: var(--vp-cream);
+    }
+
+    .quick-info-head {
+      margin-bottom: 45px;
+    }
+
+    .quick-info-head .kicker {
+      margin-bottom: 14px;
+
+      color: var(--vp-gold);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .quick-info-head h2 {
+      margin: 0;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: clamp(40px, 5vw, 58px);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .quick-info-head h2 em {
+      color: var(--vp-gold);
+      font-style: italic;
     }
 
     .faq-mini {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--line);
-      background: #fff;
+
+      background: var(--vp-white);
+      border: 1px solid var(--vp-line);
     }
 
     .faq-mini-item {
-      padding: 32px;
-      border-right: 1px solid var(--line);
+      padding: 34px;
+
+      border-right: 1px solid var(--vp-line);
     }
 
     .faq-mini-item:last-child {
@@ -276,61 +709,225 @@
     .faq-mini-item b {
       display: block;
       margin-bottom: 20px;
-      color: #aaa69e;
+
+      color: var(--vp-gold);
+
       font-size: 10px;
-      letter-spacing: .13em;
+      font-weight: 700;
+      letter-spacing: 0.13em;
     }
 
     .faq-mini-item h3 {
-      margin-bottom: 10px;
-      font-family: var(--serif);
-      font-size: 25px;
+      margin: 0 0 10px;
+
+      color: var(--vp-brown);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: 26px;
       font-weight: 400;
     }
 
     .faq-mini-item p {
-      color: var(--muted);
+      margin: 0;
+
+      color: var(--vp-taupe);
+
       font-size: 12px;
-      line-height: 1.75;
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .contact-cta-section {
+      padding: 95px 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--vp-brown),
+          var(--vp-espresso)
+        );
     }
 
     .contact-cta {
-      padding: 60px;
-      background: #171714;
-      color: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
+
+      gap: 50px;
+    }
+
+    .contact-cta .kicker {
+      margin-bottom: 14px;
+
+      color: var(--vp-gold);
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.20em;
     }
 
     .contact-cta h2 {
-      font-family: var(--serif);
-      font-size: 46px;
+      margin: 0;
+
+      color: var(--vp-white);
+
+      font-family: "Gilda Display", Georgia, serif;
+      font-size: clamp(40px, 5vw, 62px);
       font-weight: 400;
-      line-height: 1.08;
+      line-height: 1.05;
+    }
+
+    .contact-cta h2 em {
+      color: var(--vp-champagne);
+      font-style: italic;
     }
 
     .contact-cta p {
       max-width: 540px;
-      margin-top: 14px;
-      color: #aaa79f;
+      margin: 16px 0 0;
+
+      color: rgba(255, 255, 255, 0.68);
+
       font-size: 13px;
       line-height: 1.8;
     }
 
-    @media (max-width: 900px) {
+    .contact-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 55px;
+      padding: 0 29px;
+
+      border: 1px solid rgba(232, 208, 154, 0.75);
+
+      color: var(--vp-white);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      white-space: nowrap;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .contact-cta-button:hover {
+      background: var(--vp-gold);
+      border-color: var(--vp-gold);
+      color: var(--vp-brown);
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .site-footer {
+      padding: 75px 0 25px;
+
+      background: var(--vp-espresso);
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.25fr;
+      gap: 55px;
+    }
+
+    .footer-about {
+      max-width: 310px;
+      margin: 0;
+
+      color: rgba(255, 255, 255, 0.60);
+
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-column h4 {
+      margin: 0 0 19px;
+
+      color: var(--vp-gold);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      margin-bottom: 10px;
+
+      color: rgba(255, 255, 255, 0.68);
+
+      font-size: 12px;
+      line-height: 1.6;
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--vp-champagne);
+    }
+
+    .footer-column p {
+      margin: 0 0 10px;
+
+      color: rgba(255, 255, 255, 0.60);
+
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .footer-bottom {
+      margin-top: 55px;
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+      color: rgba(255, 255, 255, 0.40);
+
+      font-size: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1000px) {
+
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 55px;
       }
 
-      .map-section {
+      .contact-details {
+        padding-right: 0;
+      }
+
+      .location-grid {
         grid-template-columns: 1fr;
       }
 
-      .map-copy {
-        padding: 50px 35px;
+      .location-copy {
+        padding: 65px 50px;
       }
 
       .faq-mini {
@@ -339,32 +936,36 @@
 
       .faq-mini-item {
         border-right: 0;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--vp-line);
       }
 
       .faq-mini-item:last-child {
         border-bottom: 0;
       }
 
-      .contact-cta {
-        padding: 45px 30px;
-        align-items: flex-start;
-        flex-direction: column;
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
       }
+
     }
 
-    @media (max-width: 600px) {
-      .page-hero {
-        min-height: 390px;
-        padding: 75px 0;
+    @media (max-width: 700px) {
+
+      .contact-hero {
+        min-height: 430px;
+        padding: 110px 0 65px;
       }
 
-      .page-hero h1 {
-        font-size: 54px;
+      .contact-hero-inner {
+        width: min(100% - 40px, 1240px);
+      }
+
+      .contact-main {
+        padding: 70px 0;
       }
 
       .contact-form-wrap {
-        padding: 30px 22px;
+        padding: 30px 23px;
       }
 
       .contact-form {
@@ -376,32 +977,65 @@
         grid-column: auto;
       }
 
-      .map-copy {
-        padding: 40px 25px;
+      .location-copy {
+        padding: 55px 25px;
       }
 
-      .map-copy h2 {
-        font-size: 40px;
+      .location-map {
+        min-height: 380px;
       }
 
-      .map-box {
-        min-height: 350px;
+      .location-overlay {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+      }
+
+      .quick-info-section {
+        padding: 70px 0;
+      }
+
+      .faq-mini-item {
+        padding: 28px 24px;
+      }
+
+      .contact-cta-section {
+        padding: 70px 0;
       }
 
       .contact-cta {
-        padding: 35px 25px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .contact-cta h2 {
-        font-size: 36px;
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
       }
+
+      .vp-brand img {
+        height: 54px;
+        max-width: 165px;
+      }
+
+      .vp-footer-brand img {
+        height: 52px;
+        max-width: 160px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- TOP BAR -->
+
+  <!-- =========================================================
+       TOP BAR
+       ========================================================= -->
+
   <div class="topbar">
 
     <div>
@@ -417,13 +1051,25 @@
   </div>
 
 
-  <!-- HEADER -->
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+
   <header class="header">
 
-    <a class="logo" href="index.html">
-      VISHaka
-      <small>PAARK</small>
+    <a
+      class="vp-brand"
+      href="index.html"
+      aria-label="Vishaka Paark"
+    >
+
+      <img
+        src="assets/branding/logo.png"
+        alt="Vishaka Paark"
+      >
+
     </a>
+
 
     <nav class="nav">
 
@@ -457,15 +1103,20 @@
 
     </nav>
 
-    <a class="header-btn" href="booking.html">
+
+    <a
+      class="header-btn"
+      href="booking.html"
+    >
       BOOK NOW ↗
     </a>
+
 
     <button
       class="mobile-nav"
       type="button"
       aria-label="Open navigation"
-      aria-expanded="false"
+      onclick="document.querySelector('.nav').classList.toggle('show')"
     >
       ☰
     </button>
@@ -473,14 +1124,17 @@
   </header>
 
 
-  <!-- HERO -->
-  <section class="page-hero">
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
 
-    <div class="container">
+  <section class="contact-hero">
 
-      <div class="eyebrow">
-        VISHaka PAARK · CONTACT
-      </div>
+    <div class="contact-hero-inner">
+
+      <span class="eyebrow">
+        VISHAKA PAARK · CONTACT
+      </span>
 
       <h1>
         Let's plan your
@@ -488,362 +1142,384 @@
         <em>stay together.</em>
       </h1>
 
+      <div class="contact-hero-line"></div>
+
     </div>
 
   </section>
 
 
-  <!-- CONTACT SECTION -->
-  <section class="section">
+  <!-- =========================================================
+       CONTACT DETAILS + ENQUIRY FORM
+       ========================================================= -->
 
-    <div class="container">
+  <main>
 
-      <div class="contact-grid">
+    <section class="contact-main">
 
+      <div class="container">
 
-        <!-- CONTACT DETAILS -->
-        <div class="contact-details">
-
-          <div class="kicker">
-            GET IN TOUCH
-          </div>
-
-          <h2 class="title">
-            We're here
-            <br>
-            <em>to help.</em>
-          </h2>
-
-          <br>
+        <div class="contact-grid">
 
 
-          <div class="contact-block">
+          <!-- ===================================================
+               CONTACT DETAILS
+               =================================================== -->
 
-            <div class="contact-label">
-              CALL US
+          <div class="contact-details">
+
+            <div class="kicker">
+              GET IN TOUCH
             </div>
 
-            <h3>
-              +91 90909 27979
-            </h3>
+            <h2>
+              We're here
+              <br>
+              <em>to help.</em>
+            </h2>
 
-            <a href="tel:+919090927979">
-              Call Vishaka Paark →
-            </a>
 
-          </div>
+            <div class="contact-block">
 
-
-          <div class="contact-block">
-
-            <div class="contact-label">
-              LANDLINE
-            </div>
-
-            <h3>
-              0422 4695952
-            </h3>
-
-            <a href="tel:04224695952">
-              Call hotel →
-            </a>
-
-          </div>
-
-
-          <div class="contact-block">
-
-            <div class="contact-label">
-              EMAIL
-            </div>
-
-            <h3>
-              Send us a message
-            </h3>
-
-            <a href="mailto:hotelvishakapaark@gmail.com">
-              hotelvishakapaark@gmail.com
-            </a>
-
-          </div>
-
-
-          <div class="contact-block">
-
-            <div class="contact-label">
-              LOCATION
-            </div>
-
-            <h3>
-              Vishaka Paark
-            </h3>
-
-            <p>
-              Thudiyalur Road,
-              Saravanampatty,
-              Coimbatore — 641 035,
-              Tamil Nadu, India.
-            </p>
-
-          </div>
-
-
-          <div class="contact-actions">
-
-            <a
-              class="btn"
-              href="tel:+919090927979"
-            >
-              CALL NOW →
-            </a>
-
-            <a
-              class="btn"
-              href="mailto:hotelvishakapaark@gmail.com"
-              style="
-                background:transparent;
-                color:#20201d;
-              "
-            >
-              EMAIL US
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- FORM -->
-        <div class="contact-form-wrap">
-
-          <div class="kicker">
-            SEND AN ENQUIRY
-          </div>
-
-          <h2>
-            Tell us what
-            <br>
-            you need.
-          </h2>
-
-          <p>
-            Use the form below for a room enquiry,
-            general question or special request.
-          </p>
-
-
-          <form
-            class="contact-form"
-            id="contactForm"
-          >
-
-            <div class="form-field">
-
-              <label for="name">
-                Full Name
-              </label>
-
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Your name"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="phone">
-                Phone Number
-              </label>
-
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="+91"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="email">
-                Email
-              </label>
-
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="purpose">
-                Enquiry Type
-              </label>
-
-              <select
-                id="purpose"
-                name="purpose"
-              >
-
-                <option value="Room Booking">
-                  Room Booking
-                </option>
-
-                <option value="Room Availability">
-                  Room Availability
-                </option>
-
-                <option value="General Enquiry">
-                  General Enquiry
-                </option>
-
-                <option value="Event / Group">
-                  Event / Group
-                </option>
-
-                <option value="Other">
-                  Other
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="checkin">
-                Check-in
-              </label>
-
-              <input
-                id="checkin"
-                name="checkin"
-                type="date"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="checkout">
-                Check-out
-              </label>
-
-              <input
-                id="checkout"
-                name="checkout"
-                type="date"
-              >
-
-            </div>
-
-
-            <div class="form-field full">
-
-              <label for="message">
-                Message
-              </label>
-
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us about your requirements..."
-              ></textarea>
-
-            </div>
-
-
-            <div class="form-submit">
-
-              <button
-                class="btn"
-                type="submit"
-              >
-                SEND ENQUIRY →
-              </button>
-
-              <div
-                class="form-message"
-                id="formMessage"
-              >
-                Thank you. This demo form is ready for
-                integration with the hotel's email,
-                WhatsApp or booking system.
+              <div class="contact-label">
+                CALL US
               </div>
 
+              <h3>
+                +91 90909 27979
+              </h3>
+
+              <a href="tel:+919090927979">
+                Call Vishaka Paark →
+              </a>
+
             </div>
 
-          </form>
+
+            <div class="contact-block">
+
+              <div class="contact-label">
+                LANDLINE
+              </div>
+
+              <h3>
+                0422 4695952
+              </h3>
+
+              <a href="tel:04224695952">
+                Call hotel →
+              </a>
+
+            </div>
+
+
+            <div class="contact-block">
+
+              <div class="contact-label">
+                EMAIL
+              </div>
+
+              <h3>
+                Send us a message
+              </h3>
+
+              <a href="mailto:hotelvishakapaark@gmail.com">
+                hotelvishakapaark@gmail.com
+              </a>
+
+            </div>
+
+
+            <div class="contact-block">
+
+              <div class="contact-label">
+                LOCATION
+              </div>
+
+              <h3>
+                Vishaka Paark
+              </h3>
+
+              <p>
+                Thudiyalur Road,
+                Saravanampatty,
+                Coimbatore — 641 035,
+                Tamil Nadu, India.
+              </p>
+
+            </div>
+
+
+            <div class="contact-actions">
+
+              <a
+                class="contact-action-primary"
+                href="tel:+919090927979"
+              >
+                CALL NOW →
+              </a>
+
+              <a
+                class="contact-action-secondary"
+                href="mailto:hotelvishakapaark@gmail.com"
+              >
+                EMAIL US
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- ===================================================
+               CONTACT FORM
+               =================================================== -->
+
+          <div class="contact-form-wrap">
+
+            <div class="kicker">
+              SEND AN ENQUIRY
+            </div>
+
+            <h2>
+              Tell us what
+              <br>
+              <em>you need.</em>
+            </h2>
+
+            <p class="contact-form-intro">
+              Use the form below for a room enquiry,
+              general question or special request.
+              Our team will get back to you as soon as possible.
+            </p>
+
+
+            <form
+              class="contact-form"
+              id="contactForm"
+            >
+
+
+              <!-- FULL NAME -->
+
+              <div class="form-field">
+
+                <label for="contactName">
+                  Full Name
+                </label>
+
+                <input
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                >
+
+              </div>
+
+
+              <!-- PHONE -->
+
+              <div class="form-field">
+
+                <label for="contactPhone">
+                  Phone Number
+                </label>
+
+                <input
+                  id="contactPhone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+91"
+                  autocomplete="tel"
+                  required
+                >
+
+              </div>
+
+
+              <!-- EMAIL -->
+
+              <div class="form-field">
+
+                <label for="contactEmail">
+                  Email
+                </label>
+
+                <input
+                  id="contactEmail"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
+
+              </div>
+
+
+              <!-- SUBJECT -->
+
+              <div class="form-field">
+
+                <label for="contactSubject">
+                  Subject
+                </label>
+
+                <select
+                  id="contactSubject"
+                  name="subject"
+                  required
+                >
+
+                  <option value="">
+                    Select an option
+                  </option>
+
+                  <option value="Room Enquiry">
+                    Room Enquiry
+                  </option>
+
+                  <option value="Reservation">
+                    Reservation
+                  </option>
+
+                  <option value="General Question">
+                    General Question
+                  </option>
+
+                  <option value="Special Request">
+                    Special Request
+                  </option>
+
+                  <option value="Other">
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- MESSAGE -->
+
+              <div class="form-field full">
+
+                <label for="contactMessage">
+                  Message
+                </label>
+
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  placeholder="Tell us how we can help..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <!-- SUBMIT -->
+
+              <div class="form-submit">
+
+                <button type="submit">
+                  SEND ENQUIRY →
+                </button>
+
+                <p class="form-note">
+                  This is a website enquiry form.
+                  Our hotel team will contact you directly.
+                </p>
+
+              </div>
+
+
+            </form>
+
+
+            <div
+              class="form-message"
+              id="formMessage"
+              role="status"
+            >
+              Thank you. Your enquiry has been received.
+              Our team will contact you regarding your request.
+            </div>
+
+          </div>
+
 
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- LOCATION -->
-  <section class="section">
+    <!-- =======================================================
+         LOCATION
+         ======================================================= -->
 
-    <div class="container">
+    <section class="location-section">
 
-      <div class="map-section">
+      <div class="location-grid">
 
-        <div class="map-copy">
+
+        <div class="location-copy">
 
           <div class="kicker">
             FIND US
           </div>
 
           <h2>
-            Your stay,
+            Conveniently
             <br>
-            <em>right here.</em>
+            <em>in Coimbatore.</em>
           </h2>
 
           <p>
-            Vishaka Paark is located on Thudiyalur Road
-            in Saravanampatty, Coimbatore.
+            Hotel Vishaka Paark is located on Thudiyalur Road
+            in Saravanampatty, Coimbatore — providing a
+            convenient base for business travellers, families
+            and guests visiting the city.
           </p>
 
-          <p>
-            For exact directions and the easiest route
-            from your current location, contact the hotel
-            directly.
-          </p>
+
+          <div class="location-address">
+
+            <strong>
+              HOTEL ADDRESS
+            </strong>
+
+            <span>
+              Thudiyalur Road,
+              Saravanampatty,
+              <br>
+              Coimbatore — 641 035,
+              Tamil Nadu, India.
+            </span>
+
+          </div>
+
 
           <a
-            class="btn"
-            href="https://www.google.com/maps/search/?api=1&query=Vishaka+Paark+Saravanampatty+Coimbatore"
+            class="directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=Hotel+Vishaka+Paark+Saravanampatty+Coimbatore"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
-            OPEN GOOGLE MAPS →
+            GET DIRECTIONS →
           </a>
 
         </div>
 
 
-        <div class="map-box">
+        <div class="location-map">
 
-          <div class="map-overlay">
+          <div class="location-overlay">
 
             <strong>
               Vishaka Paark
@@ -857,27 +1533,28 @@
 
         </div>
 
+
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- QUICK INFO -->
-  <section class="section">
+    <!-- =======================================================
+         QUICK INFORMATION
+         ======================================================= -->
 
-    <div class="container">
+    <section class="quick-info-section">
 
-      <div class="section-head">
+      <div class="container">
 
-        <div>
+
+        <div class="quick-info-head">
 
           <div class="kicker">
             BEFORE YOU ARRIVE
           </div>
 
-          <h2 class="title">
+          <h2>
             A few useful
             <br>
             <em>things to know.</em>
@@ -885,212 +1562,257 @@
 
         </div>
 
+
+        <div class="faq-mini">
+
+
+          <div class="faq-mini-item">
+
+            <b>
+              01 · RESERVATIONS
+            </b>
+
+            <h3>
+              Need a room?
+            </h3>
+
+            <p>
+              Contact our team directly for current room
+              availability, rates and booking assistance.
+            </p>
+
+          </div>
+
+
+          <div class="faq-mini-item">
+
+            <b>
+              02 · LOCATION
+            </b>
+
+            <h3>
+              Need directions?
+            </h3>
+
+            <p>
+              Our team can help you with directions and
+              information about reaching the hotel.
+            </p>
+
+          </div>
+
+
+          <div class="faq-mini-item">
+
+            <b>
+              03 · QUESTIONS
+            </b>
+
+            <h3>
+              Have a request?
+            </h3>
+
+            <p>
+              Tell us what you need before your arrival
+              and we'll help wherever possible.
+            </p>
+
+          </div>
+
+
+        </div>
+
       </div>
 
-
-      <div class="faq-mini">
-
-
-        <div class="faq-mini-item">
-
-          <b>01 · RESERVATIONS</b>
-
-          <h3>
-            Need a room?
-          </h3>
-
-          <p>
-            Contact our team directly for current room
-            availability, rates and booking assistance.
-          </p>
-
-        </div>
+    </section>
 
 
-        <div class="faq-mini-item">
+    <!-- =======================================================
+         CTA
+         ======================================================= -->
 
-          <b>02 · LOCATION</b>
+    <section class="contact-cta-section">
 
-          <h3>
-            Need directions?
-          </h3>
+      <div class="container">
 
-          <p>
-            Our team can help you with directions and
-            information about reaching the hotel.
-          </p>
+        <div class="contact-cta">
 
-        </div>
+          <div>
+
+            <div class="kicker">
+              VISHAKA PAARK
+            </div>
+
+            <h2>
+              Ready to make
+              <br>
+              a <em>reservation?</em>
+            </h2>
+
+            <p>
+              Explore our rooms or contact the hotel directly
+              to plan your stay in Coimbatore.
+            </p>
+
+          </div>
 
 
-        <div class="faq-mini-item">
-
-          <b>03 · QUESTIONS</b>
-
-          <h3>
-            Have a request?
-          </h3>
-
-          <p>
-            Tell us what you need before your arrival and
-            we'll help wherever possible.
-          </p>
+          <a
+            class="contact-cta-button"
+            href="booking.html"
+          >
+            BOOK YOUR STAY →
+          </a>
 
         </div>
-
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </main>
 
 
-  <!-- CTA -->
-  <section class="section">
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer class="site-footer">
 
     <div class="container">
 
-      <div class="contact-cta">
+
+      <div class="footer-grid">
+
+
+        <!-- BRAND -->
 
         <div>
 
-          <div class="kicker">
-            VISHaka PAARK
-          </div>
+          <a
+            class="vp-footer-brand"
+            href="index.html"
+            aria-label="Vishaka Paark"
+          >
 
-          <h2>
-            Ready to make
-            <br>
-            a reservation?
-          </h2>
+            <img
+              src="assets/branding/logo.png"
+              alt="Vishaka Paark"
+            >
 
-          <p>
-            Explore our rooms or contact the hotel directly
-            to plan your stay in Coimbatore.
+          </a>
+
+
+          <p class="footer-about">
+            A contemporary stay designed around comfort,
+            thoughtful hospitality and easy living in
+            Coimbatore.
           </p>
 
         </div>
 
-        <a
-          class="btn"
-          href="booking.html"
-        >
-          BOOK YOUR STAY →
-        </a>
 
-      </div>
+        <!-- QUICK LINKS -->
 
-    </div>
+        <div class="footer-column">
 
-  </section>
+          <h4>
+            Quick Links
+          </h4>
 
+          <a href="index.html">
+            Home
+          </a>
 
-  <!-- FOOTER -->
-  <footer class="footer">
+          <a href="rooms.html">
+            Rooms & Suites
+          </a>
 
-    <div class="container footer-grid">
+          <a href="about.html">
+            About Hotel
+          </a>
 
+          <a href="services.html">
+            Services
+          </a>
 
-      <div>
+          <a href="offers.html">
+            Offers
+          </a>
 
-        <div class="logo">
-          VISHaka
-          <small>PAARK</small>
         </div>
 
-        <p>
-          A contemporary stay designed around comfort,
-          thoughtful hospitality and easy living in Coimbatore.
-        </p>
+
+        <!-- USEFUL LINKS -->
+
+        <div class="footer-column">
+
+          <h4>
+            Useful Links
+          </h4>
+
+          <a href="gallery.html">
+            Gallery
+          </a>
+
+          <a href="blog.html">
+            Blog
+          </a>
+
+          <a href="faq.html">
+            FAQ
+          </a>
+
+          <a href="terms.html">
+            Terms & Conditions
+          </a>
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+          <h4>
+            Contact
+          </h4>
+
+          <a href="tel:04224695952">
+            0422 4695952
+          </a>
+
+          <a href="tel:+919090927979">
+            +91 90909 27979
+          </a>
+
+          <a href="mailto:hotelvishakapaark@gmail.com">
+            hotelvishakapaark@gmail.com
+          </a>
+
+          <p>
+            Thudiyalur Road,
+            Saravanampatty,
+            <br>
+            Coimbatore — 641 035
+          </p>
+
+          <a href="contact.html">
+            Contact Us →
+          </a>
+
+        </div>
+
 
       </div>
 
 
-      <div>
-
-        <h4>
-          Quick Links
-        </h4>
-
-        <a href="index.html">
-          Home
-        </a>
-
-        <a href="rooms.html">
-          Rooms & Suites
-        </a>
-
-        <a href="about.html">
-          About
-        </a>
-
-        <a href="services.html">
-          Services
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h4>
-          Useful Links
-        </h4>
-
-        <a href="offers.html">
-          Offers
-        </a>
-
-        <a href="gallery.html">
-          Gallery
-        </a>
-
-        <a href="faq.html">
-          FAQ
-        </a>
-
-        <a href="terms.html">
-          Terms & Conditions
-        </a>
-
-        <a href="privacy.html">
-          Privacy Policy
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h4>
-          Contact
-        </h4>
-
-        <a href="tel:04224695952">
-          0422 4695952
-        </a>
-
-        <a href="tel:+919090927979">
-          +91 90909 27979
-        </a>
-
-        <a href="mailto:hotelvishakapaark@gmail.com">
-          hotelvishakapaark@gmail.com
-        </a>
-
-        <p>
-          Thudiyalur Road,
-          Saravanampatty,
-          <br>
-          Coimbatore — 641 035
-        </p>
-
-      </div>
-
-
-      <div class="copyright">
-        © 2026 Vishaka Paark. Demo website concept.
+      <div class="footer-bottom">
+        © 2026 Vishaka Paark. Website concept & design.
       </div>
 
 
@@ -1099,7 +1821,10 @@
   </footer>
 
 
-  <!-- CONTACT FORM DEMO SCRIPT -->
+  <!-- =========================================================
+       CONTACT FORM DEMO SCRIPT
+       ========================================================= -->
+
   <script>
 
     document.addEventListener(
@@ -1111,6 +1836,11 @@
 
         const message =
           document.getElementById("formMessage");
+
+
+        if (!form || !message) {
+          return;
+        }
 
 
         form.addEventListener(
@@ -1140,4 +1870,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
