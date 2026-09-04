@@ -1,1952 +1,1065 @@
-@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+:root{
+  --brand-green:#26382D;
+  --brand-green-dark:#1C2A22;
+  --brand-gold:#B68A3C;
+  --brand-gold-light:#D1A85A;
 
-:root {
-  --bg: #f5f1eb;
-  --paper: #ffffff;
-  --ink: #1b1714;
-  --muted: #716860;
-  --line: #ddd4ca;
-  --gold: #9a733d;
-  --gold-light: #c69a55;
-  --red: #8f1b2d;
-  --red-dark: #741625;
-  --dark: #171411;
-  --serif: "Gilda Display", Georgia, serif;
-  --sans: "Plus Jakarta Sans", Arial, sans-serif;
+  --ink:#3A2A1C;
+  --muted:#6F6A60;
+
+  --paper:#F7F3E9;
+  --cream:#EFE7D7;
+  --sand:#E5D7BD;
+
+  --line:#D9CEBA;
+  --white:#FFFFFF;
 }
 
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Plus Jakarta Sans",Arial,sans-serif;
+  font-size:14px;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 button,
 input,
 select,
-textarea {
-  font-family: inherit;
+textarea{
+  font:inherit;
 }
 
-button {
-  cursor: pointer;
+.container{
+  width:min(1180px,88vw);
+  margin:auto;
 }
 
-.container {
-  width: min(1180px, calc(100% - 80px));
-  margin: 0 auto;
-}
-
-/* =========================================================
+/* =========================
    TOP BAR
-   ========================================================= */
+========================= */
 
-.topbar {
-  min-height: 38px;
-  padding: 8px 40px;
-  background: #11100e;
-  color: rgba(255,255,255,.72);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  font-size: 11px;
-  letter-spacing: .04em;
+.topbar{
+  height:38px;
+  background:var(--brand-green-dark);
+  color:#E9E2D5;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 6vw;
+
+  font-size:10px;
+  letter-spacing:.08em;
 }
 
-.topbar > div {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+.topbar span{
+  margin-right:25px;
 }
 
-/* =========================================================
+/* =========================
    HEADER
-   ========================================================= */
+========================= */
 
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  min-height: 78px;
-  padding: 0 40px;
-  background: rgba(23,20,17,.97);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  display: flex;
-  align-items: center;
-  gap: 30px;
+.header{
+  height:92px;
+  background:var(--white);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 6vw;
+
+  position:relative;
+  z-index:10;
+
+  border-bottom:1px solid rgba(182,138,60,.16);
 }
 
-.logo {
-  flex: 0 0 auto;
-  color: #fff;
-  font-family: var(--serif);
-  font-size: 28px;
-  line-height: 1;
-  letter-spacing: -.02em;
+.logo{
+  font-family:"Gilda Display",serif;
+  font-size:26px;
+  color:var(--brand-green);
 }
 
-.logo small {
-  display: block;
-  margin-top: 5px;
-  color: var(--gold-light);
-  font-family: var(--sans);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-align: center;
+.logo small{
+  font:600 9px "Plus Jakarta Sans";
+  letter-spacing:.25em;
+  margin-left:6px;
+  color:var(--brand-gold);
 }
 
-.nav {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 27px;
+.nav{
+  display:flex;
+  gap:26px;
+
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
 }
 
-.nav a {
-  position: relative;
-  color: rgba(255,255,255,.72);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: color .2s ease;
+.nav a{
+  transition:.25s ease;
 }
 
 .nav a:hover,
-.nav a.active {
-  color: var(--gold-light);
+.nav a.active{
+  color:var(--brand-gold);
 }
 
-.nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  height: 1px;
-  background: var(--gold-light);
-}
+.header-btn,
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
 
-.header-btn {
-  flex: 0 0 auto;
-  padding: 13px 18px;
-  border: 1px solid rgba(198,154,85,.7);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  background:var(--brand-green);
+  color:var(--white);
+
+  padding:15px 19px;
+
+  border:0;
+
+  text-transform:uppercase;
+  font-size:9px;
+  letter-spacing:.14em;
+
+  cursor:pointer;
+
   transition:
-    background .2s ease,
-    color .2s ease,
-    border-color .2s ease;
+    background .25s ease,
+    transform .25s ease,
+    color .25s ease;
 }
 
-.header-btn:hover {
-  background: var(--gold-light);
-  color: #171411;
-  border-color: var(--gold-light);
+.header-btn:hover,
+.btn:hover{
+  background:var(--brand-gold);
+  color:var(--white);
+  transform:translateY(-1px);
 }
 
-.mobile-nav {
-  display: none;
-  border: 1px solid rgba(255,255,255,.25);
-  background: transparent;
-  color: #fff;
-  padding: 9px 12px;
-  font-size: 20px;
-}
-
-/* =========================================================
-   GENERAL TYPOGRAPHY
-   ========================================================= */
-
-.kicker,
-.eyebrow {
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-.eyebrow {
-  color: var(--gold-light);
-}
-
-.title {
-  margin: 15px 0 0;
-  font-family: var(--serif);
-  font-size: clamp(48px, 5.5vw, 76px);
-  line-height: 1.02;
-  font-weight: 400;
-  letter-spacing: -.035em;
-}
-
-.title em {
-  color: var(--gold);
-  font-style: italic;
-}
-
-.copy {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.85;
-}
-
-.link {
-  display: inline-block;
-  margin-top: 12px;
-  color: var(--red);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
-  transition: color .2s ease;
-}
-
-.link:hover {
-  color: var(--gold);
-}
-
-.section {
-  padding: 105px 0;
-}
-
-.section.dark {
-  background: var(--dark);
-  color: #fff;
-}
-
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 80px;
-  align-items: start;
-}
-
-.section-head {
-  margin-bottom: 55px;
-}
-
-/* =========================================================
-   BUTTON
-   ========================================================= */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  min-height: 48px;
-  padding: 13px 22px;
-  border: 1px solid var(--red);
-  background: transparent;
-  color: var(--red);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  transition:
-    background .22s ease,
-    color .22s ease,
-    border-color .22s ease,
-    transform .22s ease;
-}
-
-.btn:hover {
-  background: var(--red);
-  color: #fff;
-  border-color: var(--red);
-  transform: translateY(-1px);
-}
-
-/*
-   IMPORTANT:
-   CTA sections with dark/red backgrounds must not turn
-   into a white rectangle with invisible white text.
-*/
-
-.about-cta .btn,
-.dark .btn,
-.booking-side .btn {
-  border-color: rgba(255,255,255,.6);
-  color: #fff;
-}
-
-.about-cta .btn:hover,
-.dark .btn:hover,
-.booking-side .btn:hover {
-  background: #fff;
-  color: var(--red);
-  border-color: #fff;
-}
-
-/* =========================================================
+/* =========================
    HERO
-   ========================================================= */
+========================= */
 
-.hero {
-  min-height: 720px;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
+.hero{
+  min-height:690px;
+
+  position:relative;
+
+  background:center/cover no-repeat;
+
+  display:flex;
+  align-items:center;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.hero:before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.72),
-      rgba(0,0,0,.20)
+      rgba(28,42,34,.82),
+      rgba(38,56,45,.48),
+      rgba(38,56,45,.08)
     );
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  width: min(1180px, calc(100% - 80px));
-  margin: 0 auto;
-  padding: 110px 0;
+.hero-inner{
+  position:relative;
+
+  color:var(--white);
+
+  width:min(1180px,88vw);
+  margin:auto;
 }
 
-.hero h1 {
-  max-width: 800px;
-  margin: 20px 0 25px;
-  font-family: var(--serif);
-  font-size: clamp(62px, 8vw, 105px);
-  line-height: .98;
-  font-weight: 400;
-  letter-spacing: -.04em;
+.eyebrow{
+  font-size:9px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--brand-gold-light);
 }
 
-.hero h1 em {
-  color: #e7c1bd;
-  font-style: italic;
+.hero h1{
+  font:500 clamp(52px,7vw,92px)/.94 "Gilda Display";
+
+  max-width:720px;
+
+  margin:25px 0;
 }
 
-.hero p {
-  max-width: 590px;
-  margin: 0 0 32px;
-  color: rgba(255,255,255,.78);
-  font-size: 17px;
-  line-height: 1.8;
+.hero h1 em,
+.title em{
+  font-style:italic;
 }
 
-/* =========================================================
-   HOME BOOKING STRIP
-   ========================================================= */
+.hero p{
+  max-width:520px;
 
-.booking {
-  position: relative;
-  z-index: 5;
-  width: min(1120px, calc(100% - 80px));
-  margin: -45px auto 0;
-  padding: 25px;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 50px rgba(0,0,0,.08);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
-  gap: 15px;
-  align-items: end;
+  line-height:1.8;
+
+  color:#F2EFE8;
 }
 
-.booking label {
-  display: block;
-  margin-bottom: 8px;
-  color: #4b413a;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+.hero .btn{
+  background:var(--brand-gold);
+  color:var(--white);
+
+  margin-top:18px;
+}
+
+.hero .btn:hover{
+  background:var(--brand-gold-light);
+}
+
+/* =========================
+   BOOKING BAR
+========================= */
+
+.booking{
+  position:relative;
+
+  margin:-48px auto 0;
+
+  z-index:3;
+
+  width:min(1080px,82vw);
+
+  background:var(--white);
+
+  box-shadow:
+    0 18px 55px rgba(38,56,45,.13);
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr 1fr 1.15fr;
+
+  border-top:3px solid var(--brand-gold);
+}
+
+.booking>div{
+  padding:22px 25px;
+
+  border-right:1px solid var(--line);
+}
+
+.booking label{
+  display:block;
+
+  font-size:8px;
+  letter-spacing:.17em;
+
+  color:var(--brand-gold);
+
+  margin-bottom:9px;
 }
 
 .booking input,
-.booking select {
-  width: 100%;
-  height: 50px;
-  padding: 0 14px;
-  border: 1px solid var(--line);
-  background: #faf8f5;
-  color: var(--ink);
-  outline: none;
-  font-size: 14px;
+.booking select{
+  border:0;
+
+  background:transparent;
+
+  outline:0;
+
+  width:100%;
+
+  font-size:12px;
+
+  color:var(--ink);
 }
 
-.booking input:focus,
-.booking select:focus {
-  border-color: var(--gold);
+.booking button{
+  border:0;
+
+  background:var(--brand-green);
+
+  color:var(--white);
+
+  letter-spacing:.13em;
+
+  font-size:9px;
+
+  cursor:pointer;
+
+  transition:.25s ease;
 }
 
-.booking button {
-  height: 50px;
-  padding: 0 25px;
-  border: 1px solid var(--red);
-  background: var(--red);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+.booking button:hover{
+  background:var(--brand-gold);
 }
 
-.booking button:hover {
-  background: var(--red-dark);
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  padding:105px 0;
 }
 
-/* =========================================================
-   PAGE HERO
-   ========================================================= */
+.section-head{
+  display:flex;
 
-.page-hero {
-  min-height: 470px;
-  padding: 100px 0;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
+  justify-content:space-between;
+
+  align-items:end;
+
+  margin-bottom:45px;
+}
+
+.kicker{
+  color:var(--brand-gold);
+
+  font-size:9px;
+
+  letter-spacing:.2em;
+
+  text-transform:uppercase;
+}
+
+.title{
+  font:500 clamp(43px,5vw,68px)/1.03 "Gilda Display";
+
+  margin:12px 0;
+
+  color:var(--brand-green);
+}
+
+.copy{
+  color:var(--muted);
+
+  line-height:1.9;
+
+  max-width:530px;
+}
+
+.link{
+  font-size:9px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.14em;
+
+  border-bottom:1px solid var(--brand-gold);
+
+  padding-bottom:7px;
+
+  color:var(--brand-green);
+}
+
+.link:hover{
+  color:var(--brand-gold);
+}
+
+/* =========================
+   SPLIT SECTIONS
+========================= */
+
+.split{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:75px;
+
+  align-items:center;
+}
+
+.photo{
+  min-height:560px;
+
+  background:center/cover no-repeat;
+
+  border-top:4px solid var(--brand-gold);
+}
+
+/* =========================
+   ROOM / CONTENT CARDS
+========================= */
+
+.cards{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:22px;
+}
+
+.card{
+  background:var(--white);
+
+  box-shadow:
+    0 10px 35px rgba(38,56,45,.06);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 18px 45px rgba(38,56,45,.12);
+}
+
+.card-photo{
+  height:330px;
+
+  background:center/cover no-repeat;
+
+  position:relative;
+}
+
+.badge{
+  position:absolute;
+
+  top:18px;
+  left:18px;
+
+  background:var(--white);
+
+  color:var(--brand-green);
+
+  padding:8px 10px;
+
+  font-size:8px;
+
+  letter-spacing:.12em;
+
+  border-left:3px solid var(--brand-gold);
+}
+
+.card-body{
+  padding:23px;
+}
+
+.card-body h3{
+  font:500 28px "Gilda Display";
+
+  color:var(--brand-green);
+
+  margin:8px 0 12px;
+}
+
+.card-body p{
+  color:var(--muted);
+
+  font-size:12px;
+
+  line-height:1.7;
+}
+
+.meta{
+  display:flex;
+
+  gap:17px;
+
+  color:#777;
+
+  font-size:9px;
+
+  border-top:1px solid var(--line);
+
+  padding-top:16px;
+
+  margin-top:20px;
+}
+
+/* =========================
+   DARK / BRAND SECTIONS
+========================= */
+
+.dark{
+  background:var(--brand-green);
+
+  color:var(--white);
+}
+
+.dark .title{
+  color:var(--white);
+}
+
+.dark .copy{
+  color:#D8DED8;
+}
+
+.dark .kicker{
+  color:var(--brand-gold-light);
+}
+
+.dark .link{
+  color:var(--brand-gold-light);
+
+  border-color:var(--brand-gold-light);
+}
+
+/* =========================
+   FACILITIES
+========================= */
+
+.facility-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:1px;
+
+  background:var(--line);
+}
+
+.facility{
+  background:var(--paper);
+
+  padding:35px 25px;
+
+  min-height:190px;
+
+  transition:.25s ease;
+}
+
+.facility:hover{
+  background:var(--cream);
+}
+
+.facility b{
+  font:500 24px "Gilda Display";
+
+  color:var(--brand-green);
+
+  display:block;
+
+  margin:18px 0 10px;
+}
+
+.facility p{
+  font-size:11px;
+
+  color:var(--muted);
+
+  line-height:1.7;
+}
+
+/* =========================
+   OFFERS
+========================= */
+
+.offers{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:25px;
+}
+
+.offer{
+  min-height:360px;
+
+  padding:35px;
+
+  background:center/cover;
+
+  position:relative;
+
+  color:var(--white);
+
+  display:flex;
+
+  align-items:end;
+}
+
+.offer:before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
   background:
     linear-gradient(
-      90deg,
-      rgba(0,0,0,.72),
-      rgba(0,0,0,.25)
-    ),
-    url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=2200&q=90")
-    center / cover;
-  color: #fff;
+      180deg,
+      rgba(28,42,34,.08),
+      rgba(28,42,34,.78)
+    );
 }
 
-.page-hero h1 {
-  max-width: 800px;
-  margin: 18px 0 0;
-  font-family: var(--serif);
-  font-size: clamp(58px, 7vw, 92px);
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: -.035em;
+.offer>*{
+  position:relative;
 }
 
-.page-hero h1 em {
-  color: #e7c1bd;
-  font-style: italic;
-}
-
-/* =========================================================
-   ROOM CARDS / ROOMS PAGE
-   ========================================================= */
-
-.room-list {
-  display: grid;
-  gap: 35px;
-}
-
-.room-large {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  min-height: 500px;
-  background: #fff;
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-
-.room-large.reverse {
-  grid-template-columns: .95fr 1.05fr;
-}
-
-.room-large.reverse .room-image {
-  order: 2;
-}
-
-.room-image {
-  min-height: 500px;
-  background-position: center;
-  background-size: cover;
-}
-
-.room-content {
-  padding: 55px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.room-number {
-  margin-bottom: 25px;
-  color: #aaa69e;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .14em;
-}
-
-.room-content h2 {
-  margin: 0 0 20px;
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.05;
-}
-
-.room-content p {
-  max-width: 510px;
-  margin: 0 0 28px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.85;
-}
-
-.room-features {
-  margin-bottom: 30px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 25px;
-}
-
-.room-features span {
-  color: #68655f;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.room-content .btn {
-  width: fit-content;
-}
-
-.room-note {
-  margin-top: 60px;
-  padding: 38px;
-  background: #ebe8e1;
-  border: 1px solid var(--line);
-  text-align: center;
-}
-
-.room-note p {
-  max-width: 760px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* =========================================================
-   GENERIC CARDS
-   ========================================================= */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-
-.card-body {
-  padding: 38px;
-}
-
-.card h3 {
-  margin: 12px 0 15px;
-  font-family: var(--serif);
-  font-size: 35px;
-  font-weight: 400;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.price {
-  margin: 25px 0;
-  color: var(--red);
-  font-family: var(--serif);
-  font-size: 28px;
-}
-
-.price small {
-  color: var(--muted);
-  font-family: var(--sans);
-  font-size: 11px;
-}
-
-/* =========================================================
-   ABOUT PAGE
-   ========================================================= */
-
-.about-intro {
-  padding: 105px 0;
-  background: var(--bg);
-}
-
-.about-intro-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-  gap: 80px;
-  align-items: center;
-}
-
-.about-main-image {
-  min-height: 620px;
-  background:
-    url("https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=90")
-    center / cover;
-}
-
-.about-copy .copy {
-  margin: 0 0 20px;
-}
-
-.about-signature {
-  margin-top: 35px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.about-signature strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 25px;
-  font-weight: 400;
-}
-
-.about-signature span {
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* ABOUT EXPERIENCE */
-
-.about-dark {
-  padding: 105px 0;
-  background: var(--dark);
-  color: #fff;
-}
-
-.about-experience-grid {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 80px;
-}
-
-.about-experience-intro {
-  position: sticky;
-  top: 130px;
-}
-
-.about-dark .title {
-  color: #fff;
-}
-
-.about-dark .copy {
-  color: rgba(255,255,255,.64);
-}
-
-.about-values {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.about-value {
-  min-height: 220px;
-  padding: 30px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  border-right: 1px solid rgba(255,255,255,.12);
-}
-
-.about-value:nth-child(2n) {
-  border-right: none;
-}
-
-.about-value-number {
-  display: block;
-  margin-bottom: 25px;
-  color: var(--gold-light);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.about-value h3 {
-  margin: 0 0 10px;
-  font-family: var(--serif);
-  font-size: 27px;
-  font-weight: 400;
-}
-
-.about-value p {
-  margin: 0;
-  color: rgba(255,255,255,.58);
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-/* ABOUT HOURS */
-
-.about-hours {
-  padding: 105px 0;
-  background: #fff;
-}
-
-.about-hours-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 50px;
-}
-
-.about-hour-card {
-  padding: 45px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-}
-
-.small-label {
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.about-hour-card h3 {
-  margin: 15px 0 10px;
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 400;
-}
-
-.about-hour-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
-}
+.offer h3{
+  font:500 33px "Gilda Display";
 
-/* ABOUT LOCATION */
-
-.about-location {
-  padding: 105px 0;
-  background: #ebe8e1;
-}
-
-.about-location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-location-image {
-  min-height: 560px;
-  background:
-    url("https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=1600&q=90")
-    center / cover;
-}
-
-.about-contact-box {
-  margin: 30px 0;
-  border-top: 1px solid var(--line);
-}
-
-.about-contact-row {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 20px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-}
-
-.about-contact-row strong {
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.about-contact-row a {
-  color: var(--red);
-}
-
-/* ABOUT CTA */
-
-.about-cta {
-  padding: 95px 0;
-  background: #941b32;
-  color: #fff;
+  margin:10px 0;
 }
 
-.about-cta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
+.offer .btn{
+  background:var(--brand-gold);
 }
 
-.about-cta h2 {
-  margin: 18px 0 0;
-  font-family: var(--serif);
-  font-size: clamp(52px, 5vw, 68px);
-  line-height: 1.05;
-  font-weight: 400;
-}
-
-.about-cta h2 em {
-  color: #e7c1bd;
-  font-style: italic;
-}
-
-.about-cta .btn {
-  border-color: rgba(255,255,255,.55);
-  color: #fff;
-  white-space: nowrap;
-}
-
-.about-cta .btn:hover {
-  background: #fff;
-  color: #941b32;
-}
+/* =========================
+   STATS
+========================= */
 
-/* =========================================================
-   SERVICES
-   ========================================================= */
-
-.services-grid,
-.facility-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
+.stats{
+  display:grid;
 
-.service-card,
-.facility {
-  padding: 38px 30px;
-  border: 1px solid var(--line);
-  background: #fff;
-}
+  grid-template-columns:repeat(4,1fr);
 
-.service-icon,
-.facility-icon {
-  width: 45px;
-  height: 45px;
-  margin-bottom: 22px;
-  display: grid;
-  place-items: center;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  font-size: 20px;
-}
+  padding:55px 0;
 
-.service-card h3,
-.facility strong {
-  display: block;
-  margin: 0 0 10px;
-  font-family: var(--serif);
-  font-size: 25px;
-  font-weight: 400;
-}
+  border-top:1px solid var(--line);
 
-.service-card p,
-.facility p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
+  border-bottom:1px solid var(--line);
 }
-
-/* =========================================================
-   OFFERS
-   ========================================================= */
 
-.offers {
-  display: grid;
-  gap: 30px;
-}
+.stats strong{
+  font:500 38px "Gilda Display";
 
-.offer {
-  min-height: 430px;
-  padding: 55px;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-  overflow: hidden;
-}
+  color:var(--brand-green);
 
-.offer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(0,0,0,.78),
-    rgba(0,0,0,.15)
-  );
+  display:block;
 }
 
-.offer > div {
-  position: relative;
-  z-index: 1;
-}
+.stats span{
+  font-size:9px;
 
-.offer h3 {
-  margin: 12px 0;
-  font-family: var(--serif);
-  font-size: 45px;
-  font-weight: 400;
-}
+  letter-spacing:.1em;
 
-.offer p {
-  max-width: 600px;
-  color: rgba(255,255,255,.78);
-  font-size: 14px;
+  color:var(--muted);
 }
 
-/* =========================================================
+/* =========================
    GALLERY
-   ========================================================= */
+========================= */
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+.gallery{
+  display:grid;
+
+  grid-template-columns:
+    1.2fr .8fr .8fr;
+
+  grid-auto-rows:230px;
+
+  gap:12px;
 }
 
-.gallery-item {
-  min-height: 300px;
-  background-position: center;
-  background-size: cover;
+.gallery div{
+  background:center/cover;
 }
 
-.gallery-item.tall {
-  min-height: 620px;
-  grid-row: span 2;
+.gallery .big{
+  grid-row:span 2;
 }
 
-/* =========================================================
-   CONTACT
-   ========================================================= */
+/* =========================
+   TESTIMONIAL
+========================= */
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+.testimonial{
+  background:var(--cream);
+
+  padding:95px 8vw;
+
+  text-align:center;
+
+  border-top:1px solid var(--line);
+
+  border-bottom:1px solid var(--line);
 }
 
-.field,
-.form-field {
-  display: flex;
-  flex-direction: column;
+.testimonial blockquote{
+  font:
+    italic 500
+    clamp(30px,4vw,52px)
+    "Gilda Display";
+
+  color:var(--brand-green);
+
+  max-width:850px;
+
+  margin:20px auto;
+
+  line-height:1.1;
 }
 
-.field.full,
-.form-field.full {
-  grid-column: 1 / -1;
+/* =========================
+   FORMS
+========================= */
+
+.form-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:16px;
 }
 
-.field label,
-.form-field label {
-  margin-bottom: 9px;
-  color: #443a33;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.field{
+  display:grid;
+
+  gap:7px;
+}
+
+.field label{
+  font-size:9px;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+
+  color:var(--brand-green);
 }
 
 .field input,
 .field select,
-.field textarea,
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #d8cfc5;
-  border-radius: 0;
-  outline: none;
-  background: #faf8f5;
-  color: #211b17;
-  font-size: 15px;
-  padding: 15px 16px;
-  transition:
-    border-color .2s ease,
-    background .2s ease,
-    box-shadow .2s ease;
-}
+.field textarea{
+  border:1px solid var(--line);
 
-.field input,
-.field select,
-.form-field input,
-.form-field select {
-  min-height: 53px;
-}
+  background:var(--white);
 
-.field textarea,
-.form-field textarea {
-  min-height: 135px;
-  resize: vertical;
-  line-height: 1.65;
+  padding:15px;
+
+  outline:0;
+
+  color:var(--ink);
 }
 
 .field input:focus,
 .field select:focus,
-.field textarea:focus,
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  border-color: var(--gold);
-  background: #fff;
-  box-shadow: 0 0 0 2px rgba(154,115,61,.08);
+.field textarea:focus{
+  border-color:var(--brand-gold);
 }
 
-/* =========================================================
-   BOOKING PAGE
-   ========================================================= */
-
-.booking-page {
-  background: #f5f1eb;
-}
-
-.booking-hero {
-  min-height: 500px;
-  padding: 105px 20px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(25,17,13,.88),
-      rgba(25,17,13,.45)
-    ),
-    url("https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=2200&q=90")
-    center / cover;
-  color: #fff;
-}
-
-.booking-hero-inner {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-}
-
-.booking-hero h1 {
-  margin: 20px 0;
-  font-family: var(--serif);
-  font-size: clamp(55px, 6vw, 82px);
-  line-height: 1;
-  font-weight: 400;
-}
-
-.booking-hero h1 em {
-  color: #e7c1bd;
-  font-style: italic;
-}
-
-.booking-hero p {
-  max-width: 680px;
-  margin: 0;
-  color: rgba(255,255,255,.75);
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.stay-policy-wrapper {
-  background: #171411;
-}
-
-.stay-policy {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.policy-item {
-  min-height: 190px;
-  padding: 35px;
-  text-align: center;
-  border-right: 1px solid rgba(255,255,255,.09);
-}
-
-.policy-item:last-child {
-  border-right: none;
-}
-
-.policy-icon {
-  margin-bottom: 12px;
-  color: var(--gold-light);
-  font-size: 25px;
-  line-height: 1;
-}
-
-.policy-item h3 {
-  margin: 0 0 7px;
-  color: #fff;
-  font-family: var(--serif);
-  font-size: 23px;
-  font-weight: 400;
-}
-
-.policy-item p {
-  margin: 0;
-  color: rgba(255,255,255,.65);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.booking-main {
-  padding: 105px 20px 110px;
-}
-
-.booking-container {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-}
-
-.booking-intro {
-  margin-bottom: 55px;
-  text-align: center;
-}
-
-.booking-intro .kicker {
-  color: var(--gold);
-  margin-bottom: 15px;
-}
-
-.booking-intro h2 {
-  margin: 0 0 17px;
-  color: #1a1511;
-  font-family: var(--serif);
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 1.05;
-  font-weight: 400;
-}
-
-.booking-intro h2 em {
-  color: var(--gold);
-  font-style: italic;
-}
-
-.booking-intro p {
-  max-width: 700px;
-  margin: 0 auto;
-  color: #6c625b;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.booking-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(300px, .75fr);
-  gap: 32px;
-  align-items: start;
-}
-
-.booking-card {
-  background: #fff;
-  border: 1px solid #ded5ca;
-  padding: 44px;
-}
-
-.booking-card-heading {
-  margin-bottom: 30px;
-}
-
-.booking-card-heading h3 {
-  margin: 0 0 8px;
-  color: #211b17;
-  font-family: var(--serif);
-  font-size: 32px;
-  line-height: 1.15;
-  font-weight: 400;
-}
-
-.booking-card-heading p {
-  margin: 0;
-  color: #756b63;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.form-section {
-  margin-top: 35px;
-}
-
-.form-section:first-of-type {
-  margin-top: 0;
-}
-
-.form-section-title {
-  margin: 0 0 7px;
-  color: #251e19;
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.form-section-description {
-  margin: 0 0 25px;
-  color: #766c63;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-.form-divider {
-  height: 1px;
-  margin: 40px 0;
-  background: #e5ddd4;
-}
-
-.datetime-note {
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  margin: 25px 0 5px;
-  padding: 18px;
-  background: #f6efe4;
-  border: 1px solid #e1d3c0;
-}
-
-.datetime-note-icon {
-  flex: 0 0 auto;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  background: var(--gold);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.datetime-note strong {
-  display: block;
-  margin-bottom: 4px;
-  color: #3c3027;
-  font-size: 13px;
-}
-
-.datetime-note p {
-  margin: 0;
-  color: #70645b;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.room-options {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.room-option {
-  position: relative;
-}
-
-.room-option input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.room-option label {
-  display: block;
-  height: 100%;
-  padding: 20px 17px;
-  border: 1px solid #d8cfc5;
-  background: #faf8f5;
-  cursor: pointer;
-  transition:
-    border-color .2s ease,
-    background .2s ease,
-    box-shadow .2s ease;
-}
-
-.room-option label strong {
-  display: block;
-  margin-bottom: 7px;
-  color: #251e19;
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.15;
-  font-weight: 400;
-}
-
-.room-option label span {
-  display: block;
-  color: #766c63;
-  font-size: 11px;
-  line-height: 1.55;
-}
-
-.room-option input:checked + label {
-  border-color: var(--gold);
-  background: #f3eadc;
-  box-shadow: inset 0 0 0 1px var(--gold);
-}
-
-.terms-box {
-  margin-top: 32px;
-  padding: 19px;
-  background: #f7f2eb;
-  border: 1px solid #e1d7cb;
-}
-
-.terms-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  cursor: pointer;
-}
-
-.terms-label input {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 auto;
-  margin-top: 2px;
-  accent-color: var(--red);
-}
-
-.terms-label span {
-  color: #5f554e;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-.terms-label a {
-  color: var(--red);
-  text-decoration: underline;
-}
-
-.submit-area {
-  margin-top: 28px;
-}
-
-.submit-button {
-  width: 100%;
-  padding: 18px 25px;
-  border: none;
-  border-radius: 0;
-  background: var(--red);
-  color: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  transition:
-    background .2s ease,
-    transform .2s ease;
-}
-
-.submit-button:hover {
-  background: var(--red-dark);
-  transform: translateY(-1px);
-}
-
-.submit-note {
-  margin: 12px 0 0;
-  color: #766c63;
-  font-size: 12px;
-  line-height: 1.6;
-  text-align: center;
-}
-
-.reservation-success {
-  display: none;
-  margin-top: 25px;
-  padding: 24px;
-  border: 1px solid #bdd2bd;
-  background: #eef6ee;
-}
-
-.reservation-success.show {
-  display: block;
-}
-
-.reservation-success h4 {
-  margin: 0 0 8px;
-  color: #315731;
-  font-family: var(--serif);
-  font-size: 27px;
-  font-weight: 400;
-}
-
-.reservation-success p {
-  margin: 0;
-  color: #496149;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-.booking-side {
-  position: sticky;
-  top: 110px;
-  padding: 38px;
-  background: #1a1511;
-  color: #fff;
-}
-
-.booking-side .kicker {
-  margin-bottom: 15px;
-  color: var(--gold-light);
-}
-
-.booking-side h3 {
-  margin: 0 0 20px;
-  font-family: var(--serif);
-  font-size: 43px;
-  line-height: 1.05;
-  font-weight: 400;
-}
-
-.booking-side h3 em {
-  color: #e7c1bd;
-}
-
-.booking-side > p {
-  margin: 0 0 30px;
-  color: rgba(255,255,255,.65);
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.side-feature {
-  display: flex;
-  gap: 15px;
-  padding: 20px 0;
-  border-top: 1px solid rgba(255,255,255,.1);
-}
-
-.side-feature-icon {
-  flex: 0 0 auto;
-  color: var(--gold-light);
-  font-size: 22px;
-}
-
-.side-feature strong {
-  display: block;
-  margin-bottom: 5px;
-  color: #fff;
-  font-size: 13px;
-}
-
-.side-feature span {
-  display: block;
-  color: rgba(255,255,255,.55);
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-.direct-contact {
-  margin-top: 25px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-
-.direct-contact-title {
-  margin-bottom: 10px;
-  color: var(--gold-light);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.direct-contact a {
-  display: block;
-  margin: 5px 0;
-  color: #fff;
-  font-size: 15px;
-}
-
-.whatsapp-button {
-  display: block;
-  margin-top: 25px;
-  padding: 15px 18px;
-  border: 1px solid rgba(255,255,255,.35);
-  color: #fff;
-  text-align: center;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  transition: background .2s ease, color .2s ease;
-}
-
-.whatsapp-button:hover {
-  background: #fff;
-  color: var(--red);
-}
-
-.booking-contact-strip {
-  margin-top: 60px;
-  padding: 40px;
-  background: #ebe8e1;
-  border: 1px solid var(--line);
-}
-
-.booking-contact-strip h3 {
-  margin: 8px 0;
-  font-family: var(--serif);
-  font-size: 34px;
-  font-weight: 400;
-}
-
-.booking-contact-strip p {
-  max-width: 700px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* =========================================================
-   FAQ / LEGAL
-   ========================================================= */
-
-.faq details {
-  padding: 25px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.faq summary {
-  cursor: pointer;
-  list-style: none;
-  font-family: var(--serif);
-  font-size: 25px;
-}
-
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq details p {
-  margin-top: 15px;
-}
-
-.legal {
-  max-width: 900px;
-}
-
-.legal h2 {
-  margin: 45px 0 12px;
-  font-family: var(--serif);
-  font-size: 35px;
-  font-weight: 400;
-}
-
-.legal h2:first-child {
-  margin-top: 0;
-}
-
-.legal p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.9;
+.field.full{
+  grid-column:1/-1;
 }
 
-/* =========================================================
+/* =========================
    FOOTER
-   ========================================================= */
+========================= */
 
-.footer {
-  padding: 80px 0 30px;
-  background: #171411;
-  color: #fff;
+.footer{
+  background:var(--brand-green-dark);
+
+  color:#DDD8CE;
+
+  padding:65px 0 25px;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 55px;
+.footer-grid{
+  display:grid;
+
+  grid-template-columns:
+    1.4fr 1fr 1fr 1fr;
+
+  gap:40px;
 }
 
-.footer .logo {
-  margin-bottom: 25px;
+.footer h4{
+  font-size:10px;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  color:var(--brand-gold-light);
 }
 
-.footer p {
-  color: rgba(255,255,255,.6);
-  font-size: 13px;
-  line-height: 1.8;
+.footer a,
+.footer p{
+  font-size:10px;
+
+  color:#AAA9A1;
+
+  line-height:1.9;
+
+  display:block;
 }
 
-.footer h4 {
-  margin: 5px 0 20px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
+.footer a:hover{
+  color:var(--brand-gold-light);
 }
 
-.footer a {
-  display: block;
-  width: fit-content;
-  margin-bottom: 10px;
-  color: rgba(255,255,255,.62);
-  font-size: 13px;
-  transition: color .2s ease;
+.copyright{
+  border-top:1px solid rgba(255,255,255,.14);
+
+  margin-top:40px;
+
+  padding-top:18px;
+
+  font-size:9px;
+
+  color:#777970;
 }
 
-.footer a:hover {
-  color: var(--gold-light);
+/* =========================
+   PAGE HERO
+========================= */
+
+.page-hero{
+  padding:85px 0;
+
+  background:var(--cream);
+
+  text-align:center;
+
+  border-bottom:1px solid var(--line);
 }
 
-.copyright {
-  grid-column: 1 / -1;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,.1);
-  color: rgba(255,255,255,.4);
-  font-size: 10px;
+.page-hero h1{
+  font:500 64px "Gilda Display";
+
+  color:var(--brand-green);
+
+  margin:15px 0;
 }
 
-/* =========================================================
+/* =========================
+   ROOM DETAILS
+========================= */
+
+.room-detail{
+  display:grid;
+
+  grid-template-columns:1.1fr .9fr;
+
+  gap:55px;
+}
+
+.room-detail .main-photo{
+  height:560px;
+
+  background:center/cover;
+
+  border-top:4px solid var(--brand-gold);
+}
+
+.side-card{
+  background:var(--white);
+
+  padding:35px;
+
+  box-shadow:
+    0 15px 40px rgba(38,56,45,.08);
+}
+
+.side-card h3{
+  font:500 34px "Gilda Display";
+
+  color:var(--brand-green);
+
+  margin-top:0;
+}
+
+.price{
+  font:500 30px "Gilda Display";
+
+  color:var(--brand-gold);
+
+  margin:25px 0;
+}
+
+.price small{
+  font:11px "Plus Jakarta Sans";
+
+  color:#777;
+}
+
+.amenity-pills{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+}
+
+.pill{
+  background:var(--cream);
+
+  color:var(--brand-green);
+
+  padding:10px 12px;
+
+  font-size:9px;
+
+  border:1px solid var(--line);
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  border-top:1px solid var(--line);
+}
+
+.faq details{
+  padding:20px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+.faq summary{
+  cursor:pointer;
+
+  font:500 20px "Gilda Display";
+
+  color:var(--brand-green);
+}
+
+/* =========================
+   LEGAL
+========================= */
+
+.legal{
+  max-width:850px;
+
+  margin:auto;
+}
+
+.legal h2{
+  font:500 32px "Gilda Display";
+
+  color:var(--brand-green);
+
+  margin-top:42px;
+}
+
+.legal p,
+.legal li{
+  color:var(--muted);
+
+  line-height:1.9;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-nav{
+  display:none;
+}
+
+/* =========================
    RESPONSIVE
-   ========================================================= */
+========================= */
 
-@media (max-width: 1000px) {
-  .header {
-    padding: 0 25px;
+@media(max-width:850px){
+
+  .topbar{
+    display:none;
   }
 
-  .nav {
-    gap: 17px;
+  .header{
+    height:75px;
   }
 
-  .container,
-  .hero-inner {
-    width: min(100% - 50px, 1180px);
+  .nav,
+  .header-btn{
+    display:none;
   }
 
-  .booking {
-    width: calc(100% - 50px);
-    grid-template-columns: repeat(2, 1fr);
+  .mobile-nav{
+    display:block;
+
+    border:0;
+
+    background:none;
+
+    color:var(--brand-green);
+
+    font-size:23px;
   }
 
-  .split,
-  .about-intro-grid,
-  .about-experience-grid,
-  .about-location-grid {
-    gap: 45px;
+  .hero{
+    min-height:610px;
   }
 
-  .services-grid,
-  .facility-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .booking{
+    grid-template-columns:1fr 1fr;
+
+    width:90vw;
   }
 
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 850px) {
-  .topbar {
-    padding: 8px 20px;
+  .booking button{
+    min-height:65px;
   }
 
-  .topbar > div {
-    gap: 12px;
-  }
-
-  .header {
-    min-height: 70px;
-  }
-
-  .nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    padding: 20px 25px;
-    background: #171411;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    border-top: 1px solid rgba(255,255,255,.1);
-  }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .nav a.active::after {
-    display: none;
-  }
-
-  .mobile-nav {
-    display: block;
-  }
-
-  .header-btn {
-    margin-left: auto;
+  .section{
+    padding:75px 0;
   }
 
   .split,
-  .about-intro-grid,
-  .about-experience-grid,
-  .about-location-grid,
-  .about-cta-grid {
-    grid-template-columns: 1fr;
+  .room-detail{
+    grid-template-columns:1fr;
   }
 
-  .about-experience-intro {
-    position: static;
+  .cards{
+    grid-template-columns:1fr;
   }
 
-  .room-large,
-  .room-large.reverse {
-    grid-template-columns: 1fr;
+  .facility-grid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .room-large.reverse .room-image {
-    order: 0;
+  .offers{
+    grid-template-columns:1fr;
   }
 
-  .room-image {
-    min-height: 390px;
+  .stats{
+    grid-template-columns:1fr 1fr;
+
+    gap:28px;
   }
 
-  .room-content {
-    padding: 42px 30px;
+  .gallery{
+    grid-template-columns:1fr 1fr;
   }
 
-  .booking-layout {
-    grid-template-columns: 1fr;
+  .gallery .big{
+    grid-row:span 1;
   }
 
-  .booking-side {
-    position: static;
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .stay-policy {
-    width: 100%;
+  .page-hero h1{
+    font-size:48px;
   }
 
-  .policy-item {
-    padding: 28px 20px;
+  .form-grid{
+    grid-template-columns:1fr;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 650px) {
-  body {
-    font-size: 15px;
+  .field.full{
+    grid-column:auto;
   }
 
-  .container,
-  .hero-inner {
-    width: calc(100% - 36px);
-  }
-
-  .topbar {
-    display: none;
-  }
-
-  .header {
-    padding: 0 18px;
-  }
-
-  .header-btn {
-    display: none;
-  }
-
-  .logo {
-    font-size: 25px;
-  }
-
-  .hero {
-    min-height: 650px;
-  }
-
-  .hero-inner {
-    padding: 75px 0;
-  }
-
-  .hero h1 {
-    font-size: 57px;
-  }
-
-  .page-hero {
-    min-height: 390px;
-    padding: 75px 0;
-  }
-
-  .page-hero h1 {
-    font-size: 55px;
-  }
-
-  .section,
-  .about-intro,
-  .about-dark,
-  .about-hours,
-  .about-location {
-    padding: 70px 0;
-  }
-
-  .title {
-    font-size: 48px;
-  }
-
-  .booking {
-    width: calc(100% - 36px);
-    margin-top: -25px;
-    grid-template-columns: 1fr;
-    padding: 18px;
-  }
-
-  .room-image {
-    min-height: 300px;
-  }
-
-  .room-content h2 {
-    font-size: 39px;
-  }
-
-  .cards,
-  .services-grid,
-  .facility-grid,
-  .gallery-grid,
-  .about-hours-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item,
-  .gallery-item.tall {
-    min-height: 320px;
-    grid-row: auto;
-  }
-
-  .about-main-image {
-    min-height: 390px;
-  }
-
-  .about-location-image {
-    min-height: 340px;
-  }
-
-  .about-values {
-    grid-template-columns: 1fr;
-  }
-
-  .about-value {
-    min-height: auto;
-    border-right: none;
-  }
-
-  .about-hour-card {
-    padding: 32px;
-  }
-
-  .about-contact-row {
-    display: block;
-  }
-
-  .about-contact-row strong {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  .booking-hero {
-    min-height: 450px;
-    padding: 75px 18px;
-  }
-
-  .booking-hero h1 {
-    font-size: 50px;
-  }
-
-  .stay-policy {
-    grid-template-columns: 1fr;
-  }
-
-  .policy-item {
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,.09);
-  }
-
-  .policy-item:last-child {
-    border-bottom: none;
-  }
-
-  .booking-main {
-    padding: 70px 18px;
-  }
-
-  .booking-card {
-    padding: 28px 20px;
-  }
-
-  .form-grid,
-  .room-options {
-    grid-template-columns: 1fr;
-  }
-
-  .form-field.full,
-  .field.full {
-    grid-column: auto;
-  }
-
-  .booking-side {
-    padding: 30px 25px;
-  }
-
-  .booking-contact-strip {
-    padding: 30px 22px;
-  }
-
-  .footer {
-    padding: 60px 0 25px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .copyright {
-    grid-column: auto;
+  .room-detail .main-photo{
+    height:400px;
   }
 }
